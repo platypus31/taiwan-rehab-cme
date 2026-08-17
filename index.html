@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>台灣復健醫學繼續教育活動彙整</title>
+<meta name="description" content="彙整台灣復健醫學相關學會的繼續教育活動與積分資訊，可依地區、時間、積分、主題篩選。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <h1>復健醫學 繼續教育活動</h1>
+    <p class="tagline">彙整各學會公告的復健醫學積分課程 · 每週日自動更新</p>
+    <div class="stats" id="stats">
+      <span class="stat"><b id="stat-count">–</b> 場活動</span>
+      <span class="stat"><b id="stat-range">–</b></span>
+      <span class="stat"><b id="stat-sources">–</b> 個來源</span>
+      <span class="stat updated" id="stat-updated"></span>
+    </div>
+    <div class="notice" id="notice" hidden></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="filters" aria-label="篩選器">
+    <div class="filter-row search-row">
+      <input type="search" id="q" placeholder="搜尋標題、主辦單位、地點…" autocomplete="off">
+      <button type="button" id="toggle" class="reset toggle" aria-expanded="false">篩選</button>
+      <button type="button" id="reset" class="reset">清除</button>
+    </div>
+
+    <div class="filter-row">
+      <span class="label">時間</span>
+      <div class="chips" id="f-time"></div>
+    </div>
+
+    <div class="filter-row">
+      <span class="label">地區</span>
+      <div class="chips" id="f-region"></div>
+    </div>
+
+    <div class="filter-row">
+      <span class="label">積分</span>
+      <div class="chips" id="f-credit"></div>
+    </div>
+
+    <div class="filter-row">
+      <span class="label">主題</span>
+      <div class="chips" id="f-category"></div>
+    </div>
+
+    <div class="filter-row">
+      <span class="label">來源</span>
+      <div class="chips" id="f-source"></div>
+    </div>
+
+    <div class="filter-row sort-row">
+      <span class="label">排序</span>
+      <div class="chips" id="f-sort"></div>
+      <span class="result-count" id="result-count"></span>
+    </div>
+  </section>
+
+  <section id="list" class="list" aria-live="polite"></section>
+  <p id="empty" class="empty" hidden>沒有符合條件的活動，試著放寬篩選條件。</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>資料直接取自各學會官方網站公告，僅作彙整索引；<strong>報名與積分認定請以主辦單位公告為準</strong>。</p>
+    <p>點選活動標題會連到該學會的原始頁面。</p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
