@@ -1,5 +1,7 @@
 # 復健醫學 繼續教育活動彙整
 
+[![更新活動資料](https://github.com/platypus31/taiwan-rehab-cme/actions/workflows/update.yml/badge.svg)](https://github.com/platypus31/taiwan-rehab-cme/actions/workflows/update.yml)
+
 把散落在各學會網站的復健醫學積分課程抓下來，變成一頁可以用**時間／地區／積分／主題／來源**篩選的清單。
 純靜態網站，資料存成一份 JSON，靠 GitHub Actions 每天自動更新，沒有伺服器也沒有資料庫。
 
