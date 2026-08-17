@@ -1,7 +1,7 @@
 # 復健醫學 繼續教育活動彙整
 
 把散落在各學會網站的復健醫學積分課程抓下來，變成一頁可以用**時間／地區／積分／主題／來源**篩選的清單。
-純靜態網站，資料存成一份 JSON，靠 GitHub Actions 每週自動更新，沒有伺服器也沒有資料庫。
+純靜態網站，資料存成一份 JSON，靠 GitHub Actions 每天自動更新，沒有伺服器也沒有資料庫。
 
 > 資料只是彙整索引，**報名與積分認定一律以主辦單位公告為準**。
 
@@ -55,7 +55,7 @@ python3 -m http.server 8899       # 開 http://127.0.0.1:8899
 
 ## 自動更新
 
-`.github/workflows/update.yml` 每週日 15:00（台灣時間）跑一次，有變動才 commit。
+`.github/workflows/update.yml` 每天台灣時間 06:00 跑一次，有變動才 commit（也可以在 Actions 頁面手動觸發）。
 也可以到 repo 的 Actions 頁面按 **Run workflow** 手動更新。
 
 ## 部署到 GitHub Pages
