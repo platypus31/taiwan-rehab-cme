@@ -1,4 +1,4 @@
-/* 讀 data/events.json，做四軸篩選（時間／地區／積分／主題＋來源）與排序。
+/* 讀 data/events.json，做多軸篩選（時間／地區／積分／主題／主辦／來源）與排序。
    全部在瀏覽器端跑，沒有後端。資料量幾百筆等級，直接全量過濾就夠快。 */
 (function () {
   "use strict";
@@ -6,6 +6,9 @@
   var DATA_URL = "data/events.json";
   var REGION_ORDER = ["北部", "中部", "南部", "東部", "離島", "線上", "其他"];
   var DOW = ["日", "一", "二", "三", "四", "五", "六"];
+
+  var ORG_HOSPITAL = "醫院／院所";
+  var ORG_NONE = "未標示";
 
   var state = {
     events: [],
@@ -15,6 +18,7 @@
     credit: 0,
     category: null,
     source: null,
+    organizer: null,
     sort: "date-asc"
   };
 
@@ -81,6 +85,38 @@
     }
   }
 
+  /** 主辦單位正規化成可篩選的鍵。
+   *
+   *  原始 organizer 有 40 種寫法，直接列成篩選器沒人看得完，而且同一個學會
+   *  會因為「社團法人」「中華民國」「臺／台」這些前綴變成好幾個不同項目。
+   *  所以：學會／公會／協會 收斂成學會名，醫院與院所全部併成一項
+   *  （她要挑的是「哪個學會辦的」，不是「哪家醫院」）。
+   *  一筆活動可能有多個主辦單位（用、分隔），任一命中就算，所以回傳陣列。 */
+  function normalizeOrg(name) {
+    return String(name == null ? "" : name)
+      // 來源網站打字時會夾雜空白（實例：「台灣兒童 青少年發展障礙學會」
+      // 與「新竹市臨床 心理師公會」），不清掉同一個學會會被拆成兩個篩選項目
+      .replace(/\s+/g, "")
+      .replace(/臺/g, "台")
+      .replace(/^(社團法人|財團法人|中華民國|中華)/, "")
+      .replace(/^台灣/, "");
+  }
+
+  function organizerKeys(e) {
+    var raw = String(e.organizer == null ? "" : e.organizer).trim();
+    if (!raw) return [ORG_NONE];
+
+    var keys = [];
+    raw.split(/[、,，/／]+/).forEach(function (part) {
+      var name = normalizeOrg(part);
+      if (!name) return;
+      var society = name.match(/^.*?(學會|公會|協會)/);
+      var key = society ? society[0] : ORG_HOSPITAL;
+      if (keys.indexOf(key) === -1) keys.push(key);
+    });
+    return keys.length ? keys : [ORG_NONE];
+  }
+
   function escapeHTML(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -118,6 +154,7 @@
       if (timeFilter && !timeFilter.test(e, today)) return false;
       if (state.region && e.region !== state.region) return false;
       if (state.source && e.source !== state.source) return false;
+      if (state.organizer && organizerKeys(e).indexOf(state.organizer) === -1) return false;
       if (state.credit > 0 && !(e.credits >= state.credit)) return false;
       if (state.category && (e.categories || []).indexOf(state.category) === -1) return false;
       if (q) {
@@ -275,6 +312,21 @@
       function (i) { return state.source === i.key; },
       function (i) { state.source = i.key; });
 
+    var orgCounts = countBy(organizerKeys);
+    var orgs = Object.keys(orgCounts)
+      .sort(function (a, b) {
+        // 「醫院／院所」跟「未標示」是收納桶不是學會，固定壓在最後
+        var ra = a === ORG_HOSPITAL || a === ORG_NONE ? 1 : 0;
+        var rb = b === ORG_HOSPITAL || b === ORG_NONE ? 1 : 0;
+        if (ra !== rb) return ra - rb;
+        if (orgCounts[b] !== orgCounts[a]) return orgCounts[b] - orgCounts[a];
+        return a < b ? -1 : a > b ? 1 : 0;
+      })
+      .map(function (o) { return { key: o, label: o, count: orgCounts[o] }; });
+    renderChips("f-organizer", [{ key: null, label: "全部" }].concat(orgs),
+      function (i) { return state.organizer === i.key; },
+      function (i) { state.organizer = i.key; });
+
     renderChips("f-sort", SORTS, function (i) { return state.sort === i.key; },
       function (i) { state.sort = i.key; });
   }
@@ -287,6 +339,7 @@
     if (state.credit > 0) n++;
     if (state.category) n++;
     if (state.source) n++;
+    if (state.organizer) n++;
     if (state.sort !== "date-asc") n++;
     return n;
   }
@@ -351,6 +404,7 @@
     state.credit = 0;
     state.category = null;
     state.source = null;
+    state.organizer = null;
     state.sort = "date-asc";
     render();
   });
