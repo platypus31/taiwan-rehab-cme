@@ -18,11 +18,12 @@
 |------|------|------|
 | [台灣復健醫學會](https://www.pmr.org.tw/active_news/active.asp) | ✅ 已接 | 主來源。全台各醫院／學會申請復健積分的課程都會登記在這裡，涵蓋度最高 |
 | [台灣兒童復健醫學會](https://www.tapedpmr.org.tw/activity/index.asp) | ✅ 已接 | 補兒童復健／早療這一塊，會進詳情頁補抓地點與主辦單位 |
-| [中華民國復健醫學發展協會](https://www.rmdaroc.org/) | ⏸ 未接 | 網站是 Google Sites，內容靠 JavaScript 載入，靜態抓不到，要接得改用 headless 瀏覽器 |
-| [台灣心肺復健醫學會](https://www.tacvpr-taiwan.com/) | ⏸ 未接 | 站台掛在 Cloudflare 人機驗證後面，一般程式請求會被擋（HTTP 403） |
+| [中華民國復健醫學發展協會](https://www.rmdaroc.org/) | ⛔ 決定不接 | 網站是 Google Sites，內容靠 JavaScript 載入，靜態抓不到 |
+| [台灣心肺復健醫學會](https://www.tacvpr-taiwan.com/) | ⛔ 決定不接 | 站台掛在 Cloudflare 人機驗證後面，一般程式請求會被擋（HTTP 403） |
 
-兩個未接的來源不是做不到，是要多付一層代價（跑 headless 瀏覽器、而且會被反爬機制影響穩定度）。
-先把兩個穩定的來源做好，需要時再加。
+這兩個來源**已決定不接**。技術上做得到（跑 headless 瀏覽器），但代價是每天的自動更新要多背一個
+瀏覽器環境、而且會被對方的反爬機制影響穩定度 —— 為了兩個站讓整條管線變脆不划算。
+真正該補的是「有辦課但不申請復健積分」的來源，那是涵蓋度缺口，不是這兩個站。
 
 ## 怎麼加新來源
 

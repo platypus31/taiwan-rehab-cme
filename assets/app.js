@@ -148,18 +148,23 @@
     { key: "credit-desc", label: "積分高→低" }
   ];
 
-  function applyFilters() {
+  /** exceptAxis：計算篩選器上的數字時，要略過該軸自己的條件
+   *  （否則點了「北部」之後，北部以外的地區數字全部變成 0）。
+   *  渲染清單時不傳，就是全部條件都套。 */
+  function applyFilters(exceptAxis) {
     var today = todayISO();
     var timeFilter = TIME_FILTERS.filter(function (f) { return f.key === state.time; })[0];
     var q = state.q.trim().toLowerCase();
 
     var rows = state.events.filter(function (e) {
-      if (timeFilter && !timeFilter.test(e, today)) return false;
-      if (state.region && e.region !== state.region) return false;
-      if (state.source && e.source !== state.source) return false;
-      if (state.organizer && organizerKeys(e).indexOf(state.organizer) === -1) return false;
-      if (state.credit > 0 && !(e.credits >= state.credit)) return false;
-      if (state.category && (e.categories || []).indexOf(state.category) === -1) return false;
+      if (exceptAxis !== "time" && timeFilter && !timeFilter.test(e, today)) return false;
+      if (exceptAxis !== "region" && state.region && e.region !== state.region) return false;
+      if (exceptAxis !== "source" && state.source && e.source !== state.source) return false;
+      if (exceptAxis !== "organizer" && state.organizer &&
+          organizerKeys(e).indexOf(state.organizer) === -1) return false;
+      if (exceptAxis !== "credit" && state.credit > 0 && !(e.credits >= state.credit)) return false;
+      if (exceptAxis !== "category" && state.category &&
+          (e.categories || []).indexOf(state.category) === -1) return false;
       if (q) {
         var blob = [e.title, e.organizer, e.location, e.source].join(" ").toLowerCase();
         if (blob.indexOf(q) === -1) return false;
@@ -275,9 +280,12 @@
     });
   }
 
-  function countBy(pick) {
+  /** 篩選器上的數字＝「按下去會看到幾筆」。
+   *  所以要拿套過其他軸條件的結果來數，不能數全部資料 ——
+   *  否則預設的「即將舉行」會讓數字比實際點下去多（含已結束的場次）。 */
+  function countBy(pick, axis) {
     var counts = {};
-    state.events.forEach(function (e) {
+    applyFilters(axis).forEach(function (e) {
       var values = pick(e);
       (Array.isArray(values) ? values : [values]).forEach(function (v) {
         if (v == null || v === "") return;
@@ -287,12 +295,19 @@
     return counts;
   }
 
+  /** 目前選中的項目就算在其他條件下歸零也要留著，否則 chip 消失就沒得取消，
+   *  使用者會卡在一個看不到出口的空清單（例：選了東部又選只在北部辦的學會）。 */
+  function keepSelected(counts, selected) {
+    if (selected != null && counts[selected] == null) counts[selected] = 0;
+    return counts;
+  }
+
   function renderFilters() {
     renderChips("f-time", TIME_FILTERS, function (i) { return state.time === i.key; },
       function (i) { state.time = i.key; });
 
-    var regionCounts = countBy(function (e) { return e.region; });
-    var regions = REGION_ORDER.filter(function (r) { return regionCounts[r]; })
+    var regionCounts = keepSelected(countBy(function (e) { return e.region; }, "region"), state.region);
+    var regions = REGION_ORDER.filter(function (r) { return regionCounts[r] != null; })
       .map(function (r) { return { key: r, label: r, count: regionCounts[r] }; });
     renderChips("f-region", [{ key: null, label: "全部" }].concat(regions),
       function (i) { return state.region === i.key; },
@@ -301,21 +316,21 @@
     renderChips("f-credit", CREDIT_FILTERS, function (i) { return state.credit === i.key; },
       function (i) { state.credit = i.key; });
 
-    var catCounts = countBy(function (e) { return e.categories || []; });
+    var catCounts = keepSelected(countBy(function (e) { return e.categories || []; }, "category"), state.category);
     var cats = Object.keys(catCounts).sort(function (a, b) { return catCounts[b] - catCounts[a]; })
       .map(function (c) { return { key: c, label: c, count: catCounts[c] }; });
     renderChips("f-category", [{ key: null, label: "全部" }].concat(cats),
       function (i) { return state.category === i.key; },
       function (i) { state.category = i.key; });
 
-    var srcCounts = countBy(function (e) { return e.source; });
+    var srcCounts = keepSelected(countBy(function (e) { return e.source; }, "source"), state.source);
     var srcs = Object.keys(srcCounts).sort()
       .map(function (s) { return { key: s, label: s, count: srcCounts[s] }; });
     renderChips("f-source", [{ key: null, label: "全部" }].concat(srcs),
       function (i) { return state.source === i.key; },
       function (i) { state.source = i.key; });
 
-    var orgCounts = countBy(organizerKeys);
+    var orgCounts = keepSelected(countBy(organizerKeys, "organizer"), state.organizer);
     var orgs = Object.keys(orgCounts)
       .sort(function (a, b) {
         // 「醫院／院所」跟「未標示」是收納桶不是學會，固定壓在最後
