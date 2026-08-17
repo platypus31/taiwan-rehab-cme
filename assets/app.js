@@ -55,17 +55,27 @@
     var d = new Date(iso);
     if (isNaN(d.getTime())) return String(iso).slice(0, 16).replace("T", " ");
     try {
-      return new Intl.DateTimeFormat("zh-TW", {
+      // 用 formatToParts 逐欄取值自己拼，不對 format() 的字串做正則替換 ——
+      // 各瀏覽器 ICU 對 zh-TW 的輸出格式不一致（可能是 2026/08/17，也可能是 2026年08月17日），
+      // 依賴字串長相會在某些裝置上顯示成沒被轉換的樣子。
+      var parts = new Intl.DateTimeFormat("zh-TW", {
         timeZone: "Asia/Taipei",
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
         hour: "2-digit",
         minute: "2-digit",
-        hour12: false
-      })
-        .format(d)
-        .replace(/\//g, "-");
+        hourCycle: "h23"
+      }).formatToParts(d);
+      var v = {};
+      for (var i = 0; i < parts.length; i++) v[parts[i].type] = parts[i].value;
+      if (!v.year || !v.month || !v.day || !v.hour || !v.minute) throw new Error("parts");
+      var pad = function (s) {
+        return String(s).padStart(2, "0");
+      };
+      // hourCycle h23 在少數舊 ICU 仍可能吐 24，正規化回 00
+      var hour = pad(v.hour === "24" ? "0" : v.hour);
+      return v.year + "-" + pad(v.month) + "-" + pad(v.day) + " " + hour + ":" + pad(v.minute);
     } catch (err) {
       return String(iso).slice(0, 16).replace("T", " ");
     }
