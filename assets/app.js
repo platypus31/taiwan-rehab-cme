@@ -49,6 +49,28 @@
     ].join("-");
   }
 
+  // updated_at 帶時區偏移（本機跑是 +08:00，GitHub Actions 跑是 +00:00）。
+  // 直接切字串會讓 CI 產出的時間看起來早 8 小時、像是資料很舊，所以一律換算成台北時間。
+  function formatUpdatedAt(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return String(iso).slice(0, 16).replace("T", " ");
+    try {
+      return new Intl.DateTimeFormat("zh-TW", {
+        timeZone: "Asia/Taipei",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+      })
+        .format(d)
+        .replace(/\//g, "-");
+    } catch (err) {
+      return String(iso).slice(0, 16).replace("T", " ");
+    }
+  }
+
   function escapeHTML(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -286,7 +308,7 @@
 
     if (data.updated_at) {
       document.getElementById("stat-updated").textContent =
-        "更新於 " + data.updated_at.slice(0, 16).replace("T", " ");
+        "更新於 " + formatUpdatedAt(data.updated_at);
     }
 
     if (data.errors && data.errors.length) {
