@@ -21,13 +21,14 @@ from bs4 import BeautifulSoup
 from .base import (
     Event,
     clean_text,
+    cutoff_iso,
     detect_categories,
     detect_region,
     get,
     parse_credits,
     parse_date,
     strip_prefix,
-    today_iso,
+    warn,
 )
 
 NAME = "台灣兒童復健醫學會"
@@ -69,7 +70,8 @@ def _fetch_detail(url: str) -> Tuple[str, str]:
     """從詳情頁抓 (地點, 主辦單位)。抓不到就回空字串，不讓單筆失敗拖垮整批。"""
     try:
         resp = get(url)
-    except Exception:
+    except Exception as exc:  # noqa: BLE001 - 單筆失敗不拖垮整批，但要留下痕跡
+        warn("{}：詳情頁抓取失敗，該筆缺地點與主辦單位（{}）".format(NAME, url))
         return "", ""
     resp.encoding = resp.apparent_encoding or "utf-8"
     text = clean_text(BeautifulSoup(resp.text, "html.parser").get_text(" ", strip=True))
@@ -85,17 +87,21 @@ def _fetch_detail(url: str) -> Tuple[str, str]:
 
 
 def fetch(with_detail: bool = True) -> List[Event]:
-    today = today_iso()
+    # 用 build.py 同一個下界（不是 today），否則剛結束的活動會在來源層就被丟掉，
+    # KEEP_PAST_DAYS 對這個來源等於失效。
+    cutoff = cutoff_iso()
     events: List[Event] = []
+    truncated = True  # 迴圈跑滿 MAX_PAGES 都沒 break = 可能還有沒抓到的頁
 
     for page in range(1, MAX_PAGES + 1):
         resp = get(_page_url(page))
         resp.encoding = resp.apparent_encoding or "utf-8"
         rows = _parse_rows(BeautifulSoup(resp.text, "html.parser"))
         if not rows:
+            truncated = False
             break
 
-        upcoming = [r for r in rows if r[0] >= today]
+        upcoming = [r for r in rows if r[0] >= cutoff]
         for iso_date, title, url in upcoming:
             location, organizer = _fetch_detail(url) if with_detail else ("", "")
             events.append(
@@ -114,5 +120,14 @@ def fetch(with_detail: bool = True) -> List[Event]:
 
         # 整頁都過期 = 後面只會更舊，停止翻頁
         if not upcoming:
+            truncated = False
             break
+
+    # 比照 pmr.py：命中安全上限要浮出來，不能默默少資料
+    if truncated:
+        warn(
+            "{}：翻到第 {} 頁仍有未過期活動，已達安全上限，可能有活動未收錄".format(
+                NAME, MAX_PAGES
+            )
+        )
     return events

@@ -9,7 +9,7 @@ from __future__ import annotations
 import re
 import unicodedata
 from dataclasses import asdict, dataclass, field
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from typing import List, Optional
 
 import requests
@@ -40,6 +40,11 @@ class Event:
 
     def to_dict(self) -> dict:
         return asdict(self)
+
+
+# 保留過去幾天的活動（剛結束的活動還有人想查簡章）。
+# 定義在這裡而不是 build.py，是為了讓「來源層自己過濾」與「彙整層過濾」用同一個下界。
+KEEP_PAST_DAYS = 7
 
 
 class SourceError(Exception):
@@ -253,3 +258,13 @@ def strip_prefix(text: str, *prefixes: str) -> str:
 
 def today_iso() -> str:
     return datetime.now().date().isoformat()
+
+
+def cutoff_iso() -> str:
+    """資料保留下界：早於這天的活動一律不收。
+
+    來源層若要自己過濾過期活動，必須用這個函式而不是 today_iso()，
+    否則 build.py 的 KEEP_PAST_DAYS（剛結束的活動還有人想查簡章）
+    對該來源會靜默失效 —— 資料看起來正常，只是少了近幾天的場次。
+    """
+    return (datetime.now().date() - timedelta(days=KEEP_PAST_DAYS)).isoformat()

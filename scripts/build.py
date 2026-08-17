@@ -20,16 +20,12 @@ from typing import Dict, List
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from sources import pmr, tapedpmr  # noqa: E402
-from sources.base import Event, drain_warnings  # noqa: E402
+from sources.base import KEEP_PAST_DAYS, Event, drain_warnings  # noqa: E402
 
 SOURCES = [pmr, tapedpmr]
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "data" / "events.json"
-
-# 保留過去幾天的活動（剛結束的活動還有人想查簡章）
-KEEP_PAST_DAYS = 7
-
 
 def _norm_title(title: str) -> str:
     """去掉積分/時數註記與所有空白標點，用來判斷兩筆是不是同一場活動。"""
@@ -113,6 +109,14 @@ def main() -> int:
     exit_code = 1 if errors and not events else 0
 
     if args.dry_run:
+        return exit_code
+
+    # 全部來源都掛掉時保留既有 events.json —— 寧可資料舊，也不要把網站洗成 0 筆。
+    # （兩個來源同時短暫連不上並不罕見：對方網站維護、本機斷網都會這樣。）
+    if exit_code == 1:
+        print(
+            "全部來源失敗，保留既有 {} 不覆蓋".format(OUTPUT), file=sys.stderr
+        )
         return exit_code
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
