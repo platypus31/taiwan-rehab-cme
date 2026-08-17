@@ -71,7 +71,9 @@ def _fetch_detail(url: str) -> Tuple[str, str]:
     try:
         resp = get(url)
     except Exception as exc:  # noqa: BLE001 - 單筆失敗不拖垮整批，但要留下痕跡
-        warn("{}：詳情頁抓取失敗，該筆缺地點與主辦單位（{}）".format(NAME, url))
+        warn(
+            "{}：詳情頁抓取失敗，該筆缺地點與主辦單位（{} — {}）".format(NAME, url, exc)
+        )
         return "", ""
     resp.encoding = resp.apparent_encoding or "utf-8"
     text = clean_text(BeautifulSoup(resp.text, "html.parser").get_text(" ", strip=True))
