@@ -2,8 +2,9 @@ name: 更新活動資料
 
 on:
   schedule:
-    # 每週日 15:00 台灣時間（UTC 07:00）
-    - cron: "0 7 * * 0"
+    # 每天台灣時間 06:00（UTC 22:00）—— public repo 的 Actions 免費無上限，
+    # 每次只打幾十個請求，沒有理由讓臨時加開的課等一週才出現。
+    - cron: "0 22 * * *"
   workflow_dispatch: {} # 也可以在 Actions 頁面手動按一下就更新
 
 permissions:
