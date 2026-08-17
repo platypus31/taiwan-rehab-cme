@@ -9,7 +9,7 @@ from __future__ import annotations
 import re
 import unicodedata
 from dataclasses import asdict, dataclass, field
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from typing import List, Optional
 
 import requests
@@ -42,9 +42,16 @@ class Event:
         return asdict(self)
 
 
-# 保留過去幾天的活動（剛結束的活動還有人想查簡章）。
+# 這個站的「今天」一律是台灣的今天。
+#
+# 不能用機器的本地時間：GitHub Actions 的 runner 跑在 UTC，排程是台灣 06:00
+# （UTC 前一天 22:00），用 runner 的日期會整整差一天，把當天的活動誤判成過期。
+# 台灣沒有日光節約時間，固定 +08:00 就夠，不需要 tzdata。
+TAIPEI = timezone(timedelta(hours=8))
+
+# 保留過去幾天的活動。[NAME-REDACTED] 2026-08-17 拍板：過期的課程不要出現在站上，所以是 0。
 # 定義在這裡而不是 build.py，是為了讓「來源層自己過濾」與「彙整層過濾」用同一個下界。
-KEEP_PAST_DAYS = 7
+KEEP_PAST_DAYS = 0
 
 
 class SourceError(Exception):
@@ -256,15 +263,20 @@ def strip_prefix(text: str, *prefixes: str) -> str:
     return result
 
 
+def today_taipei() -> date:
+    """台灣的今天。所有日期比較都從這裡出發，不看機器時區。"""
+    return datetime.now(TAIPEI).date()
+
+
 def today_iso() -> str:
-    return datetime.now().date().isoformat()
+    return today_taipei().isoformat()
 
 
 def cutoff_iso() -> str:
     """資料保留下界：早於這天的活動一律不收。
 
     來源層若要自己過濾過期活動，必須用這個函式而不是 today_iso()，
-    否則 build.py 的 KEEP_PAST_DAYS（剛結束的活動還有人想查簡章）
-    對該來源會靜默失效 —— 資料看起來正常，只是少了近幾天的場次。
+    否則 build.py 的 KEEP_PAST_DAYS 對該來源會失效 ——
+    資料看起來正常，只是跟彙整層對不上。
     """
-    return (datetime.now().date() - timedelta(days=KEEP_PAST_DAYS)).isoformat()
+    return (today_taipei() - timedelta(days=KEEP_PAST_DAYS)).isoformat()

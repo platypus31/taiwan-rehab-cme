@@ -13,14 +13,14 @@ import argparse
 import json
 import re
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, List
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from sources import pmr, tapedpmr  # noqa: E402
-from sources.base import KEEP_PAST_DAYS, Event, drain_warnings  # noqa: E402
+from sources.base import TAIPEI, Event, cutoff_iso, drain_warnings  # noqa: E402
 
 SOURCES = [pmr, tapedpmr]
 
@@ -63,7 +63,8 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    cutoff = (datetime.now().date() - timedelta(days=KEEP_PAST_DAYS)).isoformat()
+    # 台灣的今天（見 sources/base.py 的 TAIPEI 註解 —— runner 跑在 UTC，不能用機器日期）
+    cutoff = cutoff_iso()
 
     collected: List[Event] = []
     errors: List[str] = []
@@ -91,7 +92,7 @@ def main() -> int:
     events = dedupe(collected)
 
     payload = {
-        "updated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "updated_at": datetime.now(TAIPEI).isoformat(timespec="seconds"),
         "count": len(events),
         "sources": per_source,
         "errors": errors,

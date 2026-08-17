@@ -1,64 +1,12 @@
 {
- "updated_at": "2026-08-17T03:03:05+00:00",
- "count": 59,
+ "updated_at": "2026-08-17T11:53:52+08:00",
+ "count": 55,
  "sources": {
   "台灣復健醫學會": 47,
-  "台灣兒童復健醫學會": 15
+  "台灣兒童復健醫學會": 11
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-08-15",
-   "title": "MABC-3兒童動作評估工具之施測、計分查表與臨床實作 (合辦；積分：1.5)",
-   "organizer": "衛生福利部臺中醫院",
-   "location": "衛生福利部臺中醫院復能大樓第八會議室程",
-   "credits": 1.5,
-   "region": "中部",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/237.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-08-15",
-   "title": "以家庭為中心-兒童發展篩檢教育訓練課程 (積分：1.5)",
-   "organizer": "臺大醫院新竹臺大分院新竹醫院 復健部 早期療育中心、新竹市臨床 心理師公會",
-   "location": "臺大分院新竹醫院 5 樓第一會議室",
-   "credits": 1.5,
-   "region": "北部",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/215.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-08-15",
-   "title": "書寫易讀性與視動整合之評估、實證治療與臨床應用 (積分：2)",
-   "organizer": "佛教慈濟醫療財團法人台北慈濟醫院兒童發展暨復健中心",
-   "location": "台北慈濟醫院合心樓3F-和氣會議室(新北市新店區建國路289號)",
-   "credits": 2.0,
-   "region": "北部",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/232.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-08-16",
-   "title": "跨領域團隊照護課程-心理劇應用在兒童臨床及治療(合辦；積分：2.5)",
-   "organizer": "童綜合醫院兒童發展聯合評估中心",
-   "location": "童綜合醫院梧棲院區 20 樓視聽教室（臺中市梧棲區臺灣大道八段 699 號）",
-   "credits": 2.5,
-   "region": "中部",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/236.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
   {
    "date": "2026-08-22",
    "title": "1.棒球運動傷害與運動處方2.棒球運動傷害與投球技術相關性115.08.22(共4時)(2點)",

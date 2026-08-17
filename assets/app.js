@@ -34,12 +34,16 @@
   };
 
   // ---------- 工具 ----------
+  /** 這個站的「今天」一律是台灣的今天，不看使用者裝置的時區。
+   *  她人在國外或手機時區設錯時，「即將舉行」不該跟著跑掉。
+   *  台灣沒有日光節約，固定 +08:00 即可。 */
   function todayISO() {
-    var d = new Date();
+    var now = new Date();
+    var taipei = new Date(now.getTime() + (now.getTimezoneOffset() + 480) * 60000);
     return [
-      d.getFullYear(),
-      String(d.getMonth() + 1).padStart(2, "0"),
-      String(d.getDate()).padStart(2, "0")
+      taipei.getFullYear(),
+      String(taipei.getMonth() + 1).padStart(2, "0"),
+      String(taipei.getDate()).padStart(2, "0")
     ].join("-");
   }
 
@@ -131,8 +135,9 @@
     { key: "upcoming", label: "即將舉行", test: function (e, t) { return e.date >= t; } },
     { key: "7", label: "近 7 天", test: function (e, t) { return e.date >= t && e.date <= addDays(t, 7); } },
     { key: "30", label: "近 30 天", test: function (e, t) { return e.date >= t && e.date <= addDays(t, 30); } },
-    { key: "90", label: "近 3 個月", test: function (e, t) { return e.date >= t && e.date <= addDays(t, 90); } },
-    { key: "all", label: "全部（含已結束）", test: function () { return true; } }
+    { key: "90", label: "近 3 個月", test: function (e, t) { return e.date >= t && e.date <= addDays(t, 90); } }
+    // 沒有「含已結束」選項 —— 資料源頭就不收過期活動（KEEP_PAST_DAYS=0），
+    // 留一個永遠等同「即將舉行」的選項只會讓人以為點了沒反應。
   ];
 
   var CREDIT_FILTERS = [
