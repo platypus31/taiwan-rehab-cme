@@ -98,8 +98,9 @@
       // 與「新竹市臨床 心理師公會」），不清掉同一個學會會被拆成兩個篩選項目
       .replace(/\s+/g, "")
       .replace(/臺/g, "台")
-      .replace(/^(社團法人|財團法人|中華民國|中華)/, "")
-      .replace(/^台灣/, "");
+      // 用 + 量詞讓字首可疊加剝除：「財團法人中華民國OO學會」要一路剝到 OO學會，
+      // 只剝一次會讓同一個學會因為原始字串有沒有疊字首而落到兩個不同篩選鍵
+      .replace(/^(?:社團法人|財團法人|中華民國|中華|台灣)+/, "");
   }
 
   function organizerKeys(e) {
@@ -107,7 +108,9 @@
     if (!raw) return [ORG_NONE];
 
     var keys = [];
-    raw.split(/[、,，/／]+/).forEach(function (part) {
+    // 只切實際觀察到的分隔符。斜線刻意不切 —— 機構名本身可能含「/」（如「A/B 中心」），
+    // 切下去會生出兩個不存在的篩選鍵。
+    raw.split(/[、,，]+/).forEach(function (part) {
       var name = normalizeOrg(part);
       if (!name) return;
       var society = name.match(/^.*?(學會|公會|協會)/);
