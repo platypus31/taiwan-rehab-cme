@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-08-18T06:13:01+08:00",
- "count": 55,
+ "updated_at": "2026-08-19T06:11:34+08:00",
+ "count": 56,
  "sources": {
-  "台灣復健醫學會": 47,
+  "台灣復健醫學會": 48,
   "台灣兒童復健醫學會": 11
  },
  "errors": [],
@@ -393,6 +393,19 @@
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4499.html",
    "categories": [
     "疼痛"
+   ]
+  },
+  {
+   "date": "2026-09-12",
+   "title": "Prolo 202 Musculoskeletal Ultrasound Essential Workshop 115.09.12(共2時50分)、115.09.13(共5時)(1.5/2.75點)",
+   "organizer": "台灣增生療法醫學會、亞東紀念醫院",
+   "location": "亞東紀念醫院復健中心4F",
+   "credits": 2.75,
+   "region": "其他",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4510.html",
+   "categories": [
+    "超音波與介入"
    ]
   },
   {
