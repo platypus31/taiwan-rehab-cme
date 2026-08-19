@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-08-19T06:11:34+08:00",
- "count": 56,
+ "updated_at": "2026-08-20T06:13:41+08:00",
+ "count": 57,
  "sources": {
-  "台灣復健醫學會": 48,
+  "台灣復健醫學會": 49,
   "台灣兒童復健醫學會": 11
  },
  "errors": [],
@@ -467,6 +467,19 @@
    "region": "北部",
    "source": "台灣復健醫學會",
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4472.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-17",
+   "title": "早療服務中以家庭為中心的跨專業合作115.09.17(共3時)(1.5點)",
+   "organizer": "衛生福利部彰化醫院-兒童發展聯合評估中心",
+   "location": "衛生福利部彰化醫院2樓大禮堂",
+   "credits": 1.5,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4511.html",
    "categories": [
     "兒童復健"
    ]
