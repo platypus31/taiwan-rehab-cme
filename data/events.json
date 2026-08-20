@@ -1,9 +1,10 @@
 {
- "updated_at": "2026-08-20T06:13:41+08:00",
- "count": 57,
+ "updated_at": "2026-08-20T23:09:13+08:00",
+ "count": 63,
  "sources": {
-  "台灣復健醫學會": 49,
-  "台灣兒童復健醫學會": 11
+  "台灣復健醫學會": 51,
+  "台灣兒童復健醫學會": 11,
+  "連倚南教授復健醫學教育基金會": 4
  },
  "errors": [],
  "events": [
@@ -486,6 +487,19 @@
   },
   {
    "date": "2026-09-19",
+   "title": "115年度早期療育全人照護個案討論會(共2時)(1點)",
+   "organizer": "醫療財團法人徐元智先生藥基金會亞東紀念醫院兒童發展中心",
+   "location": "亞東紀念醫院 北棟六樓階梯教室",
+   "credits": 1.0,
+   "region": "其他",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4513.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-19",
    "title": "2026/09/19-20 ISCD Quality Bone Densitometry Course: Performance, Interpretation, and Clinical Application for Clinician (ISCD授權骨密課程及TOA考試)(台南)(僅限中華民國骨質疏鬆症學會醫師會員報名)115.09.19(共50分)(0.5點)",
    "organizer": "中華民國骨質疏鬆症學會",
    "location": "衛生福利部臺南醫院 急診大樓6樓 大會議廳 (臺南市中西區中山路125號)",
@@ -660,6 +674,19 @@
   },
   {
    "date": "2026-10-04",
+   "title": "下肢義肢研習會",
+   "organizer": "財團法人台北市連倚南教授復健醫學教育基金會",
+   "location": "臺大醫學院101講堂(臺北市中正區中山南路7號)",
+   "credits": null,
+   "region": "北部",
+   "source": "連倚南教授復健醫學教育基金會",
+   "url": "https://lien.foundation/lower_limb_prosthese/",
+   "categories": [
+    "輔具與義肢"
+   ]
+  },
+  {
+   "date": "2026-10-04",
    "title": "視覺功能之評估與復健：跨兒童與成人的臨床實務與研究分享(共3時40分)(2點)",
    "organizer": "臺北榮民總醫院 復健醫學部 - 早療評估中心",
    "location": "臺北榮民總醫院 醫療創新中心",
@@ -680,6 +707,30 @@
    "region": "線上",
    "source": "台灣復健醫學會",
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4334.html",
+   "categories": []
+  },
+  {
+   "date": "2026-10-18",
+   "title": "『加開』骨骼肌肉系統超音波檢查工作坊-診斷與注射班",
+   "organizer": "財團法人台北市連倚南教授復健醫學教育基金會",
+   "location": "台北市常德街1號",
+   "credits": null,
+   "region": "北部",
+   "source": "連倚南教授復健醫學教育基金會",
+   "url": "https://lien.foundation/ultrasound_diagnosis_injection/",
+   "categories": [
+    "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-10-18",
+   "title": "活動與穩定多方跨領域探討傷害預防研討會 115.10.18(共6時10分)(3.5點)",
+   "organizer": "中華運動培訓教育學會",
+   "location": "張榮發基金會國際中心",
+   "credits": 3.5,
+   "region": "其他",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4512.html",
    "categories": []
   },
   {
@@ -707,6 +758,17 @@
    ]
   },
   {
+   "date": "2026-11-21",
+   "title": "癌症復健研討會-乳癌復健",
+   "organizer": "財團法人台北市連倚南教授復健醫學教育基金會",
+   "location": "",
+   "credits": null,
+   "region": "北部",
+   "source": "連倚南教授復健醫學教育基金會",
+   "url": "https://lien.foundation/yearlyplan/",
+   "categories": []
+  },
+  {
    "date": "2026-11-22",
    "title": "超音波解剖暨臨床實戰經驗分享工作坊115.11.22(共9時)(4.5點)",
    "organizer": "社團法人台灣中西醫結合復健醫學會",
@@ -715,6 +777,19 @@
    "region": "北部",
    "source": "台灣復健醫學會",
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4469.html",
+   "categories": [
+    "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-11-29",
+   "title": "骨骼肌肉系統超音波檢查工作坊-進階班",
+   "organizer": "財團法人台北市連倚南教授復健醫學教育基金會",
+   "location": "",
+   "credits": null,
+   "region": "北部",
+   "source": "連倚南教授復健醫學教育基金會",
+   "url": "https://lien.foundation/yearlyplan/",
    "categories": [
     "超音波與介入"
    ]

@@ -19,10 +19,10 @@ from typing import Dict, List
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from sources import pmr, tapedpmr  # noqa: E402
+from sources import lien, pmr, tapedpmr  # noqa: E402
 from sources.base import TAIPEI, Event, cutoff_iso, drain_warnings  # noqa: E402
 
-SOURCES = [pmr, tapedpmr]
+SOURCES = [pmr, tapedpmr, lien]
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "data" / "events.json"

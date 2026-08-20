@@ -20,10 +20,14 @@
 |------|------|------|
 | [台灣復健醫學會](https://www.pmr.org.tw/active_news/active.asp) | ✅ 已接 | 主來源。全台各醫院／學會申請復健積分的課程都會登記在這裡，涵蓋度最高 |
 | [台灣兒童復健醫學會](https://www.tapedpmr.org.tw/activity/index.asp) | ✅ 已接 | 補兒童復健／早療這一塊，會進詳情頁補抓地點與主辦單位 |
+| [連倚南教授復健醫學教育基金會](https://lien.foundation/yearlyplan/) | ✅ 已接 | 超音波工作坊、義肢裝具研習會、癌症復健研討會這一類。這些課**不會出現在復健醫學會的列表**，是純新增的涵蓋度 |
 | [中華民國復健醫學發展協會](https://www.rmdaroc.org/) | ⛔ 決定不接 | 網站是 Google Sites，內容靠 JavaScript 載入，靜態抓不到 |
 | [台灣心肺復健醫學會](https://www.tacvpr-taiwan.com/) | ⛔ 決定不接 | 站台掛在 Cloudflare 人機驗證後面，一般程式請求會被擋（HTTP 403） |
 
-這兩個來源**已決定不接**。技術上做得到（跑 headless 瀏覽器），但代價是每天的自動更新要多背一個
+基金會那條的積分常常顯示「未標示」，那是照實呈現：他們的簡章多半寫「台灣復健醫學會積分申請中」，
+點數還沒核下來。與其猜一個數字，不如讓它空著 —— 積分以主辦單位最後公告為準。
+
+心肺復健醫學會與復健醫學發展協會這兩個來源**已決定不接**。技術上做得到（跑 headless 瀏覽器），但代價是每天的自動更新要多背一個
 瀏覽器環境、而且會被對方的反爬機制影響穩定度 —— 為了兩個站讓整條管線變脆不划算。
 真正該補的是「有辦課但不申請復健積分」的來源，那是涵蓋度缺口，不是這兩個站。
 
@@ -76,6 +80,7 @@ Settings → Pages → Source 選 **Deploy from a branch**，branch 選 `main`�
 sources/base.py     共用資料結構與判定邏輯（積分、地區、分類、日期）
 sources/pmr.py      台灣復健醫學會
 sources/tapedpmr.py 台灣兒童復健醫學會
+sources/lien.py     連倚南教授復健醫學教育基金會
 scripts/build.py    跑所有來源 → 合併去重 → 寫出 data/events.json
 data/events.json    網站唯一的資料來源（自動產生，不要手改）
 index.html          頁面結構
