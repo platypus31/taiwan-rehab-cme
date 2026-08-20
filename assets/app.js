@@ -118,7 +118,10 @@
       var name = normalizeOrg(part);
       if (!name) return;
       var society = name.match(/^.*?(學會|公會|協會)/);
-      var key = society ? society[0] : ORG_HOSPITAL;
+      // 基金會只認「整串就是一個基金會」的情況（連倚南教授復健醫學教育基金會）。
+      // 不能用 /基金會/ 隨便比對：「醫療財團法人徐元智先生藥基金會亞東紀念醫院
+      // 兒童發展中心」的基金會在字串中間，它實際上是醫院，該留在「醫院／院所」。
+      var key = society ? society[0] : /基金會$/.test(name) ? name : ORG_HOSPITAL;
       if (keys.indexOf(key) === -1) keys.push(key);
     });
     return keys.length ? keys : [ORG_NONE];
