@@ -1,0 +1,172 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//platypusbot//taiwan-rehab-cme//ZH-TW
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:復健醫學 繼續教育活動（線上）
+X-WR-TIMEZONE:Asia/Taipei
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Asia/Taipei
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+TZNAME:CST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-cb40add4af7143bf8983fa63aeec0f75f8be37b5
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260827
+DTEND;VALUE=DATE:20260828
+SUMMARY:DR. BONE Webinar 115.08.27(共50分)(0.5點)
+LOCATION:線上課程
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4495.html
+DESCRIPTION:主辦：台灣骨鬆肌少關節防治學會\n積分：0.5 點
+ \n分類：骨骼肌肉\n來源：台灣復健醫學會\n簡章與報名
+ ：https://www.pmr.org.tw/active_news/active_info.asp?/4495.html\n（時
+ 間為整天，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-81e85696d389b2767164cd6474f5cc2306e4689c
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260829
+SUMMARY:「網絡安全與網路成癮」專業人員教育訓練課程(積
+ 分：2.5)
+LOCATION:線上課程
+URL:https://www.tapedpmr.org.tw/activity/info.asp?/245.html
+DESCRIPTION:主辦：社團法人台灣兒童 青少年發展障礙學會\n
+ 積分：2.5 點\n分類：兒童復健\n來源：台灣兒童復健醫學
+ 會\n簡章與報名：https://www.tapedpmr.org.tw/activity/info.asp?/245.
+ html\n（時間為整天，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-bdb365146edea9f48d39cdfa3f85156a0541bb60
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20260906
+SUMMARY:臨床實務-PDMS-3 介紹 (合辦；積分：1.5)
+LOCATION:線上課程
+URL:https://www.tapedpmr.org.tw/activity/info.asp?/244.html
+DESCRIPTION:主辦：屏基醫療財團法人屏東基督教醫院\n積分
+ ：1.5 點\n分類：兒童復健\n來源：台灣兒童復健醫學會\n
+ 簡章與報名：https://www.tapedpmr.org.tw/activity/info.asp?/244.html\
+ n（時間為整天，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-13b7717026cd0bfc20e1e9143508bac7ac9ee599
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20260906
+SUMMARY:臨床實務-PDMS-3介紹115.09.05(共2時50分)(1.5點)
+LOCATION:線上課程
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4500.html
+DESCRIPTION:主辦：屏基醫療財團法人屏東基督教醫院\n積分
+ ：1.5 點\n來源：台灣復健醫學會\n簡章與報名：https://www.
+ pmr.org.tw/active_news/active_info.asp?/4500.html\n（時間為整天，
+ 實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-9292d2f8cb405bb0855841ec7bc844ccff82da43
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260913
+DTEND;VALUE=DATE:20260914
+SUMMARY:「依附觀點下的情緒教育：如何在關係中培養孩子
+ 的情緒能力」 專業人員教育訓練課程
+LOCATION:線上課程
+URL:https://www.tapedpmr.org.tw/activity/info.asp?/249.html
+DESCRIPTION:主辦：社團法人台灣兒童青少年發展障礙學會 \,
+  北極星心理治療所\n積分：未標示\n分類：兒童復健\n來
+ 源：台灣兒童復健醫學會\n簡章與報名：https://www.tapedpmr.
+ org.tw/activity/info.asp?/249.html\n（時間為整天，實際起訖請
+ 看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-3ce31f6e9d986117475488a018f17d6842250e5d
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260913
+DTEND;VALUE=DATE:20260914
+SUMMARY:兒童語言治療結合AI科技
+LOCATION:線上課程
+URL:https://www.tapedpmr.org.tw/activity/info.asp?/248.html
+DESCRIPTION:主辦：社團法人台灣兒童青少年發展障礙學會\n
+ 積分：未標示\n分類：兒童復健、吞嚥與語言\n來源：台
+ 灣兒童復健醫學會\n簡章與報名：https://www.tapedpmr.org.tw/ac
+ tivity/info.asp?/248.html\n（時間為整天，實際起訖請看主辦
+ 單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-4a309bf567e2023d057b1be8c28e3a4dd4b7ee95
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:【線上課程】下背痛之成因與治療系列課程115.07.01-
+ 115.09.30(共3時17分)(2點)
+LOCATION:線上課程
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4425.html
+DESCRIPTION:主辦：宏恩醫療財團法人宏恩綜合醫院復健科\n
+ 積分：2 點\n分類：骨骼肌肉\n來源：台灣復健醫學會\n簡
+ 章與報名：https://www.pmr.org.tw/active_news/active_info.asp?/4425.ht
+ ml\n（時間為整天，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-ab19b571da3f32c0298e1093babda58ab027b941
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:【線上課程】生產與骨盆問題臨床介入系列課程115.
+ 07.01-115.09.30(共3時9分)(2點)
+LOCATION:線上課程
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4426.html
+DESCRIPTION:主辦：宏恩醫療財團法人宏恩綜合醫院復健科\n
+ 積分：2 點\n來源：台灣復健醫學會\n簡章與報名：https://
+ www.pmr.org.tw/active_news/active_info.asp?/4426.html\n（時間為整天
+ ，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-a47fa14d1e3bb0c68e4549395970dd9be25f525d
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:【線上課程】脊椎手術與上肢生物力學系列課程115.
+ 07.01-115.09.30(共3時)(2點)
+LOCATION:線上課程
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4427.html
+DESCRIPTION:主辦：宏恩醫療財團法人宏恩綜合醫院復健科\n
+ 積分：2 點\n分類：骨骼肌肉\n來源：台灣復健醫學會\n簡
+ 章與報名：https://www.pmr.org.tw/active_news/active_info.asp?/4427.ht
+ ml\n（時間為整天，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-70c4dfebafd7eb262357c56760bae04a4567aa0b
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:【線上課程】頭痛、偏頭痛與大腦健康系列課程115.
+ 07.01-115.09.30(共2時27分)(2點)
+LOCATION:線上課程
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4428.html
+DESCRIPTION:主辦：宏恩醫療財團法人宏恩綜合醫院復健科\n
+ 積分：2 點\n來源：台灣復健醫學會\n簡章與報名：https://
+ www.pmr.org.tw/active_news/active_info.asp?/4428.html\n（時間為整天
+ ，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-44aa83c468d15c221cc2bd247d34f13bbfcd9f2a
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:TMS線上實務研討會115.01.18(共2小時)、115.03.15(共2小
+ 時)、115.05.17(共2小時)、115.07.12(共2小時)、115.10.18(共2小
+ 時)(1/1/1/1/1點)
+LOCATION:線上課程
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4334.html
+DESCRIPTION:主辦：台灣臨床TMS腦刺激學會\n積分：1 點\n來源
+ ：台灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/active_
+ news/active_info.asp?/4334.html\n（時間為整天，實際起訖請看
+ 主辦單位公告）
+END:VEVENT
+END:VCALENDAR

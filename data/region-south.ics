@@ -1,0 +1,109 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//platypusbot//taiwan-rehab-cme//ZH-TW
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:復健醫學 繼續教育活動（南部）
+X-WR-TIMEZONE:Asia/Taipei
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Asia/Taipei
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+TZNAME:CST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-34668d61340e61f2be16f83be0523e1b782473e1
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260829
+DTEND;VALUE=DATE:20260830
+SUMMARY:115年度早期療育醫事人員專業成長系列研習課程115.
+ 08.29(共6時)、115.09.05(共6時)(3/3點)
+LOCATION:衛生福利部嘉義醫院11樓第一會議室(地址：嘉義市
+ 西區北港路312號)
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4486.html
+DESCRIPTION:主辦：衛生福利部嘉義醫院\n積分：3 點\n分類：
+ 兒童復健\n來源：台灣復健醫學會\n簡章與報名：https://ww
+ w.pmr.org.tw/active_news/active_info.asp?/4486.html\n（時間為整天，
+ 實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-20e3b16fe7c932cd7dee1899a6db90f94b74d736
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260829
+DTEND;VALUE=DATE:20260830
+SUMMARY:轉化，從家庭開始-早療人員的家庭賦能與親職教練
+ 實務115.08.29(共4時)(2點)
+LOCATION:安泰醫院附設護理之家一樓交誼廳
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4462.html
+DESCRIPTION:主辦：安泰醫療社團法人安泰醫院兒童發展聯合
+ 評估中心\n積分：2 點\n分類：兒童復健\n來源：台灣復健
+ 醫學會\n簡章與報名：https://www.pmr.org.tw/active_news/active_inf
+ o.asp?/4462.html\n（時間為整天，實際起訖請看主辦單位公
+ 告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-3dd3a3dd18fcc20350f7c544fbbb73d35593ba01
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20260910
+SUMMARY:防跌有妙招，運動降血脂研習講座115.09.09(共3時)(1.5
+ 點)
+LOCATION:高雄榮民總醫院高齡醫學大樓地下一樓第10會議室
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4494.html
+DESCRIPTION:主辦：高雄榮民總醫院\n積分：1.5 點\n來源：台
+ 灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/active_news/a
+ ctive_info.asp?/4494.html\n（時間為整天，實際起訖請看主辦
+ 單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-14cda333a63ea37a72bb515736fa8b4b2a505648
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260913
+SUMMARY:TBMJ 2026年會暨國際學術研討會115.09.12(共5時10分)(2.5
+ 點)
+LOCATION:高雄展覽館304a
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4508.html
+DESCRIPTION:主辦：台灣骨鬆肌少關節防治學會\n積分：2.5 點
+ \n分類：骨骼肌肉\n來源：台灣復健醫學會\n簡章與報名
+ ：https://www.pmr.org.tw/active_news/active_info.asp?/4508.html\n（時
+ 間為整天，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-108aae158f54f2fc57b5de2c2ce481279735626b
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:2026/09/19-20 ISCD Quality Bone Densitometry Course: Performance\, 
+ Interpretation\, and Clinical Application for Clinician (ISCD授權骨密
+ 課程及TOA考試)(台南)(僅限中華民國骨質疏鬆症學會醫師
+ 會員報名)115.09.19(共50分)(0.5點)
+LOCATION:衛生福利部臺南醫院 急診大樓6樓 大會議廳 (臺南
+ 市中西區中山路125號)
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4443.html
+DESCRIPTION:主辦：中華民國骨質疏鬆症學會\n積分：0.5 點\n
+ 分類：骨骼肌肉\n來源：台灣復健醫學會\n簡章與報名：h
+ ttps://www.pmr.org.tw/active_news/active_info.asp?/4443.html\n（時間為
+ 整天，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-aa28a850bc7ec86c0ace4ab835a6803f2a558e08
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260920
+DTEND;VALUE=DATE:20260921
+SUMMARY:癌症族群運動處方學術研討會暨工作坊第二季 115.09
+ .20(共5時50分)(2.25點)
+LOCATION:高雄醫學大學附設中和紀念醫院啟川6樓第二講堂
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4504.html
+DESCRIPTION:主辦：高雄醫學大學附設中和紀念醫院健康台灣
+ 深耕計畫辦公室\n積分：2.25 點\n分類：運動醫學\n來源：
+ 台灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/active_new
+ s/active_info.asp?/4504.html\n（時間為整天，實際起訖請看主
+ 辦單位公告）
+END:VEVENT
+END:VCALENDAR

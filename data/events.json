@@ -1,25 +1,612 @@
 {
- "updated_at": "2026-08-26T06:20:41+08:00",
- "count": 4,
+ "updated_at": "2026-08-26T06:44:39+08:00",
+ "count": 58,
  "sources": {
-  "台灣復健醫學會": 0,
-  "台灣兒童復健醫學會": 0,
+  "台灣復健醫學會": 43,
+  "台灣兒童復健醫學會": 13,
   "連倚南教授復健醫學教育基金會": 4
  },
- "errors": [
-  "台灣復健醫學會：GET https://www.pmr.org.tw/active_news/active.asp?/4.html 失敗: 522 Server Error: <none> for url: https://www.pmr.org.tw/active_news/active.asp?/4.html",
-  "台灣兒童復健醫學會：GET https://www.tapedpmr.org.tw/activity/index.asp?/3.html 失敗: HTTPSConnectionPool(host='www.tapedpmr.org.tw', port=443): Max retries exceeded with url: /activity/index.asp?/3.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.tapedpmr.org.tw', port=443) at 0x7ff041d610d0>, 'Connection to www.tapedpmr.org.tw timed out. (connect timeout=30)'))",
-  "台灣兒童復健醫學會：詳情頁抓取失敗，該筆缺地點與主辦單位（https://www.tapedpmr.org.tw/activity/info.asp?/233.html — GET https://www.tapedpmr.org.tw/activity/info.asp?/233.html 失敗: HTTPSConnectionPool(host='www.tapedpmr.org.tw', port=443): Max retries exceeded with url: /activity/info.asp?/233.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.tapedpmr.org.tw', port=443) at 0x7ff041ebbe90>, 'Connection to www.tapedpmr.org.tw timed out. (connect timeout=30)'))）",
-  "台灣兒童復健醫學會：詳情頁抓取失敗，該筆缺地點與主辦單位（https://www.tapedpmr.org.tw/activity/info.asp?/243.html — GET https://www.tapedpmr.org.tw/activity/info.asp?/243.html 失敗: HTTPSConnectionPool(host='www.tapedpmr.org.tw', port=443): Max retries exceeded with url: /activity/info.asp?/243.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.tapedpmr.org.tw', port=443) at 0x7ff041eba350>, 'Connection to www.tapedpmr.org.tw timed out. (connect timeout=30)'))）",
-  "台灣兒童復健醫學會：詳情頁抓取失敗，該筆缺地點與主辦單位（https://www.tapedpmr.org.tw/activity/info.asp?/228.html — GET https://www.tapedpmr.org.tw/activity/info.asp?/228.html 失敗: HTTPSConnectionPool(host='www.tapedpmr.org.tw', port=443): Max retries exceeded with url: /activity/info.asp?/228.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.tapedpmr.org.tw', port=443) at 0x7ff0420d62d0>, 'Connection to www.tapedpmr.org.tw timed out. (connect timeout=30)'))）",
-  "台灣兒童復健醫學會：詳情頁抓取失敗，該筆缺地點與主辦單位（https://www.tapedpmr.org.tw/activity/info.asp?/248.html — GET https://www.tapedpmr.org.tw/activity/info.asp?/248.html 失敗: HTTPSConnectionPool(host='www.tapedpmr.org.tw', port=443): Max retries exceeded with url: /activity/info.asp?/248.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.tapedpmr.org.tw', port=443) at 0x7ff041c5ab10>, 'Connection to www.tapedpmr.org.tw timed out. (connect timeout=30)'))）",
-  "台灣兒童復健醫學會：詳情頁抓取失敗，該筆缺地點與主辦單位（https://www.tapedpmr.org.tw/activity/info.asp?/234.html — GET https://www.tapedpmr.org.tw/activity/info.asp?/234.html 失敗: HTTPSConnectionPool(host='www.tapedpmr.org.tw', port=443): Max retries exceeded with url: /activity/info.asp?/234.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.tapedpmr.org.tw', port=443) at 0x7ff041d52710>, 'Connection to www.tapedpmr.org.tw timed out. (connect timeout=30)'))）",
-  "台灣兒童復健醫學會：詳情頁抓取失敗，該筆缺地點與主辦單位（https://www.tapedpmr.org.tw/activity/info.asp?/247.html — GET https://www.tapedpmr.org.tw/activity/info.asp?/247.html 失敗: HTTPSConnectionPool(host='www.tapedpmr.org.tw', port=443): Max retries exceeded with url: /activity/info.asp?/247.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.tapedpmr.org.tw', port=443) at 0x7ff041d63b50>, 'Connection to www.tapedpmr.org.tw timed out. (connect timeout=30)'))）",
-  "台灣兒童復健醫學會：詳情頁抓取失敗，該筆缺地點與主辦單位（https://www.tapedpmr.org.tw/activity/info.asp?/246.html — GET https://www.tapedpmr.org.tw/activity/info.asp?/246.html 失敗: HTTPSConnectionPool(host='www.tapedpmr.org.tw', port=443): Max retries exceeded with url: /activity/info.asp?/246.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.tapedpmr.org.tw', port=443) at 0x7ff041d61c90>, 'Connection to www.tapedpmr.org.tw timed out. (connect timeout=30)'))）",
-  "台灣兒童復健醫學會：詳情頁抓取失敗，該筆缺地點與主辦單位（https://www.tapedpmr.org.tw/activity/info.asp?/244.html — GET https://www.tapedpmr.org.tw/activity/info.asp?/244.html 失敗: HTTPSConnectionPool(host='www.tapedpmr.org.tw', port=443): Max retries exceeded with url: /activity/info.asp?/244.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.tapedpmr.org.tw', port=443) at 0x7ff041d620d0>, 'Connection to www.tapedpmr.org.tw timed out. (connect timeout=30)'))）",
-  "台灣兒童復健醫學會：詳情頁抓取失敗，該筆缺地點與主辦單位（https://www.tapedpmr.org.tw/activity/info.asp?/245.html — GET https://www.tapedpmr.org.tw/activity/info.asp?/245.html 失敗: HTTPSConnectionPool(host='www.tapedpmr.org.tw', port=443): Max retries exceeded with url: /activity/info.asp?/245.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.tapedpmr.org.tw', port=443) at 0x7ff041d69d10>, 'Connection to www.tapedpmr.org.tw timed out. (connect timeout=30)'))）"
- ],
+ "errors": [],
  "events": [
+  {
+   "date": "2026-08-27",
+   "title": "DR. BONE Webinar 115.08.27(共50分)(0.5點)",
+   "organizer": "台灣骨鬆肌少關節防治學會",
+   "location": "線上課程",
+   "credits": 0.5,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4495.html",
+   "categories": [
+    "骨骼肌肉"
+   ]
+  },
+  {
+   "date": "2026-08-28",
+   "title": "「網絡安全與網路成癮」專業人員教育訓練課程(積分：2.5)",
+   "organizer": "社團法人台灣兒童 青少年發展障礙學會",
+   "location": "線上課程",
+   "credits": 2.5,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/245.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-08-29",
+   "title": "115年度早期療育醫事人員專業成長系列研習課程115.08.29(共6時)、115.09.05(共6時)(3/3點)",
+   "organizer": "衛生福利部嘉義醫院",
+   "location": "衛生福利部嘉義醫院11樓第一會議室(地址：嘉義市西區北港路312號)",
+   "credits": 3.0,
+   "region": "南部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4486.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-08-29",
+   "title": "轉化，從家庭開始-早療人員的家庭賦能與親職教練實務115.08.29(共4時)(2點)",
+   "organizer": "安泰醫療社團法人安泰醫院兒童發展聯合評估中心",
+   "location": "安泰醫院附設護理之家一樓交誼廳",
+   "credits": 2.0,
+   "region": "南部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4462.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-08-30",
+   "title": "男籃專項運動防護115.08.30(共6小時)(3點)",
+   "organizer": "台灣運動傷害防護學會",
+   "location": "臺北市立大學 天母校區 科資302學術講堂",
+   "credits": 3.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4491.html",
+   "categories": [
+    "運動醫學"
+   ]
+  },
+  {
+   "date": "2026-08-30",
+   "title": "第三季心肺復健學術研討會—加護病患的早期復健國際研討會115.08.30(共3時20分)(3點)",
+   "organizer": "臺中榮民總醫院復健醫學部",
+   "location": "臺中榮民總醫院",
+   "credits": 3.0,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4493.html",
+   "categories": [
+    "心肺復健"
+   ]
+  },
+  {
+   "date": "2026-08-30",
+   "title": "超音波導引下的復健治療策略與設備實戰應用115.08.30 (共5時20分)(5點)",
+   "organizer": "台灣肌肉骨骼神經超音波醫學會",
+   "location": "台北市內湖區基湖路18號(BenQ明基大樓 T13會議室)",
+   "credits": 5.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4497.html",
+   "categories": [
+    "骨骼肌肉",
+    "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-09-05",
+   "title": "2026生活型態功能醫學會重啟腦智序115.09.05(共4時25分)、115.09.06(共3時10分)(2.2/1.5點)",
+   "organizer": "中華職業醫學會",
+   "location": "香格里拉台北遠東國際大飯店，3F遠東宴會廳",
+   "credits": 1.5,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4482.html",
+   "categories": []
+  },
+  {
+   "date": "2026-09-05",
+   "title": "The First Asian Musculoskeletal Ultrasound Summit (2026 TNMSKUS年會) (共5時20分)(4點)",
+   "organizer": "台灣肌肉骨骼神經超音波醫學會",
+   "location": "台北市大安區金華街187號 (政大公企中心2F)",
+   "credits": 4.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4503.html",
+   "categories": [
+    "骨骼肌肉",
+    "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-09-05",
+   "title": "台灣復健醫學會2026年IDDSI與吞嚥內視鏡評估實務暨工作坊(共3時)(2.5點)",
+   "organizer": "台灣復健醫學會",
+   "location": "長庚轉運站國際會議中心",
+   "credits": 2.5,
+   "region": "其他",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4456.html",
+   "categories": [
+    "吞嚥與語言"
+   ]
+  },
+  {
+   "date": "2026-09-05",
+   "title": "早期療育聯合專業研討會-早療兒童多元溝通手語研習 (積分：3.5)",
+   "organizer": "竹山秀傳醫療社團法人竹山秀傳醫院兒童發展評估中心",
+   "location": "竹山秀傳醫院 10 樓會議室",
+   "credits": 3.5,
+   "region": "中部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/247.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-05",
+   "title": "臨床實務-PDMS-3 介紹 (合辦；積分：1.5)",
+   "organizer": "屏基醫療財團法人屏東基督教醫院",
+   "location": "線上課程",
+   "credits": 1.5,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/244.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-05",
+   "title": "臨床實務-PDMS-3介紹115.09.05(共2時50分)(1.5點)",
+   "organizer": "屏基醫療財團法人屏東基督教醫院",
+   "location": "線上課程",
+   "credits": 1.5,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4500.html",
+   "categories": []
+  },
+  {
+   "date": "2026-09-05",
+   "title": "音樂、互動與發展：音樂治療在早期療育中的應用 (積分：1.3)",
+   "organizer": "佛教慈濟醫療財團法人台北慈濟醫院兒童發展暨復健中心",
+   "location": "台北慈濟醫院合心樓3F-和氣會議室(新北市新店區建國路289號)",
+   "credits": 1.3,
+   "region": "北部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/246.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-05",
+   "title": "音樂、互動與發展：音樂治療在早期療育中的應用115.09.05(共2時40分)(1.25點)",
+   "organizer": "佛教慈濟醫療財團法人台北慈濟醫院兒童發展暨復健中心",
+   "location": "台北慈濟醫院合心樓3F-和氣會議室(新北市新店區建國路289號)",
+   "credits": 1.25,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4498.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-06",
+   "title": "以家庭為中心的 自閉症社交技巧訓練(合辦；積分：3)",
+   "organizer": "臺北榮民總醫院 復健醫學部 - 早療評估中心",
+   "location": "臺北榮民總醫院 醫療創新中心 (第三門診九樓)",
+   "credits": 3.0,
+   "region": "北部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/234.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-06",
+   "title": "以家庭為中心的自閉症社交技巧訓練115.09.06(共3時40分)(2點)",
+   "organizer": "臺北榮民總醫院 復健醫學部 - 早療評估中心",
+   "location": "臺北榮民總醫院 醫療創新中心 (第三門診九樓)",
+   "credits": 2.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4463.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-07",
+   "title": "早期療育專業人員講座—注意力不足過動症的非藥物治療 (共2時45分)(1點)",
+   "organizer": "天主教若瑟醫療財團法人若瑟醫院兒童發展聯合評估中心",
+   "location": "天主教若瑟醫療財團法人若瑟醫院第二會議室",
+   "credits": 1.0,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4458.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-09",
+   "title": "防跌有妙招，運動降血脂研習講座115.09.09(共3時)(1.5點)",
+   "organizer": "高雄榮民總醫院",
+   "location": "高雄榮民總醫院高齡醫學大樓地下一樓第10會議室",
+   "credits": 1.5,
+   "region": "南部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4494.html",
+   "categories": []
+  },
+  {
+   "date": "2026-09-12",
+   "title": "115年早期療育跨專業研討會「兒童體適能活動設計及兒童瑜珈課程臨床實務應用」115.09.12(共2時50分)(1.5點)",
+   "organizer": "佛教慈濟醫療財團法人台中慈濟醫院兒童發展聯合評估中心",
+   "location": "佛教慈濟醫療財團法人台中慈濟醫院第一院區大愛樓五樓502會議室",
+   "credits": 1.5,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4506.html",
+   "categories": [
+    "兒童復健",
+    "運動醫學"
+   ]
+  },
+  {
+   "date": "2026-09-12",
+   "title": "2026年世界疼痛醫學會台灣分會會員大會暨學術討論會115.09.12(共1時)(1點)",
+   "organizer": "世界疼痛醫學會台灣分會",
+   "location": "國立台灣大學醫學院103教室（台北市中正區仁愛路一段一號）",
+   "credits": 1.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4499.html",
+   "categories": [
+    "疼痛"
+   ]
+  },
+  {
+   "date": "2026-09-12",
+   "title": "Prolo 202 Musculoskeletal Ultrasound Essential Workshop 115.09.12(共2時50分)、115.09.13(共5時)(1.5/2.75點)",
+   "organizer": "台灣增生療法醫學會、亞東紀念醫院",
+   "location": "亞東紀念醫院復健中心4F",
+   "credits": 2.75,
+   "region": "其他",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4510.html",
+   "categories": [
+    "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-09-12",
+   "title": "TBMJ 2026年會暨國際學術研討會115.09.12(共5時10分)(2.5點)",
+   "organizer": "台灣骨鬆肌少關節防治學會",
+   "location": "高雄展覽館304a",
+   "credits": 2.5,
+   "region": "南部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4508.html",
+   "categories": [
+    "骨骼肌肉"
+   ]
+  },
+  {
+   "date": "2026-09-12",
+   "title": "以家庭為中心的早期療育-兒童情緒行為處理及親職教育115.09.12(共5時15分)(2點)",
+   "organizer": "臺灣基督教門諾會醫療財團法人門諾醫院兒童發展聯合評估中心",
+   "location": "花蓮縣花蓮市民權五街61號(門諾醫院健康管理中心4樓多功能教室)",
+   "credits": 2.0,
+   "region": "東部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4502.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-12",
+   "title": "從看見到探索：以家庭為中心的嬰幼兒知覺動作發展與眼動科技實證(共3時10分)(1.5點)",
+   "organizer": "國立臺灣大學醫學院附設醫院新竹臺大分院、新竹市臨床心理師公會",
+   "location": "新竹市北區經國路一段442巷25號- 1樓生理職能治療室",
+   "credits": 1.5,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4488.html",
+   "categories": []
+  },
+  {
+   "date": "2026-09-12",
+   "title": "跨專業網絡：兒童高風險家庭辨識與因應115.09.12(共2時40分)(1.5點)",
+   "organizer": "台灣基督長老教會馬偕醫療財團法人馬偕紀念醫院-兒童發展暨早期療育評估中心",
+   "location": "台北馬偕紀念醫院平安樓15樓階梯講堂(台北市中山區中山北路二段92號)",
+   "credits": 1.5,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4437.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-13",
+   "title": "「依附觀點下的情緒教育：如何在關係中培養孩子的情緒能力」 專業人員教育訓練課程",
+   "organizer": "社團法人台灣兒童青少年發展障礙學會 , 北極星心理治療所",
+   "location": "線上課程",
+   "credits": null,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/249.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-13",
+   "title": "以家庭為中心-繪本在早療領域的情緒學習與應用115.09.13(共3時)(1.5點)",
+   "organizer": "東元醫療社團法人東元綜合醫院兒童發展聯合評估中心",
+   "location": "東元醫療社團法人東元綜合醫院E棟601會議室（新竹縣竹北市光明九路7-3號6樓）",
+   "credits": 1.5,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4472.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-13",
+   "title": "以家庭為中心早期療育課程【自閉症兒童情緒及行為問題與動作遊戲及運動介入】",
+   "organizer": "中山醫學大學附設醫院兒童發展聯合評估中心",
+   "location": "中山醫學大學附設醫院行政大樓12樓國際會議廳 (臺中市南區建國北路一段110號)",
+   "credits": null,
+   "region": "中部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/251.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-13",
+   "title": "兒童語言治療結合AI科技",
+   "organizer": "社團法人台灣兒童青少年發展障礙學會",
+   "location": "線上課程",
+   "credits": null,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/248.html",
+   "categories": [
+    "兒童復健",
+    "吞嚥與語言"
+   ]
+  },
+  {
+   "date": "2026-09-17",
+   "title": "早療服務中以家庭為中心的跨專業合作115.09.17(共3時)(1.5點)",
+   "organizer": "衛生福利部彰化醫院-兒童發展聯合評估中心",
+   "location": "衛生福利部彰化醫院2樓大禮堂",
+   "credits": 1.5,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4511.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-19",
+   "title": "115年度早期療育全人照護個案討論會(共2時)(1點)",
+   "organizer": "醫療財團法人徐元智先生藥基金會亞東紀念醫院兒童發展中心",
+   "location": "亞東紀念醫院 北棟六樓階梯教室",
+   "credits": 1.0,
+   "region": "其他",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4513.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-19",
+   "title": "2026/09/19-20 ISCD Quality Bone Densitometry Course: Performance, Interpretation, and Clinical Application for Clinician (ISCD授權骨密課程及TOA考試)(台南)(僅限中華民國骨質疏鬆症學會醫師會員報名)115.09.19(共50分)(0.5點)",
+   "organizer": "中華民國骨質疏鬆症學會",
+   "location": "衛生福利部臺南醫院 急診大樓6樓 大會議廳 (臺南市中西區中山路125號)",
+   "credits": 0.5,
+   "region": "南部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4443.html",
+   "categories": [
+    "骨骼肌肉"
+   ]
+  },
+  {
+   "date": "2026-09-19",
+   "title": "以家庭為中心-MABC-3測驗施測與臨床應用115.09.19(共3時)(1.5點)",
+   "organizer": "東基醫療財團法人台東基督教醫院",
+   "location": "台東市開封街350號(台東基督教醫院之盼望樓6樓會議室)",
+   "credits": 1.5,
+   "region": "東部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4501.html",
+   "categories": []
+  },
+  {
+   "date": "2026-09-19",
+   "title": "以家庭為中心-動作與認知的交會-以ADHD兒童與青少年為例的物理治療新視角(共3時)(1.5點)",
+   "organizer": "國立臺灣大學醫學院附設醫院新竹臺大分院-早療中心、新竹市臨床心理師公會",
+   "location": "新竹市北區經國路一段442巷25號- 5樓第一會議室",
+   "credits": 1.5,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4451.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-19",
+   "title": "帕金森氏症之跨專業復健照護新進展115.09.19(共2時30分)(1.75點)",
+   "organizer": "台灣神經復健醫學會",
+   "location": "台中高鐵集思會議中心 瓦特廳301會議室",
+   "credits": 1.75,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4509.html",
+   "categories": [
+    "神經復健"
+   ]
+  },
+  {
+   "date": "2026-09-20",
+   "title": "以家庭為中心-擴大性及替代性溝通(AAC)的介入及口腔敏 感兒童的挑食處理",
+   "organizer": "中國醫藥大學兒童醫院兒童發展聯合評估中心",
+   "location": "中國醫藥大學附設醫院-癌症中心大樓 1 樓-階梯教室 (台中市北區學士路 6 號",
+   "credits": null,
+   "region": "中部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/250.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-20",
+   "title": "癌症族群運動處方學術研討會暨工作坊第二季 115.09.20(共5時50分)(2.25點)",
+   "organizer": "高雄醫學大學附設中和紀念醫院健康台灣深耕計畫辦公室",
+   "location": "高雄醫學大學附設中和紀念醫院啟川6樓第二講堂",
+   "credits": 2.25,
+   "region": "南部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4504.html",
+   "categories": [
+    "運動醫學"
+   ]
+  },
+  {
+   "date": "2026-09-20",
+   "title": "超音波解剖暨臨床實戰經驗分享工作坊115.09.20(共9時)(4.5點)",
+   "organizer": "社團法人台灣中西醫結合復健醫學會",
+   "location": "台北維醫診所 | 台北市大安區師大路105巷2號",
+   "credits": 4.5,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4468.html",
+   "categories": [
+    "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-09-26",
+   "title": "115 年度早期療育跨專業人員訓練課程-當代神經發展治療觀點下的兒科動 作分析與臨床推理(積分：1.5)",
+   "organizer": "臺中榮民總醫院復健醫學部",
+   "location": "臺中榮民總醫院 第二醫療大樓第七會議室",
+   "credits": 1.5,
+   "region": "中部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/243.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-30",
+   "title": "【線上課程】下背痛之成因與治療系列課程115.07.01-115.09.30(共3時17分)(2點)",
+   "organizer": "宏恩醫療財團法人宏恩綜合醫院復健科",
+   "location": "線上課程",
+   "credits": 2.0,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4425.html",
+   "categories": [
+    "骨骼肌肉"
+   ]
+  },
+  {
+   "date": "2026-09-30",
+   "title": "【線上課程】生產與骨盆問題臨床介入系列課程115.07.01-115.09.30(共3時9分)(2點)",
+   "organizer": "宏恩醫療財團法人宏恩綜合醫院復健科",
+   "location": "線上課程",
+   "credits": 2.0,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4426.html",
+   "categories": []
+  },
+  {
+   "date": "2026-09-30",
+   "title": "【線上課程】脊椎手術與上肢生物力學系列課程115.07.01-115.09.30(共3時)(2點)",
+   "organizer": "宏恩醫療財團法人宏恩綜合醫院復健科",
+   "location": "線上課程",
+   "credits": 2.0,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4427.html",
+   "categories": [
+    "骨骼肌肉"
+   ]
+  },
+  {
+   "date": "2026-09-30",
+   "title": "【線上課程】頭痛、偏頭痛與大腦健康系列課程115.07.01-115.09.30(共2時27分)(2點)",
+   "organizer": "宏恩醫療財團法人宏恩綜合醫院復健科",
+   "location": "線上課程",
+   "credits": 2.0,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4428.html",
+   "categories": []
+  },
+  {
+   "date": "2026-10-03",
+   "title": "115年早期療育跨專業研討會「中醫藥於早期療育介入的進展」115.10.03(共3時)(1.5點)",
+   "organizer": "佛教慈濟醫療財團法人台中慈濟醫院兒童發展聯合評估中心",
+   "location": "佛教慈濟醫療財團法人台中慈濟醫院第一院區大愛樓五樓501會議室",
+   "credits": 1.5,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4507.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-10-03",
+   "title": "SECC Congress 2026 Taipei 暨2026智慧急重症醫療國際會議&The 10th Asia-Pacific Conference on ICU Early Rehabilitation Taipei 2026：115.10.03(共4時20分) 、115.10.04(共6時55分)(2.7/3.3點)",
+   "organizer": "台灣急救加護醫學會",
+   "location": "台大醫院國際會議中心",
+   "credits": 3.3,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4496.html",
+   "categories": []
+  },
+  {
+   "date": "2026-10-04",
+   "title": "115 年度兒童發展早期療育專業人員培訓課程暨研討會 (合辦；積分：1.5)",
+   "organizer": "臺北榮民總醫院 復健醫學部-早療評估中心",
+   "location": "臺北榮民總醫院 醫療創新中心 (第三門診九樓)",
+   "credits": 1.5,
+   "region": "北部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/233.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
   {
    "date": "2026-10-04",
    "title": "下肢義肢研習會",
@@ -32,6 +619,30 @@
    "categories": [
     "輔具與義肢"
    ]
+  },
+  {
+   "date": "2026-10-04",
+   "title": "視覺功能之評估與復健：跨兒童與成人的臨床實務與研究分享(共3時40分)(2點)",
+   "organizer": "臺北榮民總醫院 復健醫學部 - 早療評估中心",
+   "location": "臺北榮民總醫院 醫療創新中心",
+   "credits": 2.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4464.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-10-18",
+   "title": "TMS線上實務研討會115.01.18(共2小時)、115.03.15(共2小時)、115.05.17(共2小時)、115.07.12(共2小時)、115.10.18(共2小時)(1/1/1/1/1點)",
+   "organizer": "台灣臨床TMS腦刺激學會",
+   "location": "線上課程",
+   "credits": 1.0,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4334.html",
+   "categories": []
   },
   {
    "date": "2026-10-18",
@@ -47,6 +658,41 @@
    ]
   },
   {
+   "date": "2026-10-18",
+   "title": "活動與穩定多方跨領域探討傷害預防研討會 115.10.18(共6時10分)(3.5點)",
+   "organizer": "中華運動培訓教育學會",
+   "location": "張榮發基金會國際中心",
+   "credits": 3.5,
+   "region": "其他",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4512.html",
+   "categories": []
+  },
+  {
+   "date": "2026-10-31",
+   "title": "台灣復健醫學會115年期中研討會(4點)",
+   "organizer": "台灣復健醫學會、台中市立老人復健綜合醫院復健部",
+   "location": "台中市立老人復健綜合醫院（B 棟 10 樓會議室）",
+   "credits": 4.0,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4505.html",
+   "categories": []
+  },
+  {
+   "date": "2026-11-01",
+   "title": "2026/11/01 ISCD Body Composition Analysis Course (台中)115.11.01(共5時20分)(2.7點)",
+   "organizer": "中華民國骨質疏鬆症學會",
+   "location": "光田醫院向上院區（台中市沙鹿區向上路7段127號B棟14樓1401會議室）",
+   "credits": 2.7,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4489.html",
+   "categories": [
+    "骨骼肌肉"
+   ]
+  },
+  {
    "date": "2026-11-21",
    "title": "癌症復健研討會-乳癌復健",
    "organizer": "財團法人台北市連倚南教授復健醫學教育基金會",
@@ -56,6 +702,19 @@
    "source": "連倚南教授復健醫學教育基金會",
    "url": "https://lien.foundation/yearlyplan/",
    "categories": []
+  },
+  {
+   "date": "2026-11-22",
+   "title": "超音波解剖暨臨床實戰經驗分享工作坊115.11.22(共9時)(4.5點)",
+   "organizer": "社團法人台灣中西醫結合復健醫學會",
+   "location": "台北維醫診所 | 台北市大安區師大路105巷2號",
+   "credits": 4.5,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4469.html",
+   "categories": [
+    "超音波與介入"
+   ]
   },
   {
    "date": "2026-11-29",
@@ -69,6 +728,28 @@
    "categories": [
     "超音波與介入"
    ]
+  },
+  {
+   "date": "2026-12-20",
+   "title": "超音波解剖暨臨床實戰經驗分享工作坊115.12.20(共9時)(4.5點)",
+   "organizer": "社團法人台灣中西醫結合復健醫學會",
+   "location": "台北維醫診所 | 台北市大安區師大路105巷2號",
+   "credits": 4.5,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4470.html",
+   "categories": [
+    "超音波與介入"
+   ]
   }
- ]
+ ],
+ "feeds": {
+  "": "all.ics",
+  "北部": "region-north.ics",
+  "中部": "region-central.ics",
+  "南部": "region-south.ics",
+  "東部": "region-east.ics",
+  "線上": "region-online.ics",
+  "其他": "region-other.ics"
+ }
 }

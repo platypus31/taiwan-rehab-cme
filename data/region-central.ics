@@ -1,0 +1,198 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//platypusbot//taiwan-rehab-cme//ZH-TW
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:復健醫學 繼續教育活動（中部）
+X-WR-TIMEZONE:Asia/Taipei
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Asia/Taipei
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+TZNAME:CST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-e555a72a2d7e6bd945a61374eed8f24587c7965f
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260830
+DTEND;VALUE=DATE:20260831
+SUMMARY:第三季心肺復健學術研討會—加護病患的早期復健
+ 國際研討會115.08.30(共3時20分)(3點)
+LOCATION:臺中榮民總醫院
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4493.html
+DESCRIPTION:主辦：臺中榮民總醫院復健醫學部\n積分：3 點\n
+ 分類：心肺復健\n來源：台灣復健醫學會\n簡章與報名：h
+ ttps://www.pmr.org.tw/active_news/active_info.asp?/4493.html\n（時間為
+ 整天，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-873e4c3c61c69d9d949f0c64b68478f91414ab09
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20260906
+SUMMARY:早期療育聯合專業研討會-早療兒童多元溝通手語研
+ 習 (積分：3.5)
+LOCATION:竹山秀傳醫院 10 樓會議室
+URL:https://www.tapedpmr.org.tw/activity/info.asp?/247.html
+DESCRIPTION:主辦：竹山秀傳醫療社團法人竹山秀傳醫院兒童
+ 發展評估中心\n積分：3.5 點\n分類：兒童復健\n來源：台
+ 灣兒童復健醫學會\n簡章與報名：https://www.tapedpmr.org.tw/ac
+ tivity/info.asp?/247.html\n（時間為整天，實際起訖請看主辦
+ 單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-16bfd0031629613ed269f6d9de58de440be797ed
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+SUMMARY:早期療育專業人員講座—注意力不足過動症的非藥
+ 物治療 (共2時45分)(1點)
+LOCATION:天主教若瑟醫療財團法人若瑟醫院第二會議室
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4458.html
+DESCRIPTION:主辦：天主教若瑟醫療財團法人若瑟醫院兒童發
+ 展聯合評估中心\n積分：1 點\n分類：兒童復健\n來源：台
+ 灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/active_news/a
+ ctive_info.asp?/4458.html\n（時間為整天，實際起訖請看主辦
+ 單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-74ad3eb7cbb526dba3f7fd9aa54bf7abe43a66ba
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260913
+SUMMARY:115年早期療育跨專業研討會「兒童體適能活動設計
+ 及兒童瑜珈課程臨床實務應用」115.09.12(共2時50分)(1.5點)
+LOCATION:佛教慈濟醫療財團法人台中慈濟醫院第一院區大愛
+ 樓五樓502會議室
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4506.html
+DESCRIPTION:主辦：佛教慈濟醫療財團法人台中慈濟醫院兒童
+ 發展聯合評估中心\n積分：1.5 點\n分類：兒童復健、運動
+ 醫學\n來源：台灣復健醫學會\n簡章與報名：https://www.pmr.
+ org.tw/active_news/active_info.asp?/4506.html\n（時間為整天，實際
+ 起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-726b5ae756a8ea35ea9d2ca833c2739752942e71
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260913
+DTEND;VALUE=DATE:20260914
+SUMMARY:以家庭為中心早期療育課程【自閉症兒童情緒及行
+ 為問題與動作遊戲及運動介入】
+LOCATION:中山醫學大學附設醫院行政大樓12樓國際會議廳 (
+ 臺中市南區建國北路一段110號)
+URL:https://www.tapedpmr.org.tw/activity/info.asp?/251.html
+DESCRIPTION:主辦：中山醫學大學附設醫院兒童發展聯合評估
+ 中心\n積分：未標示\n分類：兒童復健\n來源：台灣兒童
+ 復健醫學會\n簡章與報名：https://www.tapedpmr.org.tw/activity/in
+ fo.asp?/251.html\n（時間為整天，實際起訖請看主辦單位公
+ 告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-6a35fd9654dc725cadfb478facd541784641f609
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:早療服務中以家庭為中心的跨專業合作115.09.17(共3
+ 時)(1.5點)
+LOCATION:衛生福利部彰化醫院2樓大禮堂
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4511.html
+DESCRIPTION:主辦：衛生福利部彰化醫院-兒童發展聯合評估
+ 中心\n積分：1.5 點\n分類：兒童復健\n來源：台灣復健醫
+ 學會\n簡章與報名：https://www.pmr.org.tw/active_news/active_info.a
+ sp?/4511.html\n（時間為整天，實際起訖請看主辦單位公告
+ ）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-55c6d4d96cd86039e7275991241e8e3002b19186
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:帕金森氏症之跨專業復健照護新進展115.09.19(共2時30
+ 分)(1.75點)
+LOCATION:台中高鐵集思會議中心 瓦特廳301會議室
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4509.html
+DESCRIPTION:主辦：台灣神經復健醫學會\n積分：1.75 點\n分類
+ ：神經復健\n來源：台灣復健醫學會\n簡章與報名：https:/
+ /www.pmr.org.tw/active_news/active_info.asp?/4509.html\n（時間為整天
+ ，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-9f2f8dd948f49649570e9992d118bbf51893e770
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260920
+DTEND;VALUE=DATE:20260921
+SUMMARY:以家庭為中心-擴大性及替代性溝通(AAC)的介入及口
+ 腔敏 感兒童的挑食處理
+LOCATION:中國醫藥大學附設醫院-癌症中心大樓 1 樓-階梯教
+ 室 (台中市北區學士路 6 號
+URL:https://www.tapedpmr.org.tw/activity/info.asp?/250.html
+DESCRIPTION:主辦：中國醫藥大學兒童醫院兒童發展聯合評估
+ 中心\n積分：未標示\n分類：兒童復健\n來源：台灣兒童
+ 復健醫學會\n簡章與報名：https://www.tapedpmr.org.tw/activity/in
+ fo.asp?/250.html\n（時間為整天，實際起訖請看主辦單位公
+ 告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-fcfae514fb5910cf6369b892fabc7040dfbc1e3f
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260927
+SUMMARY:115 年度早期療育跨專業人員訓練課程-當代神經發
+ 展治療觀點下的兒科動 作分析與臨床推理(積分：1.5)
+LOCATION:臺中榮民總醫院 第二醫療大樓第七會議室
+URL:https://www.tapedpmr.org.tw/activity/info.asp?/243.html
+DESCRIPTION:主辦：臺中榮民總醫院復健醫學部\n積分：1.5 點
+ \n分類：兒童復健\n來源：台灣兒童復健醫學會\n簡章與
+ 報名：https://www.tapedpmr.org.tw/activity/info.asp?/243.html\n（時
+ 間為整天，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-ece412766b19bce4ca3eaa20e55843239c72d3bd
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261004
+SUMMARY:115年早期療育跨專業研討會「中醫藥於早期療育介
+ 入的進展」115.10.03(共3時)(1.5點)
+LOCATION:佛教慈濟醫療財團法人台中慈濟醫院第一院區大愛
+ 樓五樓501會議室
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4507.html
+DESCRIPTION:主辦：佛教慈濟醫療財團法人台中慈濟醫院兒童
+ 發展聯合評估中心\n積分：1.5 點\n分類：兒童復健\n來源
+ ：台灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/active_
+ news/active_info.asp?/4507.html\n（時間為整天，實際起訖請看
+ 主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-14105a12376e4af3bc65bc1379804ebd52ca7164
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:台灣復健醫學會115年期中研討會(4點)
+LOCATION:台中市立老人復健綜合醫院（B 棟 10 樓會議室）
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4505.html
+DESCRIPTION:主辦：台灣復健醫學會、台中市立老人復健綜合
+ 醫院復健部\n積分：4 點\n來源：台灣復健醫學會\n簡章與
+ 報名：https://www.pmr.org.tw/active_news/active_info.asp?/4505.html\n
+ （時間為整天，實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-64d1b4999bcee62bb77082fc342cadae30aa4fbb
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:2026/11/01 ISCD Body Composition Analysis Course (台中)115.11.01(
+ 共5時20分)(2.7點)
+LOCATION:光田醫院向上院區（台中市沙鹿區向上路7段127號B
+ 棟14樓1401會議室）
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4489.html
+DESCRIPTION:主辦：中華民國骨質疏鬆症學會\n積分：2.7 點\n
+ 分類：骨骼肌肉\n來源：台灣復健醫學會\n簡章與報名：h
+ ttps://www.pmr.org.tw/active_news/active_info.asp?/4489.html\n（時間為
+ 整天，實際起訖請看主辦單位公告）
+END:VEVENT
+END:VCALENDAR

@@ -157,6 +157,25 @@ _INSTITUTION_MAP = [
 ]
 
 
+# 地區 → 檔名用的 ASCII 代號。訂閱檔（data/region-*.ics）的檔名要能放進網址，
+# 中文檔名經過各家日曆 App 的 percent-encoding 會變成很難除錯的東西。
+#
+# 🔴 **這份對應表是唯一真實來源**：build.py 用它決定產哪些檔，
+# 並把「地區 → 檔名」整份寫進 events.json 的 `feeds` 欄位交給前端。
+# 前端**不要**自己再抄一份 —— 抄一份的話，這裡加了新地區而前端沒跟上，
+# 使用者會拿到 404 的訂閱網址，而且沒有任何錯誤訊息。
+# 沒列在這裡的地區不會有自己的訂閱檔（仍然收在「全部」那份裡）。
+REGION_SLUGS = {
+    "北部": "north",
+    "中部": "central",
+    "南部": "south",
+    "東部": "east",
+    "離島": "islands",
+    "線上": "online",
+    "其他": "other",
+}
+
+
 def detect_region(location: str, organizer: str = "") -> str:
     """由地點判斷地區。線上優先（線上課程沒有地理限制，是獨立篩選軸）。
 
@@ -243,6 +262,22 @@ def parse_date(text: str) -> Optional[str]:
         except ValueError:
             continue
     return None
+
+
+def norm_title(title: str) -> str:
+    """去掉積分/時數註記與所有空白標點，用來判斷兩筆是不是同一場活動。
+
+    🔴 **這支有兩個消費者，而且它們必須永遠一致**：
+      ・`scripts/build.py` 的 dedupe key —— 決定「兩筆是不是同一場」
+      ・`sources/icsfeed.py` 的 UID —— 決定「訂閱端會不會把它當成新事件」
+    兩邊若各寫一份，哪天有人只改了其中一份，訂閱端就會無聲地重複跳出同一場活動
+    （而且測試不會紅）。所以放在 base 讓兩邊共用，**不要再複製第三份出去**。
+
+    ⚠️ 改動這裡的正規化規則會讓既有訂閱者的事件全部重新產生一次
+    （UID 跟著變），非必要不要動。
+    """
+    text = re.sub(r"[(（][^)）]*[)）]", "", title or "")
+    return re.sub(r"[\s\-—－_、,，.。:：;；]", "", text).lower()
 
 
 def clean_text(text: str) -> str:

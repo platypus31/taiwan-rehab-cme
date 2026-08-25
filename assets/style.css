@@ -122,6 +122,47 @@ body {
 .sort-row { align-items: center; }
 .result-count { font-size: .8rem; color: var(--muted); white-space: nowrap; }
 
+/* ---------- 訂閱行事曆 ---------- */
+/* 放在篩選器與清單之間：使用者選定地區、看過清單長什麼樣子之後，
+   才會決定要不要把它放進日曆。放在最上面會變成還沒看內容就被推銷。 */
+.subscribe {
+  margin: 0 0 14px;
+  padding: 11px 13px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.subscribe[hidden] { display: none; }
+.subscribe-main { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.subscribe-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 999px;
+}
+.subscribe-btn::before { content: "📅"; }
+.subscribe-btn:hover { filter: brightness(1.08); }
+.subscribe-copy {
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: .8rem;
+  padding: 7px 13px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.subscribe-copy:hover { border-color: var(--accent); color: var(--accent); }
+/* 訂閱範圍的說明。字小但不能是灰到看不見 —— 它講的是「你訂到的跟你篩的不一樣」，
+   看不到那句話的人會拿到跟預期不符的行事曆。 */
+.subscribe-note { margin: 8px 0 0; font-size: .76rem; color: var(--muted); line-height: 1.55; }
+
 /* ---------- list ---------- */
 .list { display: flex; flex-direction: column; gap: 10px; padding-bottom: 30px; }
 

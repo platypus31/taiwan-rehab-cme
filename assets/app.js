@@ -12,6 +12,10 @@
 
   var state = {
     events: [],
+    // 「地區 → 訂閱檔名」對照表，由 build.py 寫進 events.json。
+    // 前端刻意不自己維護一份地區清單 —— 抄一份的話，後端加了新地區而這裡沒跟上，
+    // 使用者會拿到 404 的訂閱網址，而且不會有任何錯誤訊息。
+    feeds: null,
     q: "",
     time: "upcoming",
     region: null,
@@ -30,7 +34,11 @@
     resultCount: document.getElementById("result-count"),
     notice: document.getElementById("notice"),
     filters: document.querySelector(".filters"),
-    toggle: document.getElementById("toggle")
+    toggle: document.getElementById("toggle"),
+    subscribe: document.getElementById("subscribe"),
+    subscribeLink: document.getElementById("subscribe-link"),
+    subscribeCopy: document.getElementById("subscribe-copy"),
+    subscribeNote: document.getElementById("subscribe-note")
   };
 
   // ---------- 工具 ----------
@@ -375,9 +383,70 @@
     el.toggle.innerHTML = "篩選" + (n ? '<span class="badge">' + n + "</span>" : "");
   }
 
+  /* 訂閱按鈕。每個地區各對應一份 build 產生的 .ics（data/region-*.ics），
+   * 沒選地區時是 data/all.ics。
+   *
+   * 🔴 **訂閱範圍只跟著「地區」走，其他篩選軸一律不跟。**
+   *    純靜態站沒有後端，不可能為任意的篩選組合即時產生 ics，只能事先產好幾份檔案；
+   *    而地區是唯一「一筆活動恰好落在一個值」的軸，切成檔案不會讓同一場活動
+   *    出現在兩份訂閱裡（主題是可複標的，切了就會重複）。地區同時也是真正決定
+   *    「去不去得成」的條件 —— 值班的人到不了外縣市，這正是要濾掉的雜訊。
+   *
+   * 🔴 **範圍一定要寫在畫面上**：使用者篩了「南部」＋「3 點以上」再按訂閱，
+   *    拿到的是南部全部場次而不是只有 3 點以上的。說明文字會寫出實際筆數與
+   *    「哪些條件不影響訂閱」，因為「以為只訂到自己篩的那些」比沒有這個功能更糟。
+   *
+   * webcal:// 是行事曆訂閱的慣例 scheme，Google／Apple／Outlook 都認得，
+   * 會接成「訂閱」而不是「匯入一次」—— 匯入一次的話之後新增的課就再也不會進來了。
+   * 另外附一顆「複製網址」，因為部分桌機環境沒有處理 webcal:// 的程式。 */
+  function renderSubscribe() {
+    if (!el.subscribe) return;
+
+    // 舊的 events.json（還沒有 feeds 欄位）就整區藏起來，不要給出猜出來的網址。
+    var feeds = state.feeds;
+    if (!feeds || !feeds[""]) {
+      el.subscribe.hidden = true;
+      return;
+    }
+    el.subscribe.hidden = false;
+
+    var region = state.region;                    // null＝沒選地區
+    var file = region ? feeds[region] : feeds[""];
+    // 這個地區沒有專屬訂閱檔（後端的 REGION_SLUGS 沒收錄）→ 退回「全部」那份，
+    // 而且要在說明裡講清楚，不能讓人以為訂到的只有該地區。
+    var fellBack = Boolean(region) && !file;
+    if (!file) file = feeds[""];
+
+    var scope = region && !fellBack ? region : null;
+    var total = state.events.filter(function (e) {
+      return !scope || e.region === scope;
+    }).length;
+
+    var httpsURL = new URL("data/" + file, location.href).href;
+    el.subscribeLink.href = httpsURL.replace(/^https?:/, "webcal:");
+    el.subscribeLink.textContent = scope
+      ? "訂閱「" + scope + "」的活動到行事曆"
+      : "訂閱全部活動到行事曆";
+    el.subscribeCopy.setAttribute("data-url", httpsURL);
+
+    var note;
+    if (fellBack) {
+      note = "「" + region + "」沒有專屬的訂閱檔，訂到的會是全部 " + total + " 場。";
+    } else if (scope) {
+      note = "訂閱的是「" + scope + "」的 " + total + " 場，跟著上面的「地區」一起換；" +
+        "時間／積分／主題／主辦／來源與關鍵字搜尋都不影響訂閱內容。";
+    } else {
+      note = "訂閱的是全部 " + total + " 場。想少一點雜訊的話，" +
+        "先在上面選一個「地區」，訂閱範圍會跟著換。";
+    }
+    el.subscribeNote.textContent = note +
+      "資料每天更新，訂閱後行事曆會自動跟著更新。";
+  }
+
   function render() {
     renderFilters();
     renderToggle();
+    renderSubscribe();
     renderList(applyFilters());
   }
 
@@ -417,6 +486,31 @@
     el.toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
   });
 
+  /* 複製訂閱網址。webcal:// 在部分桌機環境沒有對應程式會開不起來，
+   * 這顆是那時候的退路：貼到日曆 App 的「訂閱行事曆」欄位一樣能用。
+   * clipboard API 在非 HTTPS 或使用者拒絕權限時會失敗，所以有 fallback，
+   * 兩條路都要給回饋 —— 按了沒反應會讓人以為壞了。 */
+  if (el.subscribeCopy) {
+    el.subscribeCopy.addEventListener("click", function () {
+      var url = el.subscribeCopy.getAttribute("data-url") || "";
+      var done = function (ok) {
+        el.subscribeCopy.textContent = ok ? "已複製 ✓" : "請手動複製";
+        if (!ok) window.prompt("訂閱網址：", url);
+        setTimeout(function () {
+          el.subscribeCopy.textContent = "複製訂閱網址";
+        }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(
+          function () { done(true); },
+          function () { done(false); }
+        );
+      } else {
+        done(false);
+      }
+    });
+  }
+
   // 手機預設收合，讓活動清單出現在第一屏；桌面維持全部攤開
   if (window.matchMedia("(max-width: 560px)").matches) {
     el.filters.classList.add("collapsed");
@@ -442,6 +536,7 @@
     })
     .then(function (data) {
       state.events = data.events || [];
+      state.feeds = data.feeds || null;
       renderHeader(data);
       render();
     })

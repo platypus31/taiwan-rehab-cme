@@ -27,17 +27,26 @@ jobs:
       - name: 安裝相依套件
         run: pip install -r requirements.txt
 
+      # 不連網的格式測試，放在抓資料之前：來源網站掛掉時仍然會跑到，
+      # 而且 .ics 的格式錯誤是沉默失效（訂閱端不會回報），只能靠測試守。
+      - name: 自我測試
+        run: python scripts/selftest.py
+
       - name: 抓取各學會活動
         run: python scripts/build.py
 
       - name: 有變動才提交
         run: |
-          if [ -z "$(git status --porcelain data/events.json)" ]; then
+          # 🔴 訂閱檔（data/*.ics）一定要跟 events.json 一起看、一起提交。
+          # 只看 events.json 的話，訂閱檔改了卻沒被提交 —— 網站資料是新的、
+          # 訂閱到的行事曆永遠停在舊資料，而且不會有任何錯誤訊息。
+          if [ -z "$(git status --porcelain data/)" ]; then
             echo "資料無變動，跳過提交"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/events.json
+          # -A 才會把「這次沒有活動而被刪掉的地區訂閱檔」也一起提交
+          git add -A data/
           git commit -m "chore: 自動更新活動資料 $(date -u +'%Y-%m-%d')"
           git push

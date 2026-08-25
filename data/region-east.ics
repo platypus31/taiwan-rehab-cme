@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//platypusbot//taiwan-rehab-cme//ZH-TW
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:復健醫學 繼續教育活動（東部）
+X-WR-TIMEZONE:Asia/Taipei
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Asia/Taipei
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+TZNAME:CST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-d728623774bc109e910f3696f164a6cc69bc906b
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260913
+SUMMARY:以家庭為中心的早期療育-兒童情緒行為處理及親職
+ 教育115.09.12(共5時15分)(2點)
+LOCATION:花蓮縣花蓮市民權五街61號(門諾醫院健康管理中心
+ 4樓多功能教室)
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4502.html
+DESCRIPTION:主辦：臺灣基督教門諾會醫療財團法人門諾醫院
+ 兒童發展聯合評估中心\n積分：2 點\n分類：兒童復健\n來
+ 源：台灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/acti
+ ve_news/active_info.asp?/4502.html\n（時間為整天，實際起訖請
+ 看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-1b442d42a517be3ba16a7d277d480e3f0db6e9d1
+DTSTAMP:20260825T224439Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:以家庭為中心-MABC-3測驗施測與臨床應用115.09.19(共3
+ 時)(1.5點)
+LOCATION:台東市開封街350號(台東基督教醫院之盼望樓6樓會
+ 議室)
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4501.html
+DESCRIPTION:主辦：東基醫療財團法人台東基督教醫院\n積分
+ ：1.5 點\n來源：台灣復健醫學會\n簡章與報名：https://www.
+ pmr.org.tw/active_news/active_info.asp?/4501.html\n（時間為整天，
+ 實際起訖請看主辦單位公告）
+END:VEVENT
+END:VCALENDAR
