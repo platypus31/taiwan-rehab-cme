@@ -198,6 +198,99 @@ def test_empty_calendar_not_written() -> None:
         shutil.rmtree(tmpdir, ignore_errors=True)
 
 
+def test_stable_across_builds() -> None:
+    """活動一場都沒變的那天，訂閱檔必須**位元組完全相同**。
+
+    🔴 DTSTAMP 取自 build 的 `updated_at`，那是每次 build 的當下時間，天天不一樣。
+    若照寫，七份訂閱檔會在沒有新課的日子照樣天天產生 diff，
+    git 歷史被無意義的 commit 洗版，也分不出「今天真的有新課」還是「只是時間戳跳動」。
+    這條測試就是守這件事 —— 症狀只會出現在 CI 的每日 commit 裡，本機跑一次看不出來。
+    """
+    import shutil
+    import tempfile
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import build  # noqa: E402
+
+    tmpdir = Path(tempfile.mkdtemp())
+    original = build.OUTPUT
+    try:
+        build.OUTPUT = tmpdir / "events.json"
+        rows = [sample(), sample(date="2026-09-01", title="另一場課")]
+
+        build._write_feeds(rows, "2026-08-26T06:00:00+08:00")
+        first = (tmpdir / "all.ics").read_bytes()
+
+        # 隔天再跑一次，資料一模一樣、只有 build 時間不同
+        build._write_feeds(rows, "2026-08-27T06:00:00+08:00")
+        second = (tmpdir / "all.ics").read_bytes()
+        check("資料沒變時訂閱檔位元組相同（不會天天產生 diff）", first == second)
+
+        # 真的多了一場課 → 檔案必須更新
+        rows.append(sample(date="2026-09-15", title="新加的課"))
+        build._write_feeds(rows, "2026-08-28T06:00:00+08:00")
+        third = (tmpdir / "all.ics").read_bytes()
+        check("真的有新活動時訂閱檔會更新", third != second)
+        check("新活動有進到檔案裡", "新加的課" in third.decode("utf-8"))
+
+        # 只有 DTSTAMP 不同時 _write_ics 要回報「沒寫」
+        same = icsfeed.render(rows, "復健醫學 繼續教育活動",
+                              dtstamp=icsfeed.utc_stamp("2026-09-09T06:00:00+08:00"))
+        check("_write_ics 對只差 DTSTAMP 的內容回報未寫入",
+              build._write_ics(tmpdir / "all.ics", same) is False)
+    finally:
+        build.OUTPUT = original
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
+def test_degraded_build_does_not_touch_feeds() -> None:
+    """有來源抓失敗的那輪，訂閱檔一份都不能動。
+
+    🔴 這條重現的是真實事故：2026-08-26 06:20 的自動更新，三個來源掛了兩個
+    （522 與連線逾時），events.json 從 60 筆掉到 4 筆。網站有錯誤提示可以顯示，
+    但 .ics 沒有任何地方放得下那條提示 —— 訂閱者的行事曆會安靜地被清空，
+    連「這是暫時的」都不知道。所以寧可給舊資料，也不要動。
+    """
+    import shutil
+    import tempfile
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import build  # noqa: E402
+
+    tmpdir = Path(tempfile.mkdtemp())
+    original = build.OUTPUT
+    try:
+        build.OUTPUT = tmpdir / "events.json"
+        healthy = [sample(), sample(date="2026-09-01", title="北部的課", region="北部")]
+        build._write_feeds(healthy, "2026-08-26T06:00:00+08:00")
+        before = {p.name: p.read_bytes() for p in tmpdir.glob("*.ics")}
+        check("正常那輪產出三份檔（全部＋南部＋北部）", len(before) == 3, str(sorted(before)))
+
+        # 隔天：來源掛掉只剩一筆（真實事故的形狀）
+        feeds = build._write_feeds(
+            [sample(date="2026-10-04", title="剩下的孤兒課", region="北部")],
+            "2026-08-27T06:00:00+08:00",
+            degraded=True,
+        )
+        after = {p.name: p.read_bytes() for p in tmpdir.glob("*.ics")}
+        check("來源失敗時訂閱檔完全沒被改動", before == after)
+        check("來源失敗時沒有任何地區檔被刪掉", set(before) == set(after), str(sorted(after)))
+        check("feeds 仍對應磁碟上真實存在的檔案",
+              set(feeds.values()) == set(after),
+              "feeds={} 檔案={}".format(sorted(feeds.values()), sorted(after)))
+
+        # 對照組：同一批縮水資料但來源都正常 → 這時就該照實反映（刪掉南部）
+        build._write_feeds(
+            [sample(date="2026-10-04", title="剩下的孤兒課", region="北部")],
+            "2026-08-28T06:00:00+08:00",
+        )
+        normal = {p.name for p in tmpdir.glob("*.ics")}
+        check("來源正常時資料真的變少就照實反映", "region-south.ics" not in normal, str(sorted(normal)))
+    finally:
+        build.OUTPUT = original
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
 def test_crlf_and_envelope() -> None:
     """換行是 CRLF，而且沒有落單的 LF。檔頭檔尾要完整。"""
     text = icsfeed.render([sample()], "復健醫學 繼續教育活動（南部）")
@@ -250,6 +343,8 @@ def main() -> int:
     test_escaping()
     test_lone_cr_preserved()
     test_empty_calendar_not_written()
+    test_stable_across_builds()
+    test_degraded_build_does_not_touch_feeds()
     test_crlf_and_envelope()
     test_dtstamp_stable()
     test_credits_rendering()
