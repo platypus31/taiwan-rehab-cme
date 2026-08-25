@@ -16,6 +16,10 @@
     // 前端刻意不自己維護一份地區清單 —— 抄一份的話，後端加了新地區而這裡沒跟上，
     // 使用者會拿到 404 的訂閱網址，而且不會有任何錯誤訊息。
     feeds: null,
+    // 訂閱範圍。刻意跟 state.region（地區**篩選**）分成兩個獨立的值 ——
+    // 訂閱範圍只能由使用者在訂閱區塊裡明確選，不跟著瀏覽時的篩選動作改變。
+    // null＝全部。
+    subscribeRegion: null,
     q: "",
     time: "upcoming",
     region: null,
@@ -383,18 +387,22 @@
     el.toggle.innerHTML = "篩選" + (n ? '<span class="badge">' + n + "</span>" : "");
   }
 
-  /* 訂閱按鈕。每個地區各對應一份 build 產生的 .ics（data/region-*.ics），
-   * 沒選地區時是 data/all.ics。
+  /* 訂閱按鈕。每個地區各對應一份 build 事先產好的 .ics（data/region-*.ics），
+   * 「全部」是 data/all.ics。
    *
-   * 🔴 **訂閱範圍只跟著「地區」走，其他篩選軸一律不跟。**
-   *    純靜態站沒有後端，不可能為任意的篩選組合即時產生 ics，只能事先產好幾份檔案；
-   *    而地區是唯一「一筆活動恰好落在一個值」的軸，切成檔案不會讓同一場活動
-   *    出現在兩份訂閱裡（主題是可複標的，切了就會重複）。地區同時也是真正決定
-   *    「去不去得成」的條件 —— 值班的人到不了外縣市，這正是要濾掉的雜訊。
+   * 🔴 **訂閱範圍是使用者在這一區明確選的一份，完全不跟著上面的篩選器走。**
+   *    純靜態站沒有後端，不可能為任意的篩選組合即時產生 ics，只能事先產好幾份固定
+   *    的檔案。既然如此，範圍就必須是「明確選的」而不是「跟著瀏覽動作偷偷變的」——
+   *    使用者為了找課而點了幾個篩選，回頭按訂閱卻拿到跟他以為的不一樣的東西，
+   *    比沒有這個功能更糟。所以 state.subscribeRegion 跟 state.region 是兩個獨立的值。
    *
-   * 🔴 **範圍一定要寫在畫面上**：使用者篩了「南部」＋「3 點以上」再按訂閱，
-   *    拿到的是南部全部場次而不是只有 3 點以上的。說明文字會寫出實際筆數與
-   *    「哪些條件不影響訂閱」，因為「以為只訂到自己篩的那些」比沒有這個功能更糟。
+   * 🔴 **範圍一定要寫在畫面上**：說明文字會寫出這份訂閱檔的實際筆數，並明講
+   *    「不受下面的篩選條件影響」。筆數是從資料算出來的，不是寫死的字串。
+   *
+   * 為什麼切「地區」而不是主題：地區是唯一「一筆活動恰好落在一個值」的軸，
+   * 切成檔案不會讓同一場活動出現在兩份訂閱裡（主題可複標，切了就會重複，
+   * 而且 UID 相同但分屬不同行事曆時日曆 App 不會幫忙合併）。地區同時也是
+   * 真正決定「去不去得成」的條件 —— 值班的人到不了外縣市，那正是要濾掉的雜訊。
    *
    * webcal:// 是行事曆訂閱的慣例 scheme，Google／Apple／Outlook 都認得，
    * 會接成「訂閱」而不是「匯入一次」—— 匯入一次的話之後新增的課就再也不會進來了。
@@ -410,36 +418,49 @@
     }
     el.subscribe.hidden = false;
 
-    var region = state.region;                    // null＝沒選地區
-    var file = region ? feeds[region] : feeds[""];
-    // 這個地區沒有專屬訂閱檔（後端的 REGION_SLUGS 沒收錄）→ 退回「全部」那份，
-    // 而且要在說明裡講清楚，不能讓人以為訂到的只有該地區。
-    var fellBack = Boolean(region) && !file;
-    if (!file) file = feeds[""];
+    // 選過的地區可能因為資料更新而不再有活動（該份訂閱檔會被 build 刪掉）→ 退回「全部」。
+    if (state.subscribeRegion && !feeds[state.subscribeRegion]) {
+      state.subscribeRegion = null;
+    }
+    var scope = state.subscribeRegion;
 
-    var scope = region && !fellBack ? region : null;
-    var total = state.events.filter(function (e) {
-      return !scope || e.region === scope;
-    }).length;
+    /* 這一排的數字是「訂閱下去會拿到幾場」，所以要數全部資料，
+       **不能**用 applyFilters() —— 那是篩選器上的數字，跟訂閱到的內容是兩回事。 */
+    var countOf = function (region) {
+      return state.events.filter(function (e) {
+        return !region || e.region === region;
+      }).length;
+    };
+    /* 選項一律由 feeds 的實際 key 產生，**不能**拿 REGION_ORDER 來篩 ——
+       後端加了新地區、這裡的清單沒跟上的話，那份訂閱檔會存在卻沒有任何入口，
+       而且不會有錯誤訊息。REGION_ORDER 只拿來決定「排序偏好」，
+       不在清單裡的地區排到最後，但一定看得到。 */
+    var options = [{ key: null, label: "全部", count: countOf(null) }];
+    Object.keys(feeds)
+      .filter(function (r) { return r !== ""; })
+      .sort(function (a, b) {
+        var ia = REGION_ORDER.indexOf(a), ib = REGION_ORDER.indexOf(b);
+        if (ia === -1) ia = REGION_ORDER.length;
+        if (ib === -1) ib = REGION_ORDER.length;
+        if (ia !== ib) return ia - ib;
+        return a < b ? -1 : a > b ? 1 : 0;
+      })
+      .forEach(function (r) { options.push({ key: r, label: r, count: countOf(r) }); });
+    renderChips("f-subscribe", options,
+      function (i) { return scope === i.key; },
+      function (i) { state.subscribeRegion = i.key; });
 
+    var file = scope ? feeds[scope] : feeds[""];
     var httpsURL = new URL("data/" + file, location.href).href;
     el.subscribeLink.href = httpsURL.replace(/^https?:/, "webcal:");
     el.subscribeLink.textContent = scope
-      ? "訂閱「" + scope + "」的活動到行事曆"
-      : "訂閱全部活動到行事曆";
+      ? "訂閱「" + scope + "」到行事曆"
+      : "訂閱「全部」到行事曆";
     el.subscribeCopy.setAttribute("data-url", httpsURL);
 
-    var note;
-    if (fellBack) {
-      note = "「" + region + "」沒有專屬的訂閱檔，訂到的會是全部 " + total + " 場。";
-    } else if (scope) {
-      note = "訂閱的是「" + scope + "」的 " + total + " 場，跟著上面的「地區」一起換；" +
-        "時間／積分／主題／主辦／來源與關鍵字搜尋都不影響訂閱內容。";
-    } else {
-      note = "訂閱的是全部 " + total + " 場。想少一點雜訊的話，" +
-        "先在上面選一個「地區」，訂閱範圍會跟著換。";
-    }
-    el.subscribeNote.textContent = note +
+    el.subscribeNote.textContent =
+      "訂閱的是「" + (scope || "全部") + "」整份的 " + countOf(scope) + " 場，" +
+      "不受下面的篩選條件影響（地區／時間／積分／主題／主辦／來源與關鍵字搜尋都不影響）。" +
       "資料每天更新，訂閱後行事曆會自動跟著更新。";
   }
 

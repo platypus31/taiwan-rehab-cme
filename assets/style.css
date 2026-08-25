@@ -133,6 +133,17 @@ body {
   border-radius: var(--radius);
 }
 .subscribe[hidden] { display: none; }
+/* 訂閱範圍的選項。長得像篩選器的 chip，但它**不是**篩選器 ——
+   放在訂閱區塊內、跟按鈕與說明文字綁在一起，讓「選的是訂閱範圍」一眼看得出來。 */
+.subscribe-scope {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: 9px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed var(--line);
+}
+.subscribe-scope .label { padding-top: 3px; }
 .subscribe-main { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .subscribe-btn {
   display: inline-flex;

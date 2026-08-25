@@ -79,10 +79,16 @@
   <!-- 訂閱行事曆。
        🔴 刻意做成**選配**而不是預設推播：值班不一定每堂課都上得到，
        上不到的課進了日曆就只是雜訊，所以要不要訂閱由使用者自己按。
-       訂閱範圍**跟著上面的「地區」篩選走**（純靜態站只有這一軸做得到，
-       原因見 app.js 的 renderSubscribe 註解）；說明文字由 app.js 寫上實際筆數，
-       不寫死在這裡也不含糊帶過。 -->
+       🔴 訂閱範圍是**這一排自己的選項**，跟上面的篩選器完全無關 ——
+       純靜態站沒有後端，只能事先產好幾份固定的 .ics，不可能為任意篩選組合即時產生。
+       所以訂閱粒度必須是「使用者明確選的一份」，而不是跟著瀏覽動作偷偷改變
+       （篩了南部去看、卻在不知情的狀況下訂到別的範圍，比沒有這個功能更糟）。
+       說明文字由 app.js 寫上實際筆數，不寫死在這裡也不含糊帶過。 -->
   <section class="subscribe" id="subscribe" aria-label="訂閱行事曆" hidden>
+    <div class="subscribe-scope">
+      <span class="label">訂閱</span>
+      <div class="chips" id="f-subscribe"></div>
+    </div>
     <div class="subscribe-main">
       <a id="subscribe-link" class="subscribe-btn" href="#">訂閱到行事曆</a>
       <button type="button" id="subscribe-copy" class="subscribe-copy">複製訂閱網址</button>
