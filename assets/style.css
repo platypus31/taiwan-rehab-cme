@@ -240,6 +240,46 @@ body {
 }
 .cal:hover { background: var(--accent); color: #fff; }
 
+/* ---------- 已結束的場次：整張卡片降對比 ----------
+   站主 2026-08-26 指定（姊妹站同一套做法）。
+
+   🔴 這個站正常情況下**不會有**過期活動（`KEEP_PAST_DAYS = 0`，資料源頭就濾掉了）。
+   這一區是給「資料停止更新」那條路徑用的安全網：來源掛掉時 build.py 會沿用舊的
+   events.json（頂著總比整站空掉好），但瀏覽器的「今天」照樣往前走，那些課就變成過去式。
+   那正是最需要一眼看出來的時候 —— 光靠頂端一行錯誤提示，滑到下面就忘了。
+
+   🔴 用降對比而不是 opacity：opacity 會把卡片連同底色一起沖淡，在手機戶外亮度下
+   文字會糊掉。這裡改成把**彩色元素轉灰階**（日期的主色綠、日曆按鈕的綠框），
+   文字則只降到仍過 WCAG AA 4.5:1 的灰，手機上照樣讀得清楚。
+   🔴 日曆按鈕**不設 pointer-events: none**：過去的場次可能還要補進日曆當紀錄，
+   看起來淡但必須按得下去。
+   🔴 底色刻意比頁面底色（--bg #f6f7f9）**更深**而不是更淺：未結束的卡是白的、
+   浮在灰底頁面上，已結束的比頁面還深才會讀成「陷下去」。只把彩色轉灰、底色維持接近白
+   的話，滑動時分不出來。 */
+.event.is-past {
+  background: #edeff2;
+  border-color: #e0e4e9;
+}
+.event.is-past .date-badge { border-right-color: #d7dce2; }
+/* 日期數字原本是主色綠，是整張卡最搶眼的地方，轉灰的效果最直接 */
+.event.is-past .date-badge .md { color: #5f6b78; }
+.event.is-past .date-badge .yr,
+.event.is-past .date-badge .dow { color: #616c78; }
+/* .date-badge.soon 的橘色也要收進灰階。理論上「已結束」與「七天內」互斥，
+   但那兩個判斷各自獨立，哪天有人改動其中一邊就會在灰卡上留一點橘 —— 一併蓋掉 */
+.event.is-past .date-badge.soon .md { color: #5f6b78; }
+.event.is-past .event-title a,
+.event.is-past .event-title { color: #5c6773; }
+.event.is-past .event-meta { color: #626d79; }
+/* 標籤底色要跟著卡片一起壓深，否則原本的淺灰底會反過來比卡片亮、變成整張卡最跳的東西 */
+.event.is-past .tag,
+.event.is-past .tag.credit,
+.event.is-past .tag.region,
+.event.is-past .tag.source { background: #e2e5ea; color: #58626d; font-weight: 400; }
+/* 日曆按鈕：綠框轉灰，但仍然是可按的按鈕外觀（不是被停用的樣子） */
+.event.is-past .cal { color: #5c6773; border-color: #b9c0c9; }
+.event.is-past .cal:hover { background: #5c6773; color: #fff; }
+
 .empty { text-align: center; color: var(--muted); padding: 40px 0; }
 
 /* ---------- footer ---------- */

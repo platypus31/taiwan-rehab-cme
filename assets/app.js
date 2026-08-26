@@ -59,6 +59,16 @@
     ].join("-");
   }
 
+  /** 一場活動的最後一天。判斷「過去了沒」一律用它，不要用 e.date。
+   *
+   *  目前的三個來源只給單日活動（Event 沒有 end_date 欄位），所以它現在等於 e.date。
+   *  刻意還是包成函式：哪天多日活動進來了（姊妹站的年會就是 8/22→8/23 這種），
+   *  「用開始日判過期」會讓還在進行中的兩天課在第二天早上就被劃掉，
+   *  而且症狀只在跨日活動上出現、平常測不到。改這裡一處即可，不必去追每個呼叫點。 */
+  function lastDay(e) {
+    return e.end_date || e.date;
+  }
+
   function addDays(iso, n) {
     var d = new Date(iso + "T00:00:00");
     d.setDate(d.getDate() + n);
@@ -236,6 +246,15 @@
       var parts = e.date.split("-");
       var dow = DOW[new Date(e.date + "T00:00:00").getDay()];
       var soon = e.date >= today && e.date <= soonLimit ? " soon" : "";
+      /* 過期判定只算這一次，整張卡的灰化就吃這個值 —— 算兩次的話兩套判準遲早會漂掉。
+         比的是 lastDay（結束日）不是 date（開始日），理由見 lastDay() 的註解。
+
+         🔴 正常情況下這個站**不會有**過期活動：`KEEP_PAST_DAYS = 0`，資料源頭就把
+         過期的濾掉了。灰化是給「資料停止更新」那條路徑用的安全網 ——
+         來源掛掉時 build.py 會沿用舊的 events.json（頂著總比整站空掉好），
+         但瀏覽器的「今天」照樣往前走，那些課就會變成過去式。
+         那正是最需要一眼看出來的時候，光靠頂端一行錯誤提示不夠。 */
+      var isPast = lastDay(e) < today;
 
       var meta = [];
       if (e.organizer) meta.push("<span>主辦：" + escapeHTML(e.organizer) + "</span>");
@@ -255,7 +274,7 @@
         : escapeHTML(e.title);
 
       return (
-        '<article class="event">' +
+        '<article class="event' + (isPast ? " is-past" : "") + '">' +
           '<div class="date-badge' + soon + '">' +
             '<div class="md">' + parts[1] + "/" + parts[2] + "</div>" +
             '<div class="dow">週' + dow + "</div>" +
