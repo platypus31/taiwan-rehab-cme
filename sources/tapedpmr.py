@@ -27,6 +27,7 @@ from .base import (
     get,
     parse_credits,
     parse_date,
+    scrub_contacts,
     strip_prefix,
     warn,
 )
@@ -106,6 +107,11 @@ def fetch(with_detail: bool = True) -> List[Event]:
         upcoming = [r for r in rows if r[0] >= cutoff]
         for iso_date, title, url in upcoming:
             location, organizer = _fetch_detail(url) if with_detail else ("", "")
+            # 內頁的地點／主辦是自由文字，承辦人分機常寫在同一段。
+            # 在進 Event 之前挖掉（見 base.scrub_contacts）——
+            # 等到 scripts/pii-scan.sh 才發現的話，髒資料已經在 events.json 裡了。
+            location = scrub_contacts(location)
+            organizer = scrub_contacts(organizer)
             events.append(
                 Event(
                     date=iso_date,

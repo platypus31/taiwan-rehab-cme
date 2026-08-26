@@ -25,6 +25,7 @@ from sources.base import (  # noqa: E402
     Event,
     cutoff_iso,
     drain_warnings,
+    is_current,
     norm_title,
 )
 
@@ -208,6 +209,50 @@ def _write_feeds(events: List[Event], updated_at: str, degraded: bool = False) -
     return feeds
 
 
+def _previous() -> dict:
+    """讀回上一次寫出的 data/events.json。讀不到就回空 dict。
+
+    只有「這輪一筆都沒抓到」時才會用到 —— 那時要拿舊資料頂著，
+    而不是讓網站變成 0 筆。所以這裡的失敗一律吞掉：檔案不存在（第一次跑）、
+    被手改壞、寫到一半被中斷，都只是「沒有舊資料可以沿用」，
+    不該讓整個 build 掛掉 —— 掛掉的話連那條「這是舊資料」的告警都上不了站。
+    """
+    try:
+        data = json.loads(OUTPUT.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        print("[warn] 讀不到既有的 {}（{}）".format(OUTPUT.name, exc), file=sys.stderr)
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _revive_sources(
+    previous: dict, names: List[str], cutoff: str
+) -> Dict[str, List[Event]]:
+    """從上一輪的 events.json 撈回指定來源的活動（仍要過期就丟）。
+
+    只在那些來源這輪抓不到資料時才呼叫 —— 目的是讓一個來源掛掉不等於
+    它的活動整批從站上消失。過期的仍然要丟：沿用舊資料是為了頂著，
+    不是為了讓已經結束的課復活。
+    """
+    revived: Dict[str, List[Event]] = {name: [] for name in names}
+    for raw in previous.get("events", []):
+        if not isinstance(raw, dict):
+            continue
+        rows = revived.get(raw.get("source", ""))
+        if rows is None:
+            continue
+        try:
+            event = Event(**raw)
+        except TypeError:
+            # 舊檔是不同 schema 寫的（Event 欄位增減過）。跳過那一筆而不是讓
+            # build 掛掉 —— 這條路徑只在來源已經壞掉時才走得到，再炸一次
+            # 只會連「這是舊資料」的告警都上不了站。
+            continue
+        if is_current(event, cutoff):
+            rows.append(event)
+    return revived
+
+
 def _completeness(event: Event) -> int:
     score = 0
     for value in (event.location, event.organizer, event.url):
@@ -247,7 +292,9 @@ def main() -> int:
             per_source[name] = 0
             print("[FAIL] {} — {}".format(name, exc), file=sys.stderr)
             continue
-        fresh = [e for e in fetched if e.date >= cutoff]
+        # 判準本體在 sources/base.is_current()（放那裡才測得到 —— scripts/ 沒有
+        # __init__.py，selftest 的 sys.path 技巧 import 不到 scripts.build）
+        fresh = [e for e in fetched if is_current(e, cutoff)]
         collected.extend(fresh)
         per_source[name] = len(fresh)
         print("[ok] {} — {} 筆（原始 {}）".format(name, len(fresh), len(fetched)))
@@ -257,10 +304,78 @@ def main() -> int:
             errors.append(message)
             print("[warn] {}".format(message), file=sys.stderr)
 
+    # 這輪**真的抓到**幾筆。要在復活舊資料之前記下來 ——
+    # 退出碼問的是「來源健不健康」，不是「畫面上有沒有東西」。
+    # 全部來源掛掉但舊資料成功頂上時，網站是有內容的，但 CI 一定要紅，
+    # 否則來源永久壞掉會被「畫面看起來正常」蓋過去，沒有人會發現。
+    live_count = len(collected)
+
+    # 🔴 抓失敗的來源，用上一輪的資料把它的活動補回來。
+    #
+    # 沒有這一步的話，一個來源掛掉 = 它的活動整批從站上消失，
+    # 而畫面上只有一行「某某學會抓取失敗」的小字 —— 看不出「少了 40 場課」。
+    # 實例：2026-08-26 06:20 的自動更新，主來源 522、次來源連線逾時，
+    # 站上從 58 筆掉到 4 筆，等於整個站空掉，提示卻只有兩行紅字。
+    # 寧可顯示那個來源上一輪的舊課，也不要讓它整批消失。
+    #
+    # 復活的對象：有拋例外的來源。但**這輪一筆都沒抓到**時要全部復活 ——
+    # 來源改版時 fetch() 常常不拋例外也不 warn()，只是 soup.select 選不到列、
+    # 靜靜回傳 []（三個站是同一類 ASP 樣板，會一起改版）。那條路徑不在
+    # failed_sources 裡，漏掉的話整站會被洗成 0 筆。
+    #
+    # 反過來，**只要這輪有抓到東西**，就不去復活那些「正常回傳 0 筆」的來源：
+    # 那多半是真的沒課，硬復活會讓已取消／已下架的活動永遠留在站上。
+    to_revive = failed_sources if collected else list(per_source)
+    stale_notes: List[str] = []
+    # 舊檔的 updated_at。下面決定「要不要把 updated_at 往前推」時要用同一個值，
+    # 所以在這裡留住 —— 再讀一次 _previous() 不只是多一次磁碟 I/O，
+    # 兩次讀到的還可能不是同一份內容（中途有別的程序寫檔）。
+    previous_updated_at = ""
+    # 「真的有舊資料被併進來」——這跟「有來源掛掉」不是同一件事。
+    # 來源掛掉但舊檔裡也沒有它的活動時，這輪顯示的東西 100% 都是剛抓到的新資料，
+    # 那就不該把 updated_at 往回釘（釘了會讓新資料看起來是舊的，反向的謊）。
+    revived_any = False
+    if to_revive:
+        previous = _previous()
+        previous_updated_at = previous.get("updated_at", "")
+        stale_since = previous_updated_at or "未知時間"
+        revived = _revive_sources(previous, to_revive, cutoff)
+        for name in to_revive:
+            rows = revived.get(name, [])
+            if not rows:
+                stale_notes.append(
+                    "「{}」這次沒有抓到資料，也沒有舊資料可以沿用".format(name)
+                )
+                continue
+            collected.extend(rows)
+            per_source[name] = len(rows)
+            revived_any = True
+            stale_notes.append(
+                "「{}」這次沒有抓到資料，顯示的是 {} 的舊資料（{} 筆）".format(
+                    name, stale_since, len(rows)
+                )
+            )
+        for note in stale_notes:
+            print("[stale] {}".format(note), file=sys.stderr)
+        # 排在來源自己的失敗訊息前面：使用者要先知道「這些課是舊的」，
+        # 才看得懂下面那幾條技術性的錯誤說明。
+        errors[:0] = stale_notes
+
     events = dedupe(collected)
 
+    # updated_at 的意思是「資料有多新」，只要**真的有舊資料被併進來**就不能往前推
+    # —— 推了會讓過期資料看起來像剛更新的，比不顯示更新時間還糟。
+    # 哪一個來源是舊的寫在 errors 裡，前端會顯示出來。
+    #
+    # 判準用 revived_any 而不是 stale_notes：後者也包含「這來源掛了，而且舊檔裡
+    # 也沒有它的活動」——那種情況畫面上全是剛抓到的新資料，往回釘反而變成
+    # 反方向的謊（新資料被標成舊時間）。
+    updated_at = datetime.now(TAIPEI).isoformat(timespec="seconds")
+    if revived_any and previous_updated_at:
+        updated_at = previous_updated_at
+
     payload = {
-        "updated_at": datetime.now(TAIPEI).isoformat(timespec="seconds"),
+        "updated_at": updated_at,
         "count": len(events),
         "sources": per_source,
         "errors": errors,
@@ -273,18 +388,21 @@ def main() -> int:
         )
     )
 
-    # 全部來源都掛掉才算失敗（部分失敗仍要保留可用資料）。
+    # 判準是「這輪一筆都沒抓到」，不是「有沒有 error」（部分失敗仍要保留可用資料）。
+    # 看 live_count 而不是 len(events)：復活的舊資料不算「抓到」。
+    # `per_source` 非空＝這輪確實跑過來源，排除 SOURCES 是空清單的退化情況。
     # dry-run 也要套同一套判斷，否則拿它當健康檢查會永遠得到成功碼。
-    exit_code = 1 if errors and not events else 0
+    exit_code = 1 if per_source and not live_count else 0
 
     if args.dry_run:
         return exit_code
 
-    # 全部來源都掛掉時保留既有 events.json —— 寧可資料舊，也不要把網站洗成 0 筆。
-    # （兩個來源同時短暫連不上並不罕見：對方網站維護、本機斷網都會這樣。）
-    if exit_code == 1:
+    if not events:
+        # 這次抓不到、舊檔也沒有（第一次跑，或舊檔被手改壞了）。
+        # 寧可不寫檔也不要把網站洗成 0 筆。
         print(
-            "全部來源失敗，保留既有 {} 不覆蓋".format(OUTPUT), file=sys.stderr
+            "這次與既有檔案都沒有任何活動，不寫檔（不要把網站洗成 0 筆）",
+            file=sys.stderr,
         )
         return exit_code
 
@@ -292,8 +410,19 @@ def main() -> int:
 
     # 訂閱檔先寫，events.json 後寫：`feeds` 這份對照表要進 payload 給前端，
     # 而且順序這樣排的話，前端讀到新的 feeds 時檔案一定已經在了。
+    #
+    # 真的有舊資料被併進來就整批不重產訂閱檔：磁碟上那幾份本來就對應舊資料，
+    # 重產只會把 DTSTAMP 往前推。
+    #
+    # 判準用 revived_any 而不是 stale_notes，理由跟上面 updated_at 那段同源：
+    # 「來源掛了但舊檔裡也沒有它的活動」不算降級 —— 那代表訂閱檔本來就沒有它的
+    # 內容，這輪照常重產不會讓任何人的日曆少東西，反而讓 B、C 兩個活著的來源
+    # 新公告的課能當天進到訂閱者的日曆。
+    #
+    # 「events 空了會把訂閱檔整批刪掉」那個更嚴重的情況不靠這個旗標擋 ——
+    # 上面的 `if not events: return` 已經在寫檔之前就退場了。
     payload["feeds"] = _write_feeds(
-        events, payload["updated_at"], degraded=bool(failed_sources)
+        events, payload["updated_at"], degraded=revived_any
     )
 
     tmp = OUTPUT.with_suffix(".json.tmp")

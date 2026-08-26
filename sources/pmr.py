@@ -28,6 +28,7 @@ from .base import (
     get,
     parse_credits,
     parse_date,
+    scrub_contacts,
     strip_prefix,
     warn,
 )
@@ -87,6 +88,14 @@ def _parse_rows(soup: BeautifulSoup) -> List[Event]:
                 organizer = strip_prefix(text, "主辦")
             elif text.startswith("地點"):
                 location = strip_prefix(text, "地點")
+
+        # 主辦與地點是官網的自由文字，承辦人的分機／信箱常常就寫在同一欄。
+        # 在進 Event 之前挖掉，不要等到 scripts/pii-scan.sh 才發現 ——
+        # 那時髒資料已經在 data/events.json 裡了（見 base.scrub_contacts）。
+        # 挖完再算地區：detect_region 拿到的必須跟存進 Event 的是同一份字串，
+        # 否則哪天挖掉的片段影響了判定，畫面上的地區會跟資料對不起來。
+        organizer = scrub_contacts(organizer)
+        location = scrub_contacts(location)
 
         href = link.get("href", "")
         if href.startswith("http"):

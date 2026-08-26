@@ -79,8 +79,9 @@ UID 用的識別欄位跟 `build.dedupe()` 判斷「兩筆是不是同一場」*
 | [台灣復健醫學會](https://www.pmr.org.tw/active_news/active.asp) | ✅ 已接 | 主來源。全台各醫院／學會申請復健積分的課程都會登記在這裡，涵蓋度最高 |
 | [台灣兒童復健醫學會](https://www.tapedpmr.org.tw/activity/index.asp) | ✅ 已接 | 補兒童復健／早療這一塊，會進詳情頁補抓地點與主辦單位 |
 | [連倚南教授復健醫學教育基金會](https://lien.foundation/yearlyplan/) | ✅ 已接 | 超音波工作坊、義肢裝具研習會、癌症復健研討會這一類。這些課**不會出現在復健醫學會的列表**，是純新增的涵蓋度 |
-| [中華民國復健醫學發展協會](https://www.rmdaroc.org/) | ⛔ 決定不接 | 網站是 Google Sites，內容靠 JavaScript 載入，靜態抓不到 |
-| [台灣心肺復健醫學會](https://www.tacvpr-taiwan.com/) | ⛔ 決定不接 | 站台掛在 Cloudflare 人機驗證後面，一般程式請求會被擋（HTTP 403） |
+| [中華民國復健醫學發展協會](https://www.rmdaroc.org/) | ⛔ 暫不接 | ⚠️ 舊版這裡寫「靠 JavaScript 載入，靜態抓不到」，**2026-08-26 實測推翻**——Google Sites 是伺服器端就把文字渲染出來，`curl` 拿得到全文。真正的理由是它沒有 `<table>`，是靠位置對齊的 div 網格，且 class name 經過混淆（`tyJCtd mGzaTb …`），改版時會**無聲對錯行**——解析不會報錯，只會把日期配到別堂課上 |
+| [台灣心肺復健醫學會](https://www.tacvpr-taiwan.com/) | ⛔ 決定不接 | 站台掛在 Cloudflare 人機驗證後面，一般程式請求會被擋（HTTP 403，2026-08-26 複測仍成立） |
+| [台灣神經復健醫學會](https://www.tsnr.org.tw/) | ⛔ 決定不接 | 同上，三個路徑全部 403。列在這裡是為了讓下一個人不用再查一次——它確實有辦活動（機器人復健工作坊、神經性吞嚥障礙研討會），有申請積分的場次會經由主來源進站 |
 
 基金會那條的積分常常顯示「未標示」，那是照實呈現：他們的簡章多半寫「台灣復健醫學會積分申請中」，
 點數還沒核下來。與其猜一個數字，不如讓它空著 —— 積分以主辦單位最後公告為準。
@@ -133,6 +134,12 @@ Settings → Pages → Source 選 **Deploy from a branch**，branch 選 `main`�
 不會整包壞掉。某個來源抓失敗時，其他來源照常更新，失敗訊息會寫進 `data/events.json` 的 `errors` 欄位，
 網站頂部會跳一條提示 —— 這樣來源網站改版時**看得見**，而不是資料默默變少沒人發現。
 
+**全部**來源同時掛掉時（對方維護、Cloudflare 擋、本機斷網，三個同時發生並不罕見）：
+沿用上一次的活動清單重新寫回 `events.json`，並在 `errors` 最前面插一條「顯示的是 ⟨時間⟩ 的舊資料」，
+`updated_at` **不往前推**（推了會讓過期資料看起來像剛更新的）。
+訂閱檔（`data/*.ics`）這輪一份都不動 —— 網站有地方放那條提示，訂閱端沒有，
+照常重產只會讓訂閱者的日曆安靜地被清空。CI 那次執行仍然會標成紅色，否則沒人會發現來源掛了。
+
 ## 檔案結構
 
 ```
@@ -142,7 +149,8 @@ sources/tapedpmr.py 台灣兒童復健醫學會
 sources/lien.py     連倚南教授復健醫學教育基金會
 sources/icsfeed.py  把 Event 算成 .ics 訂閱檔（UID 穩定性、整天事件、RFC 5545 折行）
 scripts/build.py    跑所有來源 → 合併去重 → 寫出 data/events.json 與 data/*.ics
-scripts/selftest.py .ics 格式規則的自我測試（不連網，CI 會跑）
+scripts/selftest.py .ics 格式、台北日期邊界、個資清洗、降級行為的自我測試（不連網，CI 會跑）
+scripts/pii-scan.sh 個資閘門（CI 每天跑；`--all` 連 git 歷史一起掃，上架前跑）
 data/events.json    網站唯一的資料來源（自動產生，不要手改）
 data/*.ics          行事曆訂閱檔（自動產生，不要手改）
 index.html          頁面結構

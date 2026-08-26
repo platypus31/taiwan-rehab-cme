@@ -32,8 +32,21 @@ jobs:
       - name: 自我測試
         run: python scripts/selftest.py
 
+      # continue-on-error 是必要的，不是偷懶：一筆活動都沒抓到時 build.py 會回傳 1，
+      # 但它同時已經把「顯示的是舊資料」這條告警寫進 data/events.json。
+      # 若這一步直接中斷 job，後面的提交步驟就不會跑，那條告警永遠上不了站 ——
+      # 「資料默默停止更新、畫面上看不出來」正是這個站最想避免的事，卻會因此真的發生。
+      # 所以：這步失敗照樣往下走，最後再用 fetch 的 outcome 把整個 run 標成紅色。
       - name: 抓取各學會活動
+        id: fetch
+        continue-on-error: true
         run: python scripts/build.py
+
+      # 個資閘門要跑在提交**之前**：這是公開 repo，push 出去就算已外流，
+      # 事後刪檔不算補救。學會官網常把承辦人的分機寫在地點欄旁邊，
+      # 來源改版時解析規則可能突然多收一欄，所以每天都要掃。
+      - name: 個資掃描（抓回來的資料也要過）
+        run: bash scripts/pii-scan.sh
 
       - name: 有變動才提交
         run: |
@@ -48,5 +61,16 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # -A 才會把「這次沒有活動而被刪掉的地區訂閱檔」也一起提交
           git add -A data/
-          git commit -m "chore: 自動更新活動資料 $(date -u +'%Y-%m-%d')"
+          # 日期用台灣時間：排程是 UTC 22:00（台灣隔天 06:00），
+          # 用 UTC 日期會讓 commit 訊息永遠比台灣實際日期少一天
+          # （實例：b390a4c 跑在 UTC 2026-08-25 22:20＝台北 08-26 06:20，
+          # 訊息卻寫「自動更新活動資料 2026-08-25」）
+          git commit -m "chore: 自動更新活動資料 $(TZ=Asia/Taipei date +'%Y-%m-%d')"
           git push
+
+      # 告警已經提交上去了，但這次執行仍然要是紅的 —— 否則沒人會發現來源掛了
+      - name: 抓取失敗就讓這次執行變紅
+        if: steps.fetch.outcome == 'failure'
+        run: |
+          echo "本次沒有抓到任何活動；已保留既有資料並把告警寫進 data/events.json"
+          exit 1

@@ -9,6 +9,7 @@
 """
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -18,6 +19,28 @@ from sources import icsfeed  # noqa: E402
 from sources.base import Event, norm_title  # noqa: E402
 
 FAILURES = []
+
+# 假來源的名字。Event.source 要跟它一致，復活機制才對得上
+# （「哪個來源抓不到，就撈那個來源的舊活動」）。
+SOURCE_NAME = "測試用假來源"
+
+
+def _future_sample(**overrides) -> "Event":
+    """一筆日期在未來的假活動，來源是 SOURCE_NAME。
+
+    復活機制的測試一定要用未來日期 —— 復活會過 is_current()，
+    過期的活動本來就該被丟掉。
+    """
+    from datetime import timedelta as _td
+
+    from sources.base import today_taipei as _today
+
+    fields = {
+        "date": (_today() + _td(days=30)).isoformat(),
+        "source": SOURCE_NAME,
+    }
+    fields.update(overrides)
+    return sample(**fields)
 
 
 def check(name: str, condition: bool, detail: str = "") -> None:
@@ -335,6 +358,365 @@ def test_norm_title_shared() -> None:
     )
 
 
+def test_taipei_date_boundary() -> None:
+    """過期判準必須釘住**台北**的日期邊界，而且當天的活動不能消失。
+
+    🔴 這條測的是 `base.is_current()` 本身。把 `>=` 打成 `>` 是一字之差，
+    症狀卻是「早上還沒上的課，一到當天就從站上不見了」——
+    本機隨手跑一次看不出來（要剛好有當天的活動才會顯現），
+    也不會有任何錯誤訊息。
+
+    🔴 邊界一律用 `today_taipei()` 算，不是機器日期：workflow 的 runner 跑在
+    UTC，排程是台灣 06:00（UTC 前一天 22:00），用機器日期會整整差一天 ——
+    每天早上都會把當天的課全部誤判成過期。
+    """
+    from datetime import timedelta as _timedelta  # noqa: PLC0415
+
+    from sources.base import cutoff_iso, is_current, today_taipei  # noqa: PLC0415
+
+    cutoff = cutoff_iso()
+
+    def dated(offset: int) -> Event:
+        return sample(date=(today_taipei() + _timedelta(days=offset)).isoformat())
+
+    check("邊界-當天的活動仍保留", is_current(dated(0), cutoff) is True)
+    check("邊界-昨天的活動要丟掉", is_current(dated(-1), cutoff) is False)
+    check("邊界-明天的活動保留", is_current(dated(1), cutoff) is True)
+    # cutoff 本身必須是台北日期。runner 在 UTC 22:00 跑時，機器日期比台北少一天 ——
+    # 若哪天有人把 cutoff_iso() 改成看機器時區，這條會抓到。
+    check(
+        "邊界-cutoff 是台北的今天（KEEP_PAST_DAYS=0）",
+        cutoff == today_taipei().isoformat(),
+        "cutoff={} 台北今天={}".format(cutoff, today_taipei().isoformat()),
+    )
+
+
+def test_scrub_contacts() -> None:
+    """承辦人的電話／信箱不能跟著地點欄進到公開站上。
+
+    🔴 這幾條的測資一律用**虛構**的號碼與信箱，不要貼來源網站上真實承辦人的
+    聯絡方式 —— 測試檔跟著 repo 公開，把真號碼寫進來就是自己把個資推上去
+    （這正是這支測試在防的事）。信箱那條還得把字串拆開拼，否則
+    scripts/pii-scan.sh 會在自己的測試檔裡抓到信箱樣式而擋下 CI。
+    拆開拼不會削弱測試：真正被檢驗的是 scrub_contacts() 執行時的行為。
+    """
+    from sources.base import scrub_contacts  # noqa: PLC0415
+
+    check("個資-挖市話", scrub_contacts("某某醫院六樓簡報室 洽詢 02-1234-5678 #123") == "某某醫院六樓簡報室 洽詢")
+    check("個資-挖信箱", scrub_contacts("報名請洽 nobody" + "@" + "example.invalid") == "報名請洽")
+    # 手機規則必須排在市話前面：否則市話規則會從第二個 0 開始咬，
+    # 留下一截「09」黏在文字裡 —— 挖一半比沒挖更糟，因為看起來像挖乾淨了
+    check("個資-挖手機", scrub_contacts("聯絡 0900-000-000") == "聯絡")
+    # 挖完只剩標點就當它是空的，不要留一個「（）」在卡片上
+    check("個資-挖完剩標點回空字串", scrub_contacts("( 0912-345-678 )") == "")
+    # 正常地址不能被誤傷（門牌號碼、樓層、郵遞區號都有數字）
+    address = "臺北市中正區常德街1號 臺大醫院復健大樓"
+    check("個資-地址不誤傷", scrub_contacts(address) == address, scrub_contacts(address))
+    time_text = "2026/04/18(六) 13:00~18:00"
+    check("個資-時間不誤傷", scrub_contacts(time_text) == time_text, scrub_contacts(time_text))
+
+
+def test_stale_build_keeps_old_events() -> None:
+    """一筆都沒抓到的那輪，要把舊活動寫回去**並附上一條告警**。
+
+    🔴 這條守的是「資料默默停止更新、畫面上看不出來」。舊行為是整個檔不覆蓋，
+    網站會若無其事地繼續顯示上週的課 —— 使用者沒有任何線索知道那是舊的。
+    現在改成沿用舊活動 + errors[0] 放告警 + updated_at 不往前推，
+    網站頂端就會跳出提示。
+    """
+    import shutil  # noqa: PLC0415
+    import tempfile  # noqa: PLC0415
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import build  # noqa: E402, PLC0415
+
+    tmpdir = Path(tempfile.mkdtemp())
+    original = build.OUTPUT
+    original_sources = build.SOURCES
+    try:
+        build.OUTPUT = tmpdir / "events.json"
+        build.OUTPUT.write_text(
+            json.dumps(
+                {
+                    "updated_at": "2026-08-20T06:00:00+08:00",
+                    "count": 1,
+                    "sources": {SOURCE_NAME: 1},
+                    "errors": [],
+                    # source 欄位要對得上下面那支假來源的 NAME ——
+                    # 復活是照「哪個來源抓不到，就撈那個來源的舊活動」比對的。
+                    # 日期必須在**未來**：復活仍然會過 is_current()，
+                    # 沿用舊資料是為了頂著，不是為了讓已結束的課復活。
+                    # 用 sample() 的預設日期（寫死的 2026-08-22）會讓這筆被濾掉，
+                    # 整個檔不會被重寫，測試就會讀到自己種下去的種子而「假通過」。
+                    "events": [_future_sample().to_dict()],
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+
+        class _Dead:
+            NAME = SOURCE_NAME
+            __name__ = "dead_source"
+
+            @staticmethod
+            def fetch():
+                raise RuntimeError("連線逾時")
+
+        build.SOURCES = [_Dead]
+        sys.argv = ["build.py"]
+        code = build.main()
+
+        check("全源失敗時退出碼是 1", code == 1, "得到 {}".format(code))
+        written = json.loads(build.OUTPUT.read_text(encoding="utf-8"))
+        check("舊活動有被寫回去（網站不會變 0 筆）", written["count"] == 1, str(written["count"]))
+        check(
+            "errors 第一條是「這是舊資料」的告警",
+            written["errors"] and "舊資料" in written["errors"][0],
+            str(written["errors"]),
+        )
+        check(
+            "來源自己的失敗訊息仍在（沒有被告警蓋掉）",
+            any("連線逾時" in e for e in written["errors"]),
+            str(written["errors"]),
+        )
+        check(
+            "告警指名是哪個來源在用舊資料",
+            any(SOURCE_NAME in e and "舊資料" in e for e in written["errors"]),
+            str(written["errors"]),
+        )
+        check(
+            "updated_at 沒有往前推（舊資料不能看起來像剛更新）",
+            written["updated_at"] == "2026-08-20T06:00:00+08:00",
+            written["updated_at"],
+        )
+        # 訂閱檔一份都不能動：這輪寫回去的是舊資料，重產只會把 DTSTAMP 往前推，
+        # 而 events 是空的，照常重產會把七份訂閱檔整批刪掉（訂閱者日曆清空）
+        check(
+            "沒有產生任何訂閱檔",
+            not list(tmpdir.glob("*.ics")),
+            str([p.name for p in tmpdir.glob("*.ics")]),
+        )
+    finally:
+        build.OUTPUT = original
+        build.SOURCES = original_sources
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
+def test_silent_zero_source_is_also_stale() -> None:
+    """來源**沒拋例外**、只是靜靜回 0 筆，也要當成故障。
+
+    🔴 這是上面那條測試蓋不到的另一半，而且是更常發生的那一半：
+    來源網頁改版時 `soup.select` 選不到列，`fetch()` 不會拋例外也不會 warn()，
+    只是回傳一個空 list。若判準寫成「有 error 才算失敗」，這條路徑會被判成
+    「成功、今天剛好沒課」——空的 events 往下走，`_write_feeds` 的刪檔分支
+    把七份訂閱檔整批刪掉，訂閱者的日曆直接清空且收不到任何提示。
+    三個站同時踩到不需要巧合：它們是同一類 ASP 樣板站，會一起改版。
+    """
+    import shutil  # noqa: PLC0415
+    import tempfile  # noqa: PLC0415
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import build  # noqa: E402, PLC0415
+
+    tmpdir = Path(tempfile.mkdtemp())
+    original = build.OUTPUT
+    original_sources = build.SOURCES
+    try:
+        build.OUTPUT = tmpdir / "events.json"
+        build.OUTPUT.write_text(
+            json.dumps(
+                {
+                    "updated_at": "2026-08-20T06:00:00+08:00",
+                    "count": 1,
+                    "sources": {SOURCE_NAME: 1},
+                    "errors": [],
+                    # source 欄位要對得上下面那支假來源的 NAME ——
+                    # 復活是照「哪個來源抓不到，就撈那個來源的舊活動」比對的。
+                    # 日期必須在**未來**：復活仍然會過 is_current()，
+                    # 沿用舊資料是為了頂著，不是為了讓已結束的課復活。
+                    # 用 sample() 的預設日期（寫死的 2026-08-22）會讓這筆被濾掉，
+                    # 整個檔不會被重寫，測試就會讀到自己種下去的種子而「假通過」。
+                    "events": [_future_sample().to_dict()],
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+        # 先放一份訂閱檔，代表「上一輪有產出」——刪檔分支要有東西可刪才測得出來
+        (tmpdir / "all.ics").write_bytes(b"PLACEHOLDER")
+
+        class _SilentlyEmpty:
+            """改版後選不到任何列的來源：不拋例外、不 warn，就是回空的。"""
+
+            NAME = SOURCE_NAME
+            __name__ = "silent_source"
+
+            @staticmethod
+            def fetch():
+                return []
+
+        build.SOURCES = [_SilentlyEmpty]
+        sys.argv = ["build.py"]
+        code = build.main()
+
+        check("靜默 0 筆也算失敗（退出碼 1）", code == 1, "得到 {}".format(code))
+        written = json.loads(build.OUTPUT.read_text(encoding="utf-8"))
+        check("靜默 0 筆時舊活動有寫回去", written["count"] == 1, str(written["count"]))
+        check(
+            "靜默 0 筆時有「這是舊資料」告警",
+            written["errors"] and "舊資料" in written["errors"][0],
+            str(written["errors"]),
+        )
+        # 這條是整段防線的重點：訂閱檔不能被刪掉
+        check(
+            "靜默 0 筆時既有訂閱檔沒有被刪掉",
+            (tmpdir / "all.ics").exists()
+            and (tmpdir / "all.ics").read_bytes() == b"PLACEHOLDER",
+            str([p.name for p in tmpdir.glob("*.ics")]),
+        )
+    finally:
+        build.OUTPUT = original
+        build.SOURCES = original_sources
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
+def test_partial_failure_revives_only_dead_source() -> None:
+    """一個來源掛掉時，只有**它**的活動沿用舊資料，活著的來源照常用新的。
+
+    🔴 這是 2026-08-26 06:20 真實事故的形狀：主來源 522、次來源連線逾時，
+    只有基金會活著 —— 站上從 58 筆掉到 4 筆，等於整個站空掉，
+    而畫面上只有兩行「抓取失敗」的小字，看不出「少了 54 場課」。
+    掛掉的來源要用舊資料頂著，活著的來源不能被牽連（那會讓新公告的課消失）。
+    """
+    import shutil  # noqa: PLC0415
+    import tempfile  # noqa: PLC0415
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import build  # noqa: E402, PLC0415
+
+    tmpdir = Path(tempfile.mkdtemp())
+    original = build.OUTPUT
+    original_sources = build.SOURCES
+    alive_name = "測試用活著的來源"
+    try:
+        build.OUTPUT = tmpdir / "events.json"
+        build.OUTPUT.write_text(
+            json.dumps(
+                {
+                    "updated_at": "2026-08-20T06:00:00+08:00",
+                    "count": 2,
+                    "sources": {SOURCE_NAME: 1, alive_name: 1},
+                    "errors": [],
+                    "events": [
+                        _future_sample(title="掛掉那個來源的舊課").to_dict(),
+                        # 活著的來源在舊檔裡也有一筆。它**不能**被復活 ——
+                        # 那筆課若已經下架／取消，復活會讓它永遠留在站上。
+                        _future_sample(
+                            title="活著來源的舊課", source=alive_name
+                        ).to_dict(),
+                    ],
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+
+        class _Dead:
+            NAME = SOURCE_NAME
+            __name__ = "dead_source"
+
+            @staticmethod
+            def fetch():
+                raise RuntimeError("522")
+
+        class _Alive:
+            NAME = alive_name
+            __name__ = "alive_source"
+
+            @staticmethod
+            def fetch():
+                return [_future_sample(title="活著來源的新課", source=alive_name)]
+
+        build.SOURCES = [_Dead, _Alive]
+        sys.argv = ["build.py"]
+        code = build.main()
+
+        # 還有來源活著、也真的抓到東西 → 這輪不算整體失敗
+        check("部分失敗時退出碼是 0", code == 0, "得到 {}".format(code))
+        written = json.loads(build.OUTPUT.read_text(encoding="utf-8"))
+        titles = sorted(e["title"] for e in written["events"])
+        check(
+            "掛掉來源的舊課有頂上",
+            "掛掉那個來源的舊課" in titles,
+            str(titles),
+        )
+        check("活著來源的新課有進來", "活著來源的新課" in titles, str(titles))
+        check(
+            "活著來源的舊課沒有被復活（已下架的課不該留在站上）",
+            "活著來源的舊課" not in titles,
+            str(titles),
+        )
+        check(
+            "告警指名是哪個來源在用舊資料",
+            any(SOURCE_NAME in e and "舊資料" in e for e in written["errors"]),
+            str(written["errors"]),
+        )
+        check(
+            "沒有把活著的來源也講成舊資料",
+            not any(alive_name in e and "舊資料" in e for e in written["errors"]),
+            str(written["errors"]),
+        )
+        check(
+            "有來源沿用舊資料時 updated_at 不往前推",
+            written["updated_at"] == "2026-08-20T06:00:00+08:00",
+            written["updated_at"],
+        )
+
+        # 反向：來源掛了，但舊檔裡也沒有它的活動 → 畫面上 100% 是新資料，
+        # 這時把 updated_at 往回釘就是**反方向的謊**（新資料被標成舊時間）。
+        # 判準必須是「真的有舊資料被併進來」，不是「有沒有來源掛掉」。
+        build.OUTPUT.write_text(
+            json.dumps(
+                {
+                    "updated_at": "2026-08-20T06:00:00+08:00",
+                    "count": 1,
+                    "sources": {alive_name: 1},
+                    "errors": [],
+                    # 舊檔裡**沒有**掛掉那個來源的任何活動
+                    "events": [
+                        _future_sample(title="活著來源的舊課", source=alive_name).to_dict()
+                    ],
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+        build.main()
+        written = json.loads(build.OUTPUT.read_text(encoding="utf-8"))
+        check(
+            "沒有舊資料可沿用時 updated_at 照常往前推",
+            written["updated_at"] != "2026-08-20T06:00:00+08:00",
+            written["updated_at"],
+        )
+        check(
+            "此時仍要講明那個來源這次沒抓到",
+            any(SOURCE_NAME in e for e in written["errors"]),
+            str(written["errors"]),
+        )
+        # 同一個判準也管訂閱檔：沒有東西被復活＝訂閱檔本來就沒有那個來源的內容，
+        # 照常重產不會讓任何人的日曆少東西，反而讓活著來源的新課當天就進得去。
+        check(
+            "沒有舊資料可沿用時訂閱檔照常重產",
+            (tmpdir / "all.ics").exists(),
+            str([p.name for p in tmpdir.glob("*.ics")]),
+        )
+    finally:
+        build.OUTPUT = original
+        build.SOURCES = original_sources
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
 def main() -> int:
     test_uid_stable()
     test_uid_matches_dedupe_key()
@@ -349,6 +731,11 @@ def main() -> int:
     test_dtstamp_stable()
     test_credits_rendering()
     test_norm_title_shared()
+    test_taipei_date_boundary()
+    test_scrub_contacts()
+    test_stale_build_keeps_old_events()
+    test_silent_zero_source_is_also_stale()
+    test_partial_failure_revives_only_dead_source()
 
     if FAILURES:
         print("\n{} 項未通過：{}".format(len(FAILURES), "、".join(FAILURES)), file=sys.stderr)

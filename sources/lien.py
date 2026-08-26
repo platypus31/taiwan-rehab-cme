@@ -34,6 +34,7 @@ from .base import (
     detect_region,
     get,
     parse_date,
+    scrub_contacts,
     today_taipei,
     warn,
 )
@@ -230,6 +231,11 @@ def fetch(with_detail: bool = True) -> List[Event]:
                 credits = detail_credits
 
         organizer = organizer or ORGANIZER
+        # 內頁的地點／主辦是自由文字，承辦人的分機／信箱常寫在同一段。
+        # 在進 Event 之前挖掉（見 base.scrub_contacts）——
+        # 等到 scripts/pii-scan.sh 才發現的話，髒資料已經在 events.json 裡了。
+        location = scrub_contacts(location)
+        organizer = scrub_contacts(organizer) or ORGANIZER
         events.append(
             Event(
                 date=iso_date,

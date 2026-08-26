@@ -4,3 +4,5 @@ __pycache__/
 data/*.json.tmp
 data/*.ics.tmp
 .venv/
+# 個資掃描的本機補充規則（含真實姓名，絕對不進版控）
+.pii-local
