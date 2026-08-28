@@ -1,29 +1,18 @@
 {
  "updated_at": "2026-08-26T07:13:36+08:00",
- "count": 60,
+ "count": 59,
  "sources": {
-  "台灣復健醫學會": 43,
+  "台灣復健醫學會": 42,
   "台灣兒童復健醫學會": 13,
   "連倚南教授復健醫學教育基金會": 4
  },
  "errors": [
-  "「台灣復健醫學會」這次沒有抓到資料，顯示的是 2026-08-26T07:13:36+08:00 的舊資料（43 筆）",
-  "台灣復健醫學會：GET https://www.pmr.org.tw/active_news/active.asp 失敗: 403 Client Error: Forbidden for url: https://www.pmr.org.tw/active_news/active.asp"
+  "「台灣復健醫學會」這次沒有抓到資料，顯示的是 2026-08-26T07:13:36+08:00 的舊資料（42 筆）",
+  "「台灣兒童復健醫學會」這次沒有抓到資料，顯示的是 2026-08-26T07:13:36+08:00 的舊資料（13 筆）",
+  "台灣復健醫學會：GET https://www.pmr.org.tw/active_news/active.asp 失敗: 403 Client Error: Forbidden for url: https://www.pmr.org.tw/active_news/active.asp",
+  "台灣兒童復健醫學會：GET https://www.tapedpmr.org.tw/activity/index.asp 失敗: 403 Client Error: Forbidden for url: https://www.tapedpmr.org.tw/activity/index.asp"
  ],
  "events": [
-  {
-   "date": "2026-08-27",
-   "title": "DR. BONE Webinar 115.08.27(共50分)(0.5點)",
-   "organizer": "台灣骨鬆肌少關節防治學會",
-   "location": "線上課程",
-   "credits": 0.5,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4495.html",
-   "categories": [
-    "骨骼肌肉"
-   ]
-  },
   {
    "date": "2026-08-28",
    "title": "「網絡安全與網路成癮」專業人員教育訓練課程(積分：2.5)",
