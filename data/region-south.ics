@@ -18,7 +18,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-34668d61340e61f2be16f83be0523e1b782473e1
-DTSTAMP:20260825T224439Z
+DTSTAMP:20260829T032504Z
 DTSTART;VALUE=DATE:20260829
 DTEND;VALUE=DATE:20260830
 SUMMARY:115年度早期療育醫事人員專業成長系列研習課程115.
@@ -33,7 +33,7 @@ DESCRIPTION:主辦：衛生福利部嘉義醫院\n積分：3 點\n分類：
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-20e3b16fe7c932cd7dee1899a6db90f94b74d736
-DTSTAMP:20260825T224439Z
+DTSTAMP:20260829T032504Z
 DTSTART;VALUE=DATE:20260829
 DTEND;VALUE=DATE:20260830
 SUMMARY:轉化，從家庭開始-早療人員的家庭賦能與親職教練
@@ -48,7 +48,7 @@ DESCRIPTION:主辦：安泰醫療社團法人安泰醫院兒童發展聯合
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-3dd3a3dd18fcc20350f7c544fbbb73d35593ba01
-DTSTAMP:20260825T224439Z
+DTSTAMP:20260829T032504Z
 DTSTART;VALUE=DATE:20260909
 DTEND;VALUE=DATE:20260910
 SUMMARY:防跌有妙招，運動降血脂研習講座115.09.09(共3時)(1.5
@@ -61,8 +61,23 @@ DESCRIPTION:主辦：高雄榮民總醫院\n積分：1.5 點\n來源：台
  單位公告）
 END:VEVENT
 BEGIN:VEVENT
+UID:taiwan-rehab-cme-451ced5ae7eb4e0b8fa6459bff8fc42b96baf6ab
+DTSTAMP:20260829T032504Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260913
+SUMMARY:115年職業災害勞工職能復健生理心理強化訓練機構
+ 教育訓練115.09.12(共3時20分)、115.09.15(共3時20分)(1.5/1.5點)
+LOCATION:大台南會展中心-努山塔里雅C廳 （臺南市歸仁區武
+ 東里歸仁十二路3號）
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4521.html
+DESCRIPTION:主辦：勞動部職業安全衛生署\n積分：1.5 點\n來
+ 源：台灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/acti
+ ve_news/active_info.asp?/4521.html\n（時間為整天，實際起訖請
+ 看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
 UID:taiwan-rehab-cme-14cda333a63ea37a72bb515736fa8b4b2a505648
-DTSTAMP:20260825T224439Z
+DTSTAMP:20260829T032504Z
 DTSTART;VALUE=DATE:20260912
 DTEND;VALUE=DATE:20260913
 SUMMARY:TBMJ 2026年會暨國際學術研討會115.09.12(共5時10分)(2.5
@@ -76,7 +91,7 @@ DESCRIPTION:主辦：台灣骨鬆肌少關節防治學會\n積分：2.5 點
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-108aae158f54f2fc57b5de2c2ce481279735626b
-DTSTAMP:20260825T224439Z
+DTSTAMP:20260829T032504Z
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260920
 SUMMARY:2026/09/19-20 ISCD Quality Bone Densitometry Course: Performance\, 
@@ -93,7 +108,7 @@ DESCRIPTION:主辦：中華民國骨質疏鬆症學會\n積分：0.5 點\n
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-aa28a850bc7ec86c0ace4ab835a6803f2a558e08
-DTSTAMP:20260825T224439Z
+DTSTAMP:20260829T032504Z
 DTSTART;VALUE=DATE:20260920
 DTEND;VALUE=DATE:20260921
 SUMMARY:癌症族群運動處方學術研討會暨工作坊第二季 115.09
@@ -105,5 +120,20 @@ DESCRIPTION:主辦：高雄醫學大學附設中和紀念醫院健康台灣
  台灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/active_new
  s/active_info.asp?/4504.html\n（時間為整天，實際起訖請看主
  辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-193cd8e68c9c8de3061d1c8a24226732c731b1d0
+DTSTAMP:20260829T032504Z
+DTSTART;VALUE=DATE:20260920
+DTEND;VALUE=DATE:20260921
+SUMMARY:頸腰椎超音波進階實作工作坊115.09.20(共4時40分)(4點
+ )
+LOCATION:台南市東區大學路西段89號9F(大學廳)
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4522.html
+DESCRIPTION:主辦：台灣肌肉骨骼神經超音波醫學會\n積分：4
+  點\n分類：骨骼肌肉、超音波與介入\n來源：台灣復健醫
+ 學會\n簡章與報名：https://www.pmr.org.tw/active_news/active_info.a
+ sp?/4522.html\n（時間為整天，實際起訖請看主辦單位公告
+ ）
 END:VEVENT
 END:VCALENDAR
