@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-08-31T08:00:30+08:00",
- "count": 62,
+ "updated_at": "2026-09-01T08:53:00+08:00",
+ "count": 63,
  "sources": {
   "台灣復健醫學會": 48,
-  "台灣兒童復健醫學會": 12,
+  "台灣兒童復健醫學會": 13,
   "連倚南教授復健醫學教育基金會": 4
  },
  "errors": [],
@@ -525,6 +525,19 @@
    "region": "北部",
    "source": "台灣復健醫學會",
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4520.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-10-02",
+   "title": "香氣裡的溫柔擁抱：芳療簡介與兒童應用(積分：0.5)",
+   "organizer": "臺大醫院兒童發展評估及療育中心",
+   "location": "兒童醫院 P4013 室",
+   "credits": 0.5,
+   "region": "北部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/252.html",
    "categories": [
     "兒童復健"
    ]
