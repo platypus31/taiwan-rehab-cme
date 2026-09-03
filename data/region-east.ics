@@ -18,7 +18,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-d728623774bc109e910f3696f164a6cc69bc906b
-DTSTAMP:20260825T224439Z
+DTSTAMP:20260903T233917Z
 DTSTART;VALUE=DATE:20260912
 DTEND;VALUE=DATE:20260913
 SUMMARY:以家庭為中心的早期療育-兒童情緒行為處理及親職
@@ -34,7 +34,7 @@ DESCRIPTION:主辦：臺灣基督教門諾會醫療財團法人門諾醫院
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-1b442d42a517be3ba16a7d277d480e3f0db6e9d1
-DTSTAMP:20260825T224439Z
+DTSTAMP:20260903T233917Z
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260920
 SUMMARY:以家庭為中心-MABC-3測驗施測與臨床應用115.09.19(共3
@@ -46,5 +46,19 @@ DESCRIPTION:主辦：東基醫療財團法人台東基督教醫院\n積分
  ：1.5 點\n來源：台灣復健醫學會\n簡章與報名：https://www.
  pmr.org.tw/active_news/active_info.asp?/4501.html\n（時間為整天，
  實際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-d952ce1b5bf1bd6f3d506bccbe4bb5175efb2259
+DTSTAMP:20260903T233917Z
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261004
+SUMMARY:2026台灣增生療法醫學會台東義診活動115.10.03(共1時)
+ 、115.10.04(共40分)(1/0.5點)
+LOCATION:台東聖母醫院3樓會議室
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4527.html
+DESCRIPTION:主辦：台灣增生療法醫學會\n積分：0.5 點\n分類
+ ：超音波與介入\n來源：台灣復健醫學會\n簡章與報名：h
+ ttps://www.pmr.org.tw/active_news/active_info.asp?/4527.html\n（時間為
+ 整天，實際起訖請看主辦單位公告）
 END:VEVENT
 END:VCALENDAR

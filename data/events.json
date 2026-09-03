@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-09-03T07:40:36+08:00",
- "count": 63,
+ "updated_at": "2026-09-04T07:39:17+08:00",
+ "count": 65,
  "sources": {
-  "台灣復健醫學會": 48,
+  "台灣復健醫學會": 50,
   "台灣兒童復健醫學會": 13,
   "連倚南教授復健醫學教育基金會": 4
  },
@@ -557,6 +557,19 @@
   },
   {
    "date": "2026-10-03",
+   "title": "2026台灣增生療法醫學會台東義診活動115.10.03(共1時)、115.10.04(共40分)(1/0.5點)",
+   "organizer": "台灣增生療法醫學會",
+   "location": "台東聖母醫院3樓會議室",
+   "credits": 0.5,
+   "region": "東部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4527.html",
+   "categories": [
+    "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-10-03",
    "title": "SECC Congress 2026 Taipei 暨2026智慧急重症醫療國際會議&The 10th Asia-Pacific Conference on ICU Early Rehabilitation Taipei 2026：115.10.03(共4時20分) 、115.10.04(共6時55分)(2.7/3.3點)",
    "organizer": "台灣急救加護醫學會",
    "location": "台大醫院國際會議中心",
@@ -712,6 +725,19 @@
    "source": "連倚南教授復健醫學教育基金會",
    "url": "https://lien.foundation/yearlyplan/",
    "categories": []
+  },
+  {
+   "date": "2026-11-22",
+   "title": "115 年11月南區地方季會課程115.11.22(共40分)(1點)",
+   "organizer": "台灣老年學暨老年醫學會",
+   "location": "實體：奇美醫院第三醫療大樓3樓第332會議室；線上課程",
+   "credits": 1.0,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4526.html",
+   "categories": [
+    "長照與老年"
+   ]
   },
   {
    "date": "2026-11-22",
