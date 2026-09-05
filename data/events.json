@@ -1,114 +1,13 @@
 {
- "updated_at": "2026-09-05T07:32:18+08:00",
- "count": 65,
+ "updated_at": "2026-09-06T07:26:19+08:00",
+ "count": 57,
  "sources": {
-  "台灣復健醫學會": 50,
-  "台灣兒童復健醫學會": 13,
+  "台灣復健醫學會": 45,
+  "台灣兒童復健醫學會": 10,
   "連倚南教授復健醫學教育基金會": 4
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-09-05",
-   "title": "2026生活型態功能醫學會重啟腦智序115.09.05(共4時25分)、115.09.06(共3時10分)(2.2/1.5點)",
-   "organizer": "中華職業醫學會",
-   "location": "香格里拉台北遠東國際大飯店，3F遠東宴會廳",
-   "credits": 1.5,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4482.html",
-   "categories": []
-  },
-  {
-   "date": "2026-09-05",
-   "title": "The First Asian Musculoskeletal Ultrasound Summit (2026 TNMSKUS年會) (共5時20分)(4點)",
-   "organizer": "台灣肌肉骨骼神經超音波醫學會",
-   "location": "台北市大安區金華街187號 (政大公企中心2F)",
-   "credits": 4.0,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4503.html",
-   "categories": [
-    "骨骼肌肉",
-    "超音波與介入"
-   ]
-  },
-  {
-   "date": "2026-09-05",
-   "title": "台灣復健醫學會2026年IDDSI與吞嚥內視鏡評估實務暨工作坊(共3時)(2.5點)",
-   "organizer": "台灣復健醫學會",
-   "location": "長庚轉運站國際會議中心",
-   "credits": 2.5,
-   "region": "其他",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4456.html",
-   "categories": [
-    "吞嚥與語言"
-   ]
-  },
-  {
-   "date": "2026-09-05",
-   "title": "早期療育聯合專業研討會-早療兒童多元溝通手語研習 (積分：3.5)",
-   "organizer": "竹山秀傳醫療社團法人竹山秀傳醫院兒童發展評估中心",
-   "location": "竹山秀傳醫院 10 樓會議室",
-   "credits": 3.5,
-   "region": "中部",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/247.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-09-05",
-   "title": "臨床實務-PDMS-3 介紹 (合辦；積分：1.5)",
-   "organizer": "屏基醫療財團法人屏東基督教醫院",
-   "location": "線上課程",
-   "credits": 1.5,
-   "region": "線上",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/244.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-09-05",
-   "title": "臨床實務-PDMS-3介紹115.09.05(共2時50分)(1.5點)",
-   "organizer": "屏基醫療財團法人屏東基督教醫院",
-   "location": "線上課程",
-   "credits": 1.5,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4500.html",
-   "categories": []
-  },
-  {
-   "date": "2026-09-05",
-   "title": "音樂、互動與發展：音樂治療在早期療育中的應用 (積分：1.3)",
-   "organizer": "佛教慈濟醫療財團法人台北慈濟醫院兒童發展暨復健中心",
-   "location": "台北慈濟醫院合心樓3F-和氣會議室(新北市新店區建國路289號)",
-   "credits": 1.3,
-   "region": "北部",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/246.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-09-05",
-   "title": "音樂、互動與發展：音樂治療在早期療育中的應用115.09.05(共2時40分)(1.25點)",
-   "organizer": "佛教慈濟醫療財團法人台北慈濟醫院兒童發展暨復健中心",
-   "location": "台北慈濟醫院合心樓3F-和氣會議室(新北市新店區建國路289號)",
-   "credits": 1.25,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4498.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
   {
    "date": "2026-09-06",
    "title": "以家庭為中心的 自閉症社交技巧訓練(合辦；積分：3)",
