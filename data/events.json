@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-09-08T07:50:40+08:00",
- "count": 54,
+ "updated_at": "2026-09-09T07:44:24+08:00",
+ "count": 58,
  "sources": {
   "台灣復健醫學會": 43,
-  "台灣兒童復健醫學會": 9,
+  "台灣兒童復健醫學會": 13,
   "連倚南教授復健醫學教育基金會": 4
  },
  "errors": [],
@@ -214,6 +214,19 @@
   },
   {
    "date": "2026-09-19",
+   "title": "「從治療室走進生活：以家庭為中心的早期療育實踐——家長訪談、需求辨識與家庭日常介入」專業人員教育訓練課程 (積分：1.5)",
+   "organizer": "社團法人台灣兒童青少年發展障礙學會",
+   "location": "線上遠距課程",
+   "credits": 1.5,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/254.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-09-19",
    "title": "以家庭為中心-MABC-3測驗施測與臨床應用115.09.19(共3時)(1.5點)",
    "organizer": "東基醫療財團法人台東基督教醫院",
    "location": "台東市開封街350號(台東基督教醫院之盼望樓6樓會議室)",
@@ -313,6 +326,19 @@
    "categories": [
     "骨骼肌肉",
     "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-09-24",
+   "title": "115年度兒童發展早期療育專業人員培訓課程暨研討會-「自閉症幼兒的情緒問題調節及引導」(積分：1)",
+   "organizer": "社團法人台灣兒童青少年發展障礙學會",
+   "location": "線上遠距課程",
+   "credits": 1.0,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/255.html",
+   "categories": [
+    "兒童復健"
    ]
   },
   {
@@ -469,7 +495,7 @@
    "date": "2026-10-04",
    "title": "下肢義肢研習會",
    "organizer": "財團法人台北市連倚南教授復健醫學教育基金會",
-   "location": "臺大醫學院101講堂(臺北市中正區中山南路7號)",
+   "location": "臺大醫學院101講堂(臺北市中正區仁愛路一段一號)",
    "credits": null,
    "region": "北部",
    "source": "連倚南教授復健醫學教育基金會",
@@ -487,6 +513,19 @@
    "region": "北部",
    "source": "台灣復健醫學會",
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4464.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-10-17",
+   "title": "從 NDBI 到家長教練：以家庭為中心的自然情境介入實踐 (積分：1.5)",
+   "organizer": "衛生福利部臺北醫院",
+   "location": "衛生福利部臺北醫院8 樓第一會議室(新北市新莊區思源路127 號)",
+   "credits": 1.5,
+   "region": "北部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/256.html",
    "categories": [
     "兒童復健"
    ]
@@ -538,6 +577,19 @@
    "categories": [
     "骨骼肌肉",
     "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-10-31",
+   "title": "115年度 台灣兒童復健醫學會-「與自閉症家長建立親職同盟—學齡前自閉特質鑑別、親職溝通與心理治療」(主辦；積分：3.5)",
+   "organizer": "台灣兒童復健醫學會",
+   "location": "線上課程",
+   "credits": 3.5,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/253.html",
+   "categories": [
+    "兒童復健"
    ]
   },
   {
