@@ -1,24 +1,13 @@
 {
- "updated_at": "2026-09-09T07:44:24+08:00",
- "count": 58,
+ "updated_at": "2026-09-10T07:38:40+08:00",
+ "count": 59,
  "sources": {
-  "台灣復健醫學會": 43,
+  "台灣復健醫學會": 44,
   "台灣兒童復健醫學會": 13,
   "連倚南教授復健醫學教育基金會": 4
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-09-09",
-   "title": "防跌有妙招，運動降血脂研習講座115.09.09(共3時)(1.5點)",
-   "organizer": "高雄榮民總醫院",
-   "location": "高雄榮民總醫院高齡醫學大樓地下一樓第10會議室",
-   "credits": 1.5,
-   "region": "南部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4494.html",
-   "categories": []
-  },
   {
    "date": "2026-09-12",
    "title": "115年早期療育跨專業研討會「兒童體適能活動設計及兒童瑜珈課程臨床實務應用」115.09.12(共2時50分)(1.5點)",
@@ -580,6 +569,19 @@
    ]
   },
   {
+   "date": "2026-10-24",
+   "title": "以MOHO觀點協助家長成功參與以家庭為中心的角色115.10.24 (共2時40分)(1點)",
+   "organizer": "輔大醫院兒童發展暨療育中心",
+   "location": "輔大醫院六樓任顯群講堂(新北市泰山區貴子路69號6樓)",
+   "credits": 1.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4528.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
    "date": "2026-10-31",
    "title": "115年度 台灣兒童復健醫學會-「與自閉症家長建立親職同盟—學齡前自閉特質鑑別、親職溝通與心理治療」(主辦；積分：3.5)",
    "organizer": "台灣兒童復健醫學會",
@@ -602,6 +604,19 @@
    "source": "台灣復健醫學會",
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4505.html",
    "categories": []
+  },
+  {
+   "date": "2026-10-31",
+   "title": "與自閉症家長建立親職同盟—學齡前自閉特質鑑別、親職溝通與心理治療115.10.31 (共3時)(1.5點)",
+   "organizer": "台灣兒童復健醫學會",
+   "location": "線上課程",
+   "credits": 1.5,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4529.html",
+   "categories": [
+    "兒童復健"
+   ]
   },
   {
    "date": "2026-11-01",
