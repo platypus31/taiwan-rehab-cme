@@ -17,37 +17,8 @@ TZNAME:CST
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:taiwan-rehab-cme-451ced5ae7eb4e0b8fa6459bff8fc42b96baf6ab
-DTSTAMP:20260911T234007Z
-DTSTART;VALUE=DATE:20260912
-DTEND;VALUE=DATE:20260913
-SUMMARY:115年職業災害勞工職能復健生理心理強化訓練機構
- 教育訓練115.09.12(共3時20分)、115.09.15(共3時20分)(1.5/1.5點)
-LOCATION:大台南會展中心-努山塔里雅C廳 （臺南市歸仁區武
- 東里歸仁十二路3號）
-URL:https://www.pmr.org.tw/active_news/active_info.asp?/4521.html
-DESCRIPTION:主辦：勞動部職業安全衛生署\n積分：1.5 點\n來
- 源：台灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/acti
- ve_news/active_info.asp?/4521.html\n（時間為整天，實際起訖請
- 看主辦單位公告）
-END:VEVENT
-BEGIN:VEVENT
-UID:taiwan-rehab-cme-14cda333a63ea37a72bb515736fa8b4b2a505648
-DTSTAMP:20260911T234007Z
-DTSTART;VALUE=DATE:20260912
-DTEND;VALUE=DATE:20260913
-SUMMARY:TBMJ 2026年會暨國際學術研討會115.09.12(共5時10分)(2.5
- 點)
-LOCATION:高雄展覽館304a
-URL:https://www.pmr.org.tw/active_news/active_info.asp?/4508.html
-DESCRIPTION:主辦：台灣骨鬆肌少關節防治學會\n積分：2.5 點
- \n分類：骨骼肌肉\n來源：台灣復健醫學會\n簡章與報名
- ：https://www.pmr.org.tw/active_news/active_info.asp?/4508.html\n（時
- 間為整天，實際起訖請看主辦單位公告）
-END:VEVENT
-BEGIN:VEVENT
 UID:taiwan-rehab-cme-108aae158f54f2fc57b5de2c2ce481279735626b
-DTSTAMP:20260911T234007Z
+DTSTAMP:20260912T233210Z
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260920
 SUMMARY:2026/09/19-20 ISCD Quality Bone Densitometry Course: Performance\, 
@@ -64,7 +35,7 @@ DESCRIPTION:主辦：中華民國骨質疏鬆症學會\n積分：0.5 點\n
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-aa28a850bc7ec86c0ace4ab835a6803f2a558e08
-DTSTAMP:20260911T234007Z
+DTSTAMP:20260912T233210Z
 DTSTART;VALUE=DATE:20260920
 DTEND;VALUE=DATE:20260921
 SUMMARY:癌症族群運動處方學術研討會暨工作坊第二季 115.09
@@ -79,7 +50,7 @@ DESCRIPTION:主辦：高雄醫學大學附設中和紀念醫院健康台灣
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-193cd8e68c9c8de3061d1c8a24226732c731b1d0
-DTSTAMP:20260911T234007Z
+DTSTAMP:20260912T233210Z
 DTSTART;VALUE=DATE:20260920
 DTEND;VALUE=DATE:20260921
 SUMMARY:頸腰椎超音波進階實作工作坊115.09.20(共4時40分)(4點
@@ -94,7 +65,7 @@ DESCRIPTION:主辦：台灣肌肉骨骼神經超音波醫學會\n積分：4
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-4b4cd4478f2962f97ee7f5dbe5c6d27ae9a29fdb
-DTSTAMP:20260911T234007Z
+DTSTAMP:20260912T233210Z
 DTSTART;VALUE=DATE:20261008
 DTEND;VALUE=DATE:20261009
 SUMMARY:病歷書寫原則115.10.08(共1時30分)(1點)

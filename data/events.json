@@ -1,114 +1,13 @@
 {
- "updated_at": "2026-09-12T07:40:07+08:00",
- "count": 60,
+ "updated_at": "2026-09-13T07:32:10+08:00",
+ "count": 52,
  "sources": {
-  "台灣復健醫學會": 45,
-  "台灣兒童復健醫學會": 13,
+  "台灣復健醫學會": 37,
+  "台灣兒童復健醫學會": 12,
   "連倚南教授復健醫學教育基金會": 4
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-09-12",
-   "title": "115年早期療育跨專業研討會「兒童體適能活動設計及兒童瑜珈課程臨床實務應用」115.09.12(共2時50分)(1.5點)",
-   "organizer": "佛教慈濟醫療財團法人台中慈濟醫院兒童發展聯合評估中心",
-   "location": "佛教慈濟醫療財團法人台中慈濟醫院第一院區大愛樓五樓502會議室",
-   "credits": 1.5,
-   "region": "中部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4506.html",
-   "categories": [
-    "兒童復健",
-    "運動醫學"
-   ]
-  },
-  {
-   "date": "2026-09-12",
-   "title": "115年職業災害勞工職能復健生理心理強化訓練機構教育訓練115.09.12(共3時20分)、115.09.15(共3時20分)(1.5/1.5點)",
-   "organizer": "勞動部職業安全衛生署",
-   "location": "大台南會展中心-努山塔里雅C廳 （臺南市歸仁區武東里歸仁十二路3號）",
-   "credits": 1.5,
-   "region": "南部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4521.html",
-   "categories": []
-  },
-  {
-   "date": "2026-09-12",
-   "title": "2026年世界疼痛醫學會台灣分會會員大會暨學術討論會115.09.12(共1時)(1點)",
-   "organizer": "世界疼痛醫學會台灣分會",
-   "location": "國立台灣大學醫學院103教室（台北市中正區仁愛路一段一號）",
-   "credits": 1.0,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4499.html",
-   "categories": [
-    "疼痛"
-   ]
-  },
-  {
-   "date": "2026-09-12",
-   "title": "Prolo 202 Musculoskeletal Ultrasound Essential Workshop 115.09.12(共2時50分)、115.09.13(共5時)(1.5/2.75點)",
-   "organizer": "台灣增生療法醫學會、亞東紀念醫院",
-   "location": "亞東紀念醫院復健中心4F",
-   "credits": 2.75,
-   "region": "其他",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4510.html",
-   "categories": [
-    "超音波與介入"
-   ]
-  },
-  {
-   "date": "2026-09-12",
-   "title": "TBMJ 2026年會暨國際學術研討會115.09.12(共5時10分)(2.5點)",
-   "organizer": "台灣骨鬆肌少關節防治學會",
-   "location": "高雄展覽館304a",
-   "credits": 2.5,
-   "region": "南部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4508.html",
-   "categories": [
-    "骨骼肌肉"
-   ]
-  },
-  {
-   "date": "2026-09-12",
-   "title": "以家庭為中心的早期療育-兒童情緒行為處理及親職教育115.09.12(共5時15分)(2點)",
-   "organizer": "臺灣基督教門諾會醫療財團法人門諾醫院兒童發展聯合評估中心",
-   "location": "花蓮縣花蓮市民權五街61號(門諾醫院健康管理中心4樓多功能教室)",
-   "credits": 2.0,
-   "region": "東部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4502.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-09-12",
-   "title": "從看見到探索：以家庭為中心的嬰幼兒知覺動作發展與眼動科技實證(共3時10分)(1.5點)",
-   "organizer": "國立臺灣大學醫學院附設醫院新竹臺大分院、新竹市臨床心理師公會",
-   "location": "新竹市北區經國路一段442巷25號- 1樓生理職能治療室",
-   "credits": 1.5,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4488.html",
-   "categories": []
-  },
-  {
-   "date": "2026-09-12",
-   "title": "跨專業網絡：兒童高風險家庭辨識與因應115.09.12(共2時40分)(1.5點)",
-   "organizer": "台灣基督長老教會馬偕醫療財團法人馬偕紀念醫院-兒童發展暨早期療育評估中心",
-   "location": "台北馬偕紀念醫院平安樓15樓階梯講堂(台北市中山區中山北路二段92號)",
-   "credits": 1.5,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4437.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
   {
    "date": "2026-09-13",
    "title": "「依附觀點下的情緒教育：如何在關係中培養孩子的情緒能力」 專業人員教育訓練課程",
