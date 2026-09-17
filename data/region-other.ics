@@ -18,7 +18,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-abd6d4e4cc98ebffc3248af2563aa03710787d76
-DTSTAMP:20260912T233210Z
+DTSTAMP:20260917T234714Z
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260920
 SUMMARY:115年度早期療育全人照護個案討論會(共2時)(1點)
@@ -32,7 +32,7 @@ DESCRIPTION:主辦：醫療財團法人徐元智先生藥基金會亞東紀
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-7e5a10d6cc4d7650c9197f4c9c87dc8caefca0ea
-DTSTAMP:20260912T233210Z
+DTSTAMP:20260917T234714Z
 DTSTART;VALUE=DATE:20261018
 DTEND;VALUE=DATE:20261019
 SUMMARY:活動與穩定多方跨領域探討傷害預防研討會 115.10.18
@@ -43,5 +43,32 @@ DESCRIPTION:主辦：中華運動培訓教育學會\n積分：3.5 點\n來
  源：台灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/acti
  ve_news/active_info.asp?/4512.html\n（時間為整天，實際起訖請
  看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-2bbed8eff2ff3f9d331d6fa6683ffd8c11976fc8
+DTSTAMP:20260917T234714Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:台灣復健醫學會2026年Cadaver Workshop (8時30分)(8點)
+LOCATION:林口長庚醫院手術技能訓練中心（研究大樓8樓）
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4532.html
+DESCRIPTION:主辦：台灣復健醫學會\n積分：8 點\n來源：台灣
+ 復健醫學會\n簡章與報名：https://www.pmr.org.tw/active_news/acti
+ ve_info.asp?/4532.html\n（時間為整天，實際起訖請看主辦單
+ 位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-02c070d8e197ebe25b44fed522975ad04612fad4
+DTSTAMP:20260917T234714Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:2026年台灣復健專科超音波導引脊椎注射認證(8時30
+ 分)(4點)
+LOCATION:林口長庚醫院手術技能訓練中心（研究大樓8樓）
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4533.html
+DESCRIPTION:主辦：台灣復健醫學會\n積分：4 點\n分類：骨骼
+ 肌肉、超音波與介入\n來源：台灣復健醫學會\n簡章與報
+ 名：https://www.pmr.org.tw/active_news/active_info.asp?/4533.html\n（
+ 時間為整天，實際起訖請看主辦單位公告）
 END:VEVENT
 END:VCALENDAR

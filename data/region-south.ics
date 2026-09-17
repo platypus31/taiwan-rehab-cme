@@ -18,7 +18,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-108aae158f54f2fc57b5de2c2ce481279735626b
-DTSTAMP:20260912T233210Z
+DTSTAMP:20260917T234714Z
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260920
 SUMMARY:2026/09/19-20 ISCD Quality Bone Densitometry Course: Performance\, 
@@ -35,7 +35,7 @@ DESCRIPTION:主辦：中華民國骨質疏鬆症學會\n積分：0.5 點\n
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-aa28a850bc7ec86c0ace4ab835a6803f2a558e08
-DTSTAMP:20260912T233210Z
+DTSTAMP:20260917T234714Z
 DTSTART;VALUE=DATE:20260920
 DTEND;VALUE=DATE:20260921
 SUMMARY:癌症族群運動處方學術研討會暨工作坊第二季 115.09
@@ -50,7 +50,7 @@ DESCRIPTION:主辦：高雄醫學大學附設中和紀念醫院健康台灣
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-193cd8e68c9c8de3061d1c8a24226732c731b1d0
-DTSTAMP:20260912T233210Z
+DTSTAMP:20260917T234714Z
 DTSTART;VALUE=DATE:20260920
 DTEND;VALUE=DATE:20260921
 SUMMARY:頸腰椎超音波進階實作工作坊115.09.20(共4時40分)(4點
@@ -65,7 +65,7 @@ DESCRIPTION:主辦：台灣肌肉骨骼神經超音波醫學會\n積分：4
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-4b4cd4478f2962f97ee7f5dbe5c6d27ae9a29fdb
-DTSTAMP:20260912T233210Z
+DTSTAMP:20260917T234714Z
 DTSTART;VALUE=DATE:20261008
 DTEND;VALUE=DATE:20261009
 SUMMARY:病歷書寫原則115.10.08(共1時30分)(1點)
@@ -75,5 +75,37 @@ DESCRIPTION:主辦：屏基醫療財團法人屏東基督教醫院\n積分
  ：1 點\n來源：台灣復健醫學會\n簡章與報名：https://www.pm
  r.org.tw/active_news/active_info.asp?/4530.html\n（時間為整天，實
  際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-cef39ec877454e1d1951ce9e3a5f85ea509c0a33
+DTSTAMP:20260917T234714Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:社區兒童復能與跨專業照護整合實務115.10.17(共6時)(
+ 3點)
+LOCATION:大林慈濟醫院-大愛樓2樓第二會議室(嘉義縣大林鎮
+ 民生路2號)
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4536.html
+DESCRIPTION:主辦：佛教慈濟醫療財團法人大林慈濟醫院兒童
+ 發展聯合評估中心\n積分：3 點\n分類：兒童復健、長照
+ 與老年\n來源：台灣復健醫學會\n簡章與報名：https://www.p
+ mr.org.tw/active_news/active_info.asp?/4536.html\n（時間為整天，實
+ 際起訖請看主辦單位公告）
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-82585c5f8e86b5e302ef72b04cc51ffe0800771e
+DTSTAMP:20260917T234714Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:『掌握黃金期』~身邊照顧者及自然情境的融入最重
+ 要：當班上有不專心、過動的孩子如何協助115.10.24(共3時
+ )(2點)
+LOCATION:高雄榮民總醫院急診大樓6樓第五會議室(高雄市左
+ 營區大中一路386號)
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4534.html
+DESCRIPTION:主辦：高雄榮民總醫院兒童發展聯合評估中心\n
+ 積分：2 點\n分類：兒童復健\n來源：台灣復健醫學會\n簡
+ 章與報名：https://www.pmr.org.tw/active_news/active_info.asp?/4534.ht
+ ml\n（時間為整天，實際起訖請看主辦單位公告）
 END:VEVENT
 END:VCALENDAR
