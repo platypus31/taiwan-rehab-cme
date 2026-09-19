@@ -17,23 +17,8 @@ TZNAME:CST
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:taiwan-rehab-cme-1b442d42a517be3ba16a7d277d480e3f0db6e9d1
-DTSTAMP:20260912T233210Z
-DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20260920
-SUMMARY:以家庭為中心-MABC-3測驗施測與臨床應用115.09.19(共3
- 時)(1.5點)
-LOCATION:台東市開封街350號(台東基督教醫院之盼望樓6樓會
- 議室)
-URL:https://www.pmr.org.tw/active_news/active_info.asp?/4501.html
-DESCRIPTION:主辦：東基醫療財團法人台東基督教醫院\n積分
- ：1.5 點\n來源：台灣復健醫學會\n簡章與報名：https://www.
- pmr.org.tw/active_news/active_info.asp?/4501.html\n（時間為整天，
- 實際起訖請看主辦單位公告）
-END:VEVENT
-BEGIN:VEVENT
 UID:taiwan-rehab-cme-d952ce1b5bf1bd6f3d506bccbe4bb5175efb2259
-DTSTAMP:20260912T233210Z
+DTSTAMP:20260919T234540Z
 DTSTART;VALUE=DATE:20261003
 DTEND;VALUE=DATE:20261004
 SUMMARY:2026台灣增生療法醫學會台東義診活動115.10.03(共1時)

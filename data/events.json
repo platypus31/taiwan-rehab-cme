@@ -1,89 +1,13 @@
 {
- "updated_at": "2026-09-19T07:44:00+08:00",
- "count": 54,
+ "updated_at": "2026-09-20T07:45:40+08:00",
+ "count": 48,
  "sources": {
-  "台灣復健醫學會": 43,
-  "台灣兒童復健醫學會": 8,
+  "台灣復健醫學會": 38,
+  "台灣兒童復健醫學會": 6,
   "連倚南教授復健醫學教育基金會": 4
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-09-19",
-   "title": "115年度早期療育全人照護個案討論會(共2時)(1點)",
-   "organizer": "醫療財團法人徐元智先生藥基金會亞東紀念醫院兒童發展中心",
-   "location": "亞東紀念醫院 北棟六樓階梯教室",
-   "credits": 1.0,
-   "region": "其他",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4513.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-09-19",
-   "title": "2026/09/19-20 ISCD Quality Bone Densitometry Course: Performance, Interpretation, and Clinical Application for Clinician (ISCD授權骨密課程及TOA考試)(台南)(僅限中華民國骨質疏鬆症學會醫師會員報名)115.09.19(共50分)(0.5點)",
-   "organizer": "中華民國骨質疏鬆症學會",
-   "location": "衛生福利部臺南醫院 急診大樓6樓 大會議廳 (臺南市中西區中山路125號)",
-   "credits": 0.5,
-   "region": "南部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4443.html",
-   "categories": [
-    "骨骼肌肉"
-   ]
-  },
-  {
-   "date": "2026-09-19",
-   "title": "「從治療室走進生活：以家庭為中心的早期療育實踐——家長訪談、需求辨識與家庭日常介入」專業人員教育訓練課程 (積分：1.5)",
-   "organizer": "社團法人台灣兒童青少年發展障礙學會",
-   "location": "線上遠距課程",
-   "credits": 1.5,
-   "region": "線上",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/254.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-09-19",
-   "title": "以家庭為中心-MABC-3測驗施測與臨床應用115.09.19(共3時)(1.5點)",
-   "organizer": "東基醫療財團法人台東基督教醫院",
-   "location": "台東市開封街350號(台東基督教醫院之盼望樓6樓會議室)",
-   "credits": 1.5,
-   "region": "東部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4501.html",
-   "categories": []
-  },
-  {
-   "date": "2026-09-19",
-   "title": "以家庭為中心-動作與認知的交會-以ADHD兒童與青少年為例的物理治療新視角(共3時)(1.5點)",
-   "organizer": "國立臺灣大學醫學院附設醫院新竹臺大分院-早療中心、新竹市臨床心理師公會",
-   "location": "新竹市北區經國路一段442巷25號- 5樓第一會議室",
-   "credits": 1.5,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4451.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-09-19",
-   "title": "帕金森氏症之跨專業復健照護新進展115.09.19(共2時30分)(1.75點)",
-   "organizer": "台灣神經復健醫學會",
-   "location": "台中高鐵集思會議中心 瓦特廳301會議室",
-   "credits": 1.75,
-   "region": "中部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4509.html",
-   "categories": [
-    "神經復健"
-   ]
-  },
   {
    "date": "2026-09-20",
    "title": "以家庭為中心-擴大性及替代性溝通(AAC)的介入及口腔敏 感兒童的挑食處理",
