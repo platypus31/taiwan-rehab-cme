@@ -17,38 +17,8 @@ TZNAME:CST
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:taiwan-rehab-cme-aa28a850bc7ec86c0ace4ab835a6803f2a558e08
-DTSTAMP:20260919T234540Z
-DTSTART;VALUE=DATE:20260920
-DTEND;VALUE=DATE:20260921
-SUMMARY:癌症族群運動處方學術研討會暨工作坊第二季 115.09
- .20(共5時50分)(2.25點)
-LOCATION:高雄醫學大學附設中和紀念醫院啟川6樓第二講堂
-URL:https://www.pmr.org.tw/active_news/active_info.asp?/4504.html
-DESCRIPTION:主辦：高雄醫學大學附設中和紀念醫院健康台灣
- 深耕計畫辦公室\n積分：2.25 點\n分類：運動醫學\n來源：
- 台灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/active_new
- s/active_info.asp?/4504.html\n（時間為整天，實際起訖請看主
- 辦單位公告）
-END:VEVENT
-BEGIN:VEVENT
-UID:taiwan-rehab-cme-193cd8e68c9c8de3061d1c8a24226732c731b1d0
-DTSTAMP:20260919T234540Z
-DTSTART;VALUE=DATE:20260920
-DTEND;VALUE=DATE:20260921
-SUMMARY:頸腰椎超音波進階實作工作坊115.09.20(共4時40分)(4點
- )
-LOCATION:台南市東區大學路西段89號9F(大學廳)
-URL:https://www.pmr.org.tw/active_news/active_info.asp?/4522.html
-DESCRIPTION:主辦：台灣肌肉骨骼神經超音波醫學會\n積分：4
-  點\n分類：骨骼肌肉、超音波與介入\n來源：台灣復健醫
- 學會\n簡章與報名：https://www.pmr.org.tw/active_news/active_info.a
- sp?/4522.html\n（時間為整天，實際起訖請看主辦單位公告
- ）
-END:VEVENT
-BEGIN:VEVENT
 UID:taiwan-rehab-cme-4b4cd4478f2962f97ee7f5dbe5c6d27ae9a29fdb
-DTSTAMP:20260919T234540Z
+DTSTAMP:20260922T002145Z
 DTSTART;VALUE=DATE:20261008
 DTEND;VALUE=DATE:20261009
 SUMMARY:病歷書寫原則115.10.08(共1時30分)(1點)
@@ -61,7 +31,7 @@ DESCRIPTION:主辦：屏基醫療財團法人屏東基督教醫院\n積分
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-cef39ec877454e1d1951ce9e3a5f85ea509c0a33
-DTSTAMP:20260919T234540Z
+DTSTAMP:20260922T002145Z
 DTSTART;VALUE=DATE:20261017
 DTEND;VALUE=DATE:20261018
 SUMMARY:社區兒童復能與跨專業照護整合實務115.10.17(共6時)(
@@ -77,7 +47,7 @@ DESCRIPTION:主辦：佛教慈濟醫療財團法人大林慈濟醫院兒童
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-82585c5f8e86b5e302ef72b04cc51ffe0800771e
-DTSTAMP:20260919T234540Z
+DTSTAMP:20260922T002145Z
 DTSTART;VALUE=DATE:20261024
 DTEND;VALUE=DATE:20261025
 SUMMARY:『掌握黃金期』~身邊照顧者及自然情境的融入最重
