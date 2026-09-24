@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-09-23T07:54:16+08:00",
- "count": 44,
+ "updated_at": "2026-09-24T08:05:57+08:00",
+ "count": 45,
  "sources": {
-  "台灣復健醫學會": 35,
+  "台灣復健醫學會": 36,
   "台灣兒童復健醫學會": 5,
   "連倚南教授復健醫學教育基金會": 4
  },
@@ -441,6 +441,20 @@
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4469.html",
    "categories": [
     "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-11-28",
+   "title": "115年兒童發展暨早期療育專業研討會「發展遲緩兒童之篩檢、幼兒語言發展與篩檢觀察」115.11.28(共2時)(1.5點)",
+   "organizer": "童綜合醫院兒童發展聯合評估中心",
+   "location": "童綜合醫院梧棲院區20樓視聽教室（臺中市梧棲區臺灣大道八段699號）",
+   "credits": 1.5,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4542.html",
+   "categories": [
+    "兒童復健",
+    "吞嚥與語言"
    ]
   },
   {
