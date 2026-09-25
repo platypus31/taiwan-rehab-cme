@@ -1,26 +1,13 @@
 {
- "updated_at": "2026-09-24T08:05:57+08:00",
- "count": 45,
+ "updated_at": "2026-09-25T08:07:29+08:00",
+ "count": 49,
  "sources": {
   "台灣復健醫學會": 36,
-  "台灣兒童復健醫學會": 5,
+  "台灣兒童復健醫學會": 9,
   "連倚南教授復健醫學教育基金會": 4
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-09-24",
-   "title": "115年度兒童發展早期療育專業人員培訓課程暨研討會-「自閉症幼兒的情緒問題調節及引導」(積分：1)",
-   "organizer": "社團法人台灣兒童青少年發展障礙學會",
-   "location": "線上遠距課程",
-   "credits": 1.0,
-   "region": "線上",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/255.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
   {
    "date": "2026-09-26",
    "title": "115 年度早期療育跨專業人員訓練課程-當代神經發展治療觀點下的兒科動 作分析與臨床推理(積分：1.5)",
@@ -118,6 +105,19 @@
    "source": "台灣復健醫學會",
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4496.html",
    "categories": []
+  },
+  {
+   "date": "2026-10-03",
+   "title": "以家庭為中心的讀寫障礙臨床實務 (合辦；積分：1.5)",
+   "organizer": "國立台灣大學醫學院附設醫院新竹台大分院-復健部早療中心 、新竹市臨床心理師公會",
+   "location": "新竹市經國路一段442巷25號-6樓多媒體會議室",
+   "credits": 1.5,
+   "region": "北部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/261.html",
+   "categories": [
+    "兒童復健"
+   ]
   },
   {
    "date": "2026-10-04",
@@ -272,6 +272,32 @@
    ]
   },
   {
+   "date": "2026-10-21",
+   "title": "「學障早期徵兆與介入策略」專業人員教育訓練課程(積分：1)",
+   "organizer": "社團法人台灣兒童青少年 發展障礙學會",
+   "location": "線上課程",
+   "credits": 1.0,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/257.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "title": "「從飲食談起：飲食與 Omega-3 脂肪酸在兒童心理健康中的角色」專業人員 教育訓練課程(積分：1)",
+   "organizer": "社團法人台灣兒童青少年 發展障礙學會",
+   "location": "線上課程",
+   "credits": 1.0,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/258.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
    "date": "2026-10-24",
    "title": "115 年兒童發展暨早期療育專業研討會-看懂身體的求救訊號：兒少創傷知情與感官調節115.10.24(共6時)(3點)",
    "organizer": "埔基醫療財團法人埔里基督教醫院",
@@ -331,6 +357,19 @@
    "source": "台灣復健醫學會",
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4535.html",
    "categories": []
+  },
+  {
+   "date": "2026-10-30",
+   "title": "115 年度早期療育專業人員訓練課程『台大醫院兒童日間病房治療模式介紹』 (積分：0.5)",
+   "organizer": "國立台灣大學醫學院附設醫院",
+   "location": "線上課程",
+   "credits": 0.5,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/259.html",
+   "categories": [
+    "兒童復健"
+   ]
   },
   {
    "date": "2026-10-31",
@@ -441,6 +480,20 @@
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4469.html",
    "categories": [
     "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-11-28",
+   "title": "115 年兒童發展暨早期療育專業研討會「發展遲緩兒童之篩檢、幼兒語言發 展 與篩檢觀察」 (合辦；積分：1.5)",
+   "organizer": "童綜合醫院兒童發展聯合評估 聯合評估中心",
+   "location": "童綜合醫院梧棲院區 20 樓視聽教室（臺中市梧棲區臺灣大道八段 699 號）",
+   "credits": 1.5,
+   "region": "中部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/260.html",
+   "categories": [
+    "兒童復健",
+    "吞嚥與語言"
    ]
   },
   {
