@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-30T08:51:17+08:00",
- "count": 48,
+ "updated_at": "2026-10-01T08:54:04+08:00",
+ "count": 46,
  "sources": {
   "台灣復健醫學會": 36,
   "台灣兒童復健醫學會": 8,
@@ -8,54 +8,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-09-30",
-   "title": "【線上課程】下背痛之成因與治療系列課程115.07.01-115.09.30(共3時17分)(2點)",
-   "organizer": "宏恩醫療財團法人宏恩綜合醫院復健科",
-   "location": "線上課程",
-   "credits": 2.0,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4425.html",
-   "categories": [
-    "骨骼肌肉"
-   ]
-  },
-  {
-   "date": "2026-09-30",
-   "title": "【線上課程】生產與骨盆問題臨床介入系列課程115.07.01-115.09.30(共3時9分)(2點)",
-   "organizer": "宏恩醫療財團法人宏恩綜合醫院復健科",
-   "location": "線上課程",
-   "credits": 2.0,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4426.html",
-   "categories": []
-  },
-  {
-   "date": "2026-09-30",
-   "title": "【線上課程】脊椎手術與上肢生物力學系列課程115.07.01-115.09.30(共3時)(2點)",
-   "organizer": "宏恩醫療財團法人宏恩綜合醫院復健科",
-   "location": "線上課程",
-   "credits": 2.0,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4427.html",
-   "categories": [
-    "骨骼肌肉"
-   ]
-  },
-  {
-   "date": "2026-09-30",
-   "title": "【線上課程】頭痛、偏頭痛與大腦健康系列課程115.07.01-115.09.30(共2時27分)(2點)",
-   "organizer": "宏恩醫療財團法人宏恩綜合醫院復健科",
-   "location": "線上課程",
-   "credits": 2.0,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4428.html",
-   "categories": []
-  },
   {
    "date": "2026-10-03",
    "title": "115年早期療育跨專業研討會「中醫藥於早期療育介入的進展」115.10.03(共3時)(1.5點)",
@@ -95,16 +47,14 @@
   },
   {
    "date": "2026-10-03",
-   "title": "以家庭為中心的讀寫障礙臨床實務 (合辦；積分：1.5)",
-   "organizer": "國立台灣大學醫學院附設醫院新竹台大分院-復健部早療中心 、新竹市臨床心理師公會",
-   "location": "新竹市經國路一段442巷25號-6樓多媒體會議室",
-   "credits": 1.5,
+   "title": "以家庭為中心的讀寫障礙臨床實務(共3時)(2點)",
+   "organizer": "國立臺灣大學醫學院附設醫院新竹臺大分院、新竹市臨床心理師公會",
+   "location": "新竹市北區經國路一段442巷25號- 6樓多媒體會議室",
+   "credits": 2.0,
    "region": "北部",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/261.html",
-   "categories": [
-    "兒童復健"
-   ]
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4544.html",
+   "categories": []
   },
   {
    "date": "2026-10-04",
@@ -285,6 +235,17 @@
    ]
   },
   {
+   "date": "2026-10-23",
+   "title": "第一屆亞洲惡病質學術研討會 First Asian Conference for Cachexia 115.10.23(4時30分)、115.10.24(4時20分)(3/3點)",
+   "organizer": "臺北榮民總醫院高齡醫學中心",
+   "location": "臺北榮民總醫院致德樓第三會議室",
+   "credits": 3.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4545.html",
+   "categories": []
+  },
+  {
    "date": "2026-10-24",
    "title": "115 年兒童發展暨早期療育專業研討會-看懂身體的求救訊號：兒少創傷知情與感官調節115.10.24(共6時)(3點)",
    "organizer": "埔基醫療財團法人埔里基督教醫院",
@@ -347,13 +308,13 @@
   },
   {
    "date": "2026-10-30",
-   "title": "115 年度早期療育專業人員訓練課程『台大醫院兒童日間病房治療模式介紹』 (積分：0.5)",
-   "organizer": "國立台灣大學醫學院附設醫院",
+   "title": "115年度早期療育專業人員訓練課程『台大醫院兒童日間病房治療模式介紹』(共1時)(1點)",
+   "organizer": "臺大醫院兒童發展評估及療育中心",
    "location": "線上課程",
-   "credits": 0.5,
+   "credits": 1.0,
    "region": "線上",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/259.html",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4543.html",
    "categories": [
     "兒童復健"
    ]
@@ -370,6 +331,17 @@
    "categories": [
     "兒童復健"
    ]
+  },
+  {
+   "date": "2026-10-31",
+   "title": "2026第三屆肌少症國際研討會115.10.31(共5時35分)(3點)",
+   "organizer": "TiBIA台灣生醫創新學會",
+   "location": "臺北醫學大學誠樸廳（臺北市吳興街250號）",
+   "credits": 3.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4546.html",
+   "categories": []
   },
   {
    "date": "2026-10-31",
