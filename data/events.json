@@ -1,61 +1,13 @@
 {
- "updated_at": "2026-10-03T08:48:28+08:00",
- "count": 51,
+ "updated_at": "2026-10-04T08:13:01+08:00",
+ "count": 48,
  "sources": {
-  "台灣復健醫學會": 41,
+  "台灣復健醫學會": 37,
   "台灣兒童復健醫學會": 8,
   "連倚南教授復健醫學教育基金會": 4
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-10-03",
-   "title": "115年早期療育跨專業研討會「中醫藥於早期療育介入的進展」115.10.03(共3時)(1.5點)",
-   "organizer": "佛教慈濟醫療財團法人台中慈濟醫院兒童發展聯合評估中心",
-   "location": "佛教慈濟醫療財團法人台中慈濟醫院第一院區大愛樓五樓501會議室",
-   "credits": 1.5,
-   "region": "中部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4507.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-10-03",
-   "title": "2026台灣增生療法醫學會台東義診活動115.10.03(共1時)、115.10.04(共40分)(1/0.5點)",
-   "organizer": "台灣增生療法醫學會",
-   "location": "台東聖母醫院3樓會議室",
-   "credits": 0.5,
-   "region": "東部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4527.html",
-   "categories": [
-    "超音波與介入"
-   ]
-  },
-  {
-   "date": "2026-10-03",
-   "title": "SECC Congress 2026 Taipei 暨2026智慧急重症醫療國際會議&The 10th Asia-Pacific Conference on ICU Early Rehabilitation Taipei 2026：115.10.03(共4時20分) 、115.10.04(共6時55分)(2.7/3.3點)",
-   "organizer": "台灣急救加護醫學會",
-   "location": "台大醫院國際會議中心",
-   "credits": 3.3,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4496.html",
-   "categories": []
-  },
-  {
-   "date": "2026-10-03",
-   "title": "以家庭為中心的讀寫障礙臨床實務(共3時)(2點)",
-   "organizer": "國立臺灣大學醫學院附設醫院新竹臺大分院、新竹市臨床心理師公會",
-   "location": "新竹市北區經國路一段442巷25號- 6樓多媒體會議室",
-   "credits": 2.0,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4544.html",
-   "categories": []
-  },
   {
    "date": "2026-10-04",
    "title": "115 年度兒童發展早期療育專業人員培訓課程暨研討會 (合辦；積分：1.5)",
@@ -254,6 +206,19 @@
    "region": "中部",
    "source": "台灣復健醫學會",
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4538.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-10-24",
+   "title": "「早期療育兒童成效評量」專業人員教育訓練課程(積分：1.5)",
+   "organizer": "社團法人台灣兒童青少年發展障礙學會",
+   "location": "線上課程",
+   "credits": 1.5,
+   "region": "線上",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/262.html",
    "categories": [
     "兒童復健"
    ]
@@ -652,7 +617,6 @@
   "北部": "region-north.ics",
   "中部": "region-central.ics",
   "南部": "region-south.ics",
-  "東部": "region-east.ics",
   "線上": "region-online.ics",
   "其他": "region-other.ics"
  }
