@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-07T09:06:26+08:00",
- "count": 46,
+ "updated_at": "2026-10-08T09:25:39+08:00",
+ "count": 50,
  "sources": {
-  "台灣復健醫學會": 36,
+  "台灣復健醫學會": 40,
   "台灣兒童復健醫學會": 8,
   "連倚南教授復健醫學教育基金會": 3
  },
@@ -355,6 +355,19 @@
    "categories": []
   },
   {
+   "date": "2026-11-07",
+   "title": "2026長庚運動醫學第七屆年度學術研討會115.11.07(共4時50分)(3點)",
+   "organizer": "林口長庚紀念醫院",
+   "location": "林口長庚紀念醫院 復健大樓一樓 第一會議廳",
+   "credits": 3.0,
+   "region": "其他",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4553.html",
+   "categories": [
+    "運動醫學"
+   ]
+  },
+  {
    "date": "2026-11-14",
    "title": "115年兒童發展暨早期療育專業研討會「跨領域團隊照護課程- ADHD及兒童常見神經發展行為問題」115.11.14(共3時)(1.5點)",
    "organizer": "童綜合醫院兒童發展聯合評估中心",
@@ -394,6 +407,20 @@
    ]
   },
   {
+   "date": "2026-11-14",
+   "title": "守護兒童「高」成長-實戰篇：以家庭為中心的運動處方工作坊115.11.14(共2時30分)(2.5點)",
+   "organizer": "臺灣早期療育學會",
+   "location": "台大景福館一樓會議廳",
+   "credits": 2.5,
+   "region": "其他",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4554.html",
+   "categories": [
+    "兒童復健",
+    "運動醫學"
+   ]
+  },
+  {
    "date": "2026-11-15",
    "title": "教育演講11 膝關節疾患復健治療面面觀115.11.15(共1時30分)(1.5點)",
    "organizer": "臺灣醫學會",
@@ -405,6 +432,17 @@
    "categories": [
     "骨骼肌肉"
    ]
+  },
+  {
+   "date": "2026-11-21",
+   "title": "2026癌症復健研討會-乳癌復健115.11.21(共3時20分)(3點)",
+   "organizer": "財團法人台北市連倚南教授復健醫學教育基金會",
+   "location": "臺大醫院復健大樓四樓 (台北市常德街1號)",
+   "credits": 3.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4556.html",
+   "categories": []
   },
   {
    "date": "2026-11-21",
@@ -584,6 +622,19 @@
     "疼痛",
     "長照與老年"
    ]
+  },
+  {
+   "date": "2027-01-09",
+   "title": "Vision Interventional Pain Symposium Hualien Chapter (VIPS-Hualien 2027) 116.01.09(共5時)、116.01.10(共5時)(3/2.5點)",
+   "organizer": "台灣疼痛醫學會",
+   "location": "花蓮慈濟醫院",
+   "credits": 2.5,
+   "region": "東部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4555.html",
+   "categories": [
+    "疼痛"
+   ]
   }
  ],
  "feeds": {
@@ -591,6 +642,7 @@
   "北部": "region-north.ics",
   "中部": "region-central.ics",
   "南部": "region-south.ics",
+  "東部": "region-east.ics",
   "線上": "region-online.ics",
   "其他": "region-other.ics"
  }
