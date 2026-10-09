@@ -1,24 +1,13 @@
 {
- "updated_at": "2026-10-08T09:25:39+08:00",
- "count": 50,
+ "updated_at": "2026-10-09T09:32:34+08:00",
+ "count": 53,
  "sources": {
-  "台灣復健醫學會": 40,
-  "台灣兒童復健醫學會": 8,
+  "台灣復健醫學會": 41,
+  "台灣兒童復健醫學會": 10,
   "連倚南教授復健醫學教育基金會": 3
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-10-08",
-   "title": "病歷書寫原則115.10.08(共1時30分)(1點)",
-   "organizer": "屏基醫療財團法人屏東基督教醫院",
-   "location": "屏東基督教醫院約翰大樓簡報室",
-   "credits": 1.0,
-   "region": "南部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4530.html",
-   "categories": []
-  },
   {
    "date": "2026-10-17",
    "title": "從 NDBI 到家長教練：以家庭為中心的自然情境介入實踐 (積分：1.5)",
@@ -220,6 +209,19 @@
    "categories": []
   },
   {
+   "date": "2026-10-29",
+   "title": "早期療育人員研習課程(積分：2.25)",
+   "organizer": "衛生福利部屏東醫院 兒童發展聯合評估中心",
+   "location": "衛生福利部屏東醫院 二樓屏杏雅築會議室(屏東巿自由路270號)",
+   "credits": 2.25,
+   "region": "南部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/264.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
    "date": "2026-10-30",
    "title": "115年度早期療育專業人員訓練課程『台大醫院兒童日間病房治療模式介紹』(共1時)(1點)",
    "organizer": "臺大醫院兒童發展評估及療育中心",
@@ -356,6 +358,32 @@
   },
   {
    "date": "2026-11-07",
+   "title": "115年度早期療育專業人員訓練課程『自閉症類群障礙者擴大性溝通治療』(共3時)(1.5點)",
+   "organizer": "臺大醫院兒童發展評估及療育中心",
+   "location": "臺北市中正區中山南路8號 B1講堂",
+   "credits": 1.5,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4558.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "title": "2026年兒童發展早期療育專業知能、服務方案及研究成果發表會115.11.07(共1時30分)、115.11.08(共6時)(1/3點)",
+   "organizer": "臺灣兒童發展早期療育協會",
+   "location": "台中市西區民生路227號(國立臺中教育大學英才樓R116會議室)",
+   "credits": 3.0,
+   "region": "中部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4557.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-11-07",
    "title": "2026長庚運動醫學第七屆年度學術研討會115.11.07(共4時50分)(3點)",
    "organizer": "林口長庚紀念醫院",
    "location": "林口長庚紀念醫院 復健大樓一樓 第一會議廳",
@@ -404,6 +432,20 @@
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4551.html",
    "categories": [
     "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-11-14",
+   "title": "守護兒童「高」成長-實戰篇：以家庭為中心的運動處方工作坊(合辦；積分1.5)",
+   "organizer": "臺灣早期療育學會",
+   "location": "台大景福館一樓會議廳",
+   "credits": 1.5,
+   "region": "其他",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/265.html",
+   "categories": [
+    "兒童復健",
+    "運動醫學"
    ]
   },
   {
