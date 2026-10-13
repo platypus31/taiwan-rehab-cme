@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-12T08:48:44+08:00",
- "count": 53,
+ "updated_at": "2026-10-13T10:45:46+08:00",
+ "count": 56,
  "sources": {
   "台灣復健醫學會": 41,
-  "台灣兒童復健醫學會": 10,
+  "台灣兒童復健醫學會": 14,
   "連倚南教授復健醫學教育基金會": 3
  },
  "errors": [],
@@ -371,6 +371,19 @@
   },
   {
    "date": "2026-11-07",
+   "title": "2026年兒童發展早期療育專業知能、服務方案及研究成果發表會 (積分：4)",
+   "organizer": "臺灣兒童發展早期療育協會",
+   "location": "台中市西區民生路227號(國立臺中教育大學英才樓R116會議室)",
+   "credits": 4.0,
+   "region": "中部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/268.html",
+   "categories": [
+    "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-11-07",
    "title": "2026年兒童發展早期療育專業知能、服務方案及研究成果發表會115.11.07(共1時30分)、115.11.08(共6時)(1/3點)",
    "organizer": "臺灣兒童發展早期療育協會",
    "location": "台中市西區民生路227號(國立臺中教育大學英才樓R116會議室)",
@@ -393,6 +406,20 @@
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4553.html",
    "categories": [
     "運動醫學"
+   ]
+  },
+  {
+   "date": "2026-11-14",
+   "title": "115 年度早期療育跨專業人員訓練課程「語言發展遲緩與學習障礙之間的 關聯性」(積分：3)",
+   "organizer": "臺中榮民總醫院復健醫學部",
+   "location": "本院教學大樓 1 樓第五會議室（臺中市西屯區東大路一段 192 號）",
+   "credits": 3.0,
+   "region": "中部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/267.html",
+   "categories": [
+    "兒童復健",
+    "吞嚥與語言"
    ]
   },
   {
@@ -473,6 +500,19 @@
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4552.html",
    "categories": [
     "骨骼肌肉"
+   ]
+  },
+  {
+   "date": "2026-11-16",
+   "title": "依愛(甘え, Amae)國際研討會(積分：3)",
+   "organizer": "中國醫藥大學兒童醫院 兒少發展暨心智行為科",
+   "location": "中國醫藥大學附設醫院癌症中心大樓一樓階梯會議室(台中市北區學士路 6 號)",
+   "credits": 3.0,
+   "region": "中部",
+   "source": "台灣兒童復健醫學會",
+   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/269.html",
+   "categories": [
+    "兒童復健"
    ]
   },
   {
