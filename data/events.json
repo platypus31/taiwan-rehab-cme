@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-14T08:43:44+08:00",
- "count": 56,
+ "updated_at": "2026-10-15T08:10:54+08:00",
+ "count": 57,
  "sources": {
-  "台灣復健醫學會": 41,
+  "台灣復健醫學會": 42,
   "台灣兒童復健醫學會": 14,
   "連倚南教授復健醫學教育基金會": 3
  },
@@ -235,6 +235,19 @@
    ]
   },
   {
+   "date": "2026-10-30",
+   "title": "TBMJ 骨肌關行動力論壇(Webinar) 115.10.30(共50分)(0.5點)",
+   "organizer": "台灣骨鬆肌少關節防治學會",
+   "location": "線上課程",
+   "credits": 0.5,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4559.html",
+   "categories": [
+    "骨骼肌肉"
+   ]
+  },
+  {
    "date": "2026-10-31",
    "title": "115 年度以家庭為中心早期療育專業研討會 「藝術治療如何應用於特需兒童」(共3時)(2點)",
    "organizer": "新竹市立馬偕兒童醫院",
@@ -384,19 +397,6 @@
   },
   {
    "date": "2026-11-07",
-   "title": "2026年兒童發展早期療育專業知能、服務方案及研究成果發表會115.11.07(共1時30分)、115.11.08(共6時)(1/3點)",
-   "organizer": "臺灣兒童發展早期療育協會",
-   "location": "台中市西區民生路227號(國立臺中教育大學英才樓R116會議室)",
-   "credits": 3.0,
-   "region": "中部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4557.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-11-07",
    "title": "2026長庚運動醫學第七屆年度學術研討會115.11.07(共4時50分)(3點)",
    "organizer": "林口長庚紀念醫院",
    "location": "林口長庚紀念醫院 復健大樓一樓 第一會議廳",
@@ -433,6 +433,19 @@
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4531.html",
    "categories": [
     "兒童復健"
+   ]
+  },
+  {
+   "date": "2026-11-14",
+   "title": "2026經顱磁刺激實務工作坊《進階班》115.11.14(共5時40分)(4點)",
+   "organizer": "台灣神經復健醫學會",
+   "location": "臺大醫院復健部（復健大樓4樓 415室）",
+   "credits": 4.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4560.html",
+   "categories": [
+    "神經復健"
    ]
   },
   {
