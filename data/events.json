@@ -1,24 +1,13 @@
 {
- "updated_at": "2026-10-16T07:57:37+08:00",
- "count": 62,
+ "updated_at": "2026-10-17T08:01:56+08:00",
+ "count": 61,
  "sources": {
-  "台灣復健醫學會": 44,
+  "台灣復健醫學會": 43,
   "台灣兒童復健醫學會": 17,
   "連倚南教授復健醫學教育基金會": 3
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-10-16",
-   "title": "2026 International Conference for Healthy Aging and Community Resilience 115.10.16(共1時40分)、115.10.17(共1時10分)(1/0.5點)",
-   "organizer": "國家高齡醫學暨健康福祉研究中心",
-   "location": "國家高齡醫學暨健康福祉研究中心國際會議廳(632007 雲林縣虎尾鎮學府路95號之1)",
-   "credits": 0.5,
-   "region": "中部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4561.html",
-   "categories": []
-  },
   {
    "date": "2026-10-17",
    "title": "從 NDBI 到家長教練：以家庭為中心的自然情境介入實踐 (積分：1.5)",
