@@ -1,75 +1,13 @@
 {
- "updated_at": "2026-10-18T07:36:31+08:00",
- "count": 59,
+ "updated_at": "2026-10-19T07:47:30+08:00",
+ "count": 54,
  "sources": {
-  "台灣復健醫學會": 42,
+  "台灣復健醫學會": 38,
   "台灣兒童復健醫學會": 16,
-  "連倚南教授復健醫學教育基金會": 3
+  "連倚南教授復健醫學教育基金會": 2
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-10-18",
-   "title": "115年度秋季學術研討會 115.10.18 (共3時10分)(2點)",
-   "organizer": "台灣運動醫學醫學會",
-   "location": "集思台大會議中心蘇格拉底廳 (臺北市大安區羅斯福路四段85號B1)",
-   "credits": 2.0,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4540.html",
-   "categories": [
-    "運動醫學"
-   ]
-  },
-  {
-   "date": "2026-10-18",
-   "title": "TMS線上實務研討會115.01.18(共2小時)、115.03.15(共2小時)、115.05.17(共2小時)、115.07.12(共2小時)、115.10.18(共2小時)(1/1/1/1/1點)",
-   "organizer": "台灣臨床TMS腦刺激學會",
-   "location": "線上課程",
-   "credits": 1.0,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4334.html",
-   "categories": []
-  },
-  {
-   "date": "2026-10-18",
-   "title": "『加開』骨骼肌肉系統超音波檢查工作坊-診斷與注射班",
-   "organizer": "財團法人台北市連倚南教授復健醫學教育基金會",
-   "location": "台北市常德街1號",
-   "credits": null,
-   "region": "北部",
-   "source": "連倚南教授復健醫學教育基金會",
-   "url": "https://lien.foundation/ultrasound_diagnosis_injection/",
-   "categories": [
-    "超音波與介入"
-   ]
-  },
-  {
-   "date": "2026-10-18",
-   "title": "活動與穩定多方跨領域探討傷害預防研討會 115.10.18(共6時10分)(3.5點)",
-   "organizer": "中華運動培訓教育學會",
-   "location": "張榮發基金會國際中心",
-   "credits": 3.5,
-   "region": "其他",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4512.html",
-   "categories": []
-  },
-  {
-   "date": "2026-10-18",
-   "title": "肌肉骨骼系統超音波工作坊—2026診斷及注射班115.10.18(共6時25分)(6點)",
-   "organizer": "財團法人台北市連倚南教授復健醫學教育基金會、台灣肌肉骨骼神經超音波醫學會",
-   "location": "臺大醫院復健大樓四樓 (台北市常德街1號)",
-   "credits": 6.0,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4523.html",
-   "categories": [
-    "骨骼肌肉",
-    "超音波與介入"
-   ]
-  },
   {
    "date": "2026-10-21",
    "title": "「學障早期徵兆與介入策略」專業人員教育訓練課程(積分：1)",
