@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-22T08:17:57+08:00",
- "count": 59,
+ "updated_at": "2026-10-23T08:14:39+08:00",
+ "count": 60,
  "sources": {
-  "台灣復健醫學會": 43,
+  "台灣復健醫學會": 44,
   "台灣兒童復健醫學會": 16,
   "連倚南教授復健醫學教育基金會": 2
  },
@@ -462,6 +462,19 @@
    "source": "台灣復健醫學會",
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4556.html",
    "categories": []
+  },
+  {
+   "date": "2026-11-21",
+   "title": "兒童早期自殺自傷防治課程115.11.21(共3時)(1點)",
+   "organizer": "衛生福利部臺北醫院",
+   "location": "衛生福利部臺北醫院8樓國際會議廳(新北市新莊區思源路127號)",
+   "credits": 1.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4568.html",
+   "categories": [
+    "兒童復健"
+   ]
   },
   {
    "date": "2026-11-21",
