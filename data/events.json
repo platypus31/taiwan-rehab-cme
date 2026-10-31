@@ -1,39 +1,13 @@
 {
- "updated_at": "2026-10-30T09:25:11+08:00",
+ "updated_at": "2026-10-31T09:11:51+08:00",
  "count": 57,
  "sources": {
   "台灣復健醫學會": 43,
-  "台灣兒童復健醫學會": 14,
+  "台灣兒童復健醫學會": 13,
   "連倚南教授復健醫學教育基金會": 2
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-10-30",
-   "title": "115年度早期療育專業人員訓練課程『台大醫院兒童日間病房治療模式介紹』(共1時)(1點)",
-   "organizer": "臺大醫院兒童發展評估及療育中心",
-   "location": "線上課程",
-   "credits": 1.0,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4543.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-10-30",
-   "title": "TBMJ 骨肌關行動力論壇(Webinar) 115.10.30(共50分)(0.5點)",
-   "organizer": "台灣骨鬆肌少關節防治學會",
-   "location": "線上課程",
-   "credits": 0.5,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4559.html",
-   "categories": [
-    "骨骼肌肉"
-   ]
-  },
   {
    "date": "2026-10-31",
    "title": "115 年度以家庭為中心早期療育專業研討會 「藝術治療如何應用於特需兒童」(共3時)(2點)",
@@ -206,6 +180,19 @@
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4553.html",
    "categories": [
     "運動醫學"
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "title": "ASIA IDDSI CONFERENCE 2026: “IDDSI REALITIES” 115.11.07(共1時30分)(1點)",
+   "organizer": "台灣咀嚼吞嚥障礙醫學學會",
+   "location": "台北市大安區新生南路三段30號(公務人力發展學院福華國際文教會館前瞻廳)",
+   "credits": 1.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4575.html",
+   "categories": [
+    "吞嚥與語言"
    ]
   },
   {
@@ -508,6 +495,19 @@
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4542.html",
    "categories": [
     "兒童復健",
+    "吞嚥與語言"
+   ]
+  },
+  {
+   "date": "2026-11-29",
+   "title": "『支持「由口進食」的進食支持實務與體系建構-借鏡日本臨床現場的跨專業合作、營養與飲食照護』課程115.11.29(共5時)(2.5點)",
+   "organizer": "台灣咀嚼吞嚥障礙醫學學會",
+   "location": "台北市中正區常德街1號(台大醫院西址復健大樓4樓415教室)",
+   "credits": 2.5,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4574.html",
+   "categories": [
     "吞嚥與語言"
    ]
   },
