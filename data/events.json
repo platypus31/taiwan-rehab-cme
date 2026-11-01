@@ -1,98 +1,13 @@
 {
- "updated_at": "2026-10-31T09:11:51+08:00",
- "count": 57,
+ "updated_at": "2026-11-01T08:32:25+08:00",
+ "count": 50,
  "sources": {
-  "台灣復健醫學會": 43,
+  "台灣復健醫學會": 37,
   "台灣兒童復健醫學會": 13,
   "連倚南教授復健醫學教育基金會": 2
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-10-31",
-   "title": "115 年度以家庭為中心早期療育專業研討會 「藝術治療如何應用於特需兒童」(共3時)(2點)",
-   "organizer": "新竹市立馬偕兒童醫院",
-   "location": "新竹市東區建功二路28號 新竹市立馬偕兒童醫院9樓國際會議廳",
-   "credits": 2.0,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4547.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-10-31",
-   "title": "115年度 台灣兒童復健醫學會-「與自閉症家長建立親職同盟—學齡前自閉特質鑑別、親職溝通與心理治療」(主辦；積分：3.5)",
-   "organizer": "台灣兒童復健醫學會",
-   "location": "線上課程",
-   "credits": 3.5,
-   "region": "線上",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/253.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
-  {
-   "date": "2026-10-31",
-   "title": "2026第三屆肌少症國際研討會115.10.31(共5時35分)(3點)",
-   "organizer": "TiBIA台灣生醫創新學會",
-   "location": "臺北醫學大學誠樸廳（臺北市吳興街250號）",
-   "credits": 3.0,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4546.html",
-   "categories": []
-  },
-  {
-   "date": "2026-10-31",
-   "title": "台灣中青年神經外科醫學會及台灣痠痛研究學會《SNG2026》聯合年會115.10.31(共6時50分)、115.10.31(共6時)、115.11.01(共2時50分)(4/3；2點)",
-   "organizer": "台灣痠痛研究學會 Taiwan Sng Society",
-   "location": "COZZI Blu 和逸飯店桃園館/中央研究院生物醫學科學研究所；32056桃園市中壢區春德路101號/115201台北市南港區研究院路二段128號",
-   "credits": 2.0,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4550.html",
-   "categories": []
-  },
-  {
-   "date": "2026-10-31",
-   "title": "台灣復健醫學會115年期中研討會(4點)",
-   "organizer": "台灣復健醫學會、台中市立老人復健綜合醫院復健部",
-   "location": "台中市立老人復健綜合醫院（B 棟 10 樓會議室）",
-   "credits": 4.0,
-   "region": "中部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4505.html",
-   "categories": []
-  },
-  {
-   "date": "2026-10-31",
-   "title": "第八屆亞太醫用超音波新進展國際論壇暨中華民國醫用超音波學會42周年2026年會暨第四次學術研討會115.10.31(共3時30分)(2.5點)",
-   "organizer": "中華民國醫用超音波學會",
-   "location": "台北國際會議中心",
-   "credits": 2.5,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4573.html",
-   "categories": [
-    "超音波與介入"
-   ]
-  },
-  {
-   "date": "2026-10-31",
-   "title": "與自閉症家長建立親職同盟—學齡前自閉特質鑑別、親職溝通與心理治療115.10.31 (共3時)(1.5點)",
-   "organizer": "台灣兒童復健醫學會",
-   "location": "線上課程",
-   "credits": 1.5,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4529.html",
-   "categories": [
-    "兒童復健"
-   ]
-  },
   {
    "date": "2026-11-01",
    "title": "2026/11/01 ISCD Body Composition Analysis Course (台中)115.11.01(共5時20分)(2.7點)",
