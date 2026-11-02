@@ -1,52 +1,13 @@
 {
- "updated_at": "2026-11-01T08:32:25+08:00",
- "count": 50,
+ "updated_at": "2026-11-02T09:06:27+08:00",
+ "count": 47,
  "sources": {
-  "台灣復健醫學會": 37,
+  "台灣復健醫學會": 34,
   "台灣兒童復健醫學會": 13,
   "連倚南教授復健醫學教育基金會": 2
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-11-01",
-   "title": "2026/11/01 ISCD Body Composition Analysis Course (台中)115.11.01(共5時20分)(2.7點)",
-   "organizer": "中華民國骨質疏鬆症學會",
-   "location": "光田醫院向上院區（台中市沙鹿區向上路7段127號B棟14樓1401會議室）",
-   "credits": 2.7,
-   "region": "中部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4489.html",
-   "categories": [
-    "骨骼肌肉"
-   ]
-  },
-  {
-   "date": "2026-11-01",
-   "title": "原住民族與多元族群文化安全與長照復能實務115.11.01(共6時)(3點)",
-   "organizer": "衛生福利部桃園醫院新屋分院復健科",
-   "location": "衛生福利部桃園醫院新屋分院六樓第一會議室",
-   "credits": 3.0,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4548.html",
-   "categories": [
-    "長照與老年"
-   ]
-  },
-  {
-   "date": "2026-11-01",
-   "title": "疼痛擂台8：真實病人工作坊-全脊守護，從頸到骶115.11.01(共6時)(3點)",
-   "organizer": "台灣區域麻醉暨止痛醫學會",
-   "location": "中山醫學大學附設醫院",
-   "credits": 3.0,
-   "region": "中部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4549.html",
-   "categories": [
-    "疼痛"
-   ]
-  },
   {
    "date": "2026-11-07",
    "title": "115.11.07臨床下肢生物力學培訓課程(共6時30分)、115.11.08臨床下肢生物力學培訓課程(共6時30分)(6.5/3點)",
