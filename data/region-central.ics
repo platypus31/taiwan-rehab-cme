@@ -17,39 +17,8 @@ TZNAME:CST
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:taiwan-rehab-cme-6f0ca77f4a7bc867ed37eea224e085cfa5efaf80
-DTSTAMP:20261108T005748Z
-DTSTART;VALUE=DATE:20261114
-DTEND;VALUE=DATE:20261115
-SUMMARY:115 年度早期療育跨專業人員訓練課程「語言發展遲
- 緩與學習障礙之間的 關聯性」(積分：3)
-LOCATION:本院教學大樓 1 樓第五會議室（臺中市西屯區東大
- 路一段 192 號）
-URL:https://www.tapedpmr.org.tw/activity/info.asp?/267.html
-DESCRIPTION:主辦：臺中榮民總醫院復健醫學部\n積分：3 點\n
- 分類：兒童復健、吞嚥與語言\n來源：台灣兒童復健醫學
- 會\n簡章與報名：https://www.tapedpmr.org.tw/activity/info.asp?/267.
- html\n（時間為整天，實際起訖請看主辦單位公告）
-END:VEVENT
-BEGIN:VEVENT
-UID:taiwan-rehab-cme-7320b41d3b9a7ae488790a0487d5cf4dba7cc59f
-DTSTAMP:20261108T005748Z
-DTSTART;VALUE=DATE:20261114
-DTEND;VALUE=DATE:20261115
-SUMMARY:115年兒童發展暨早期療育專業研討會「跨領域團隊
- 照護課程- ADHD及兒童常見神經發展行為問題」115.11.14(共3
- 時)(1.5點)
-LOCATION:童綜合醫院梧棲院區20樓視聽教室（臺中市梧棲區
- 臺灣大道八段699號）
-URL:https://www.pmr.org.tw/active_news/active_info.asp?/4531.html
-DESCRIPTION:主辦：童綜合醫院兒童發展聯合評估中心\n積分
- ：1.5 點\n分類：兒童復健\n來源：台灣復健醫學會\n簡章
- 與報名：https://www.pmr.org.tw/active_news/active_info.asp?/4531.html\
- n（時間為整天，實際起訖請看主辦單位公告）
-END:VEVENT
-BEGIN:VEVENT
 UID:taiwan-rehab-cme-9a1861e587a60ee120fefba7b20b3294a18429da
-DTSTAMP:20261108T005748Z
+DTSTAMP:20261115T012530Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:依愛(甘え\, Amae)國際研討會(積分：3)
@@ -64,7 +33,7 @@ DESCRIPTION:主辦：中國醫藥大學兒童醫院 兒少發展暨心智
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-d588f1e2055646fbceec0e3b2504bb177467a28f
-DTSTAMP:20261108T005748Z
+DTSTAMP:20261115T012530Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:115 年兒童發展暨早期療育專業研討會「發展遲緩兒
@@ -81,7 +50,7 @@ DESCRIPTION:主辦：童綜合醫院兒童發展聯合評估 聯合評估
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-d8fcf523b441bc0a6ecdab2cf77800726c65c6e0
-DTSTAMP:20261108T005748Z
+DTSTAMP:20261115T012530Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:115年兒童發展暨早期療育專業研討會「發展遲緩兒
@@ -98,7 +67,7 @@ DESCRIPTION:主辦：童綜合醫院兒童發展聯合評估中心\n積分
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-c943d5f46fb4ff61e47124fb91563ab279ebd1d0
-DTSTAMP:20261108T005748Z
+DTSTAMP:20261115T012530Z
 DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
 SUMMARY:以兒童為中心的早期療育―從醫療評估、教育支持
