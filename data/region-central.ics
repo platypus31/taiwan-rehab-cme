@@ -17,23 +17,8 @@ TZNAME:CST
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:taiwan-rehab-cme-9a1861e587a60ee120fefba7b20b3294a18429da
-DTSTAMP:20261115T012530Z
-DTSTART;VALUE=DATE:20261116
-DTEND;VALUE=DATE:20261117
-SUMMARY:依愛(甘え\, Amae)國際研討會(積分：3)
-LOCATION:中國醫藥大學附設醫院癌症中心大樓一樓階梯會議
- 室(台中市北區學士路 6 號)
-URL:https://www.tapedpmr.org.tw/activity/info.asp?/269.html
-DESCRIPTION:主辦：中國醫藥大學兒童醫院 兒少發展暨心智
- 行為科\n積分：3 點\n分類：兒童復健\n來源：台灣兒童復
- 健醫學會\n簡章與報名：https://www.tapedpmr.org.tw/activity/info.
- asp?/269.html\n（時間為整天，實際起訖請看主辦單位公告
- ）
-END:VEVENT
-BEGIN:VEVENT
 UID:taiwan-rehab-cme-d588f1e2055646fbceec0e3b2504bb177467a28f
-DTSTAMP:20261115T012530Z
+DTSTAMP:20261117T041414Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:115 年兒童發展暨早期療育專業研討會「發展遲緩兒
@@ -50,7 +35,7 @@ DESCRIPTION:主辦：童綜合醫院兒童發展聯合評估 聯合評估
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-d8fcf523b441bc0a6ecdab2cf77800726c65c6e0
-DTSTAMP:20261115T012530Z
+DTSTAMP:20261117T041414Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:115年兒童發展暨早期療育專業研討會「發展遲緩兒
@@ -67,7 +52,7 @@ DESCRIPTION:主辦：童綜合醫院兒童發展聯合評估中心\n積分
 END:VEVENT
 BEGIN:VEVENT
 UID:taiwan-rehab-cme-c943d5f46fb4ff61e47124fb91563ab279ebd1d0
-DTSTAMP:20261115T012530Z
+DTSTAMP:20261117T041414Z
 DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
 SUMMARY:以兒童為中心的早期療育―從醫療評估、教育支持
