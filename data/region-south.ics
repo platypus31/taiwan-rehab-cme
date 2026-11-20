@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//platypusbot//taiwan-rehab-cme//ZH-TW
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:復健醫學 繼續教育活動（南部）
+X-WR-TIMEZONE:Asia/Taipei
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Asia/Taipei
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+TZNAME:CST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:taiwan-rehab-cme-aa6a78f2b91ae40c242cc6392b09093c7aac6271
+DTSTAMP:20261120T024417Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:癌症族群運動處方學術研討會暨工作坊第三季 116.01
+ .16(共5時30分)(2.25點)
+LOCATION:高雄醫學大學附設中和紀念醫院啟川6樓第二講堂
+URL:https://www.pmr.org.tw/active_news/active_info.asp?/4578.html
+DESCRIPTION:主辦：高雄醫學大學附設中和紀念醫院健康台灣
+ 深耕計畫辦公室\n積分：2.25 點\n分類：運動醫學\n來源：
+ 台灣復健醫學會\n簡章與報名：https://www.pmr.org.tw/active_new
+ s/active_info.asp?/4578.html\n（時間為整天，實際起訖請看主
+ 辦單位公告）
+END:VEVENT
+END:VCALENDAR
