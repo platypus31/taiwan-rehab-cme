@@ -1,80 +1,13 @@
 {
- "updated_at": "2026-11-22T09:45:30+08:00",
- "count": 33,
+ "updated_at": "2026-11-23T10:03:32+08:00",
+ "count": 28,
  "sources": {
-  "台灣復健醫學會": 28,
-  "台灣兒童復健醫學會": 5,
+  "台灣復健醫學會": 24,
+  "台灣兒童復健醫學會": 4,
   "連倚南教授復健醫學教育基金會": 1
  },
  "errors": [],
  "events": [
-  {
-   "date": "2026-11-22",
-   "title": "115 年11月南區地方季會課程115.11.22(共40分)(1點)",
-   "organizer": "台灣老年學暨老年醫學會",
-   "location": "實體：奇美醫院第三醫療大樓3樓第332會議室；線上課程",
-   "credits": 1.0,
-   "region": "線上",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4526.html",
-   "categories": [
-    "長照與老年"
-   ]
-  },
-  {
-   "date": "2026-11-22",
-   "title": "肌筋膜疼痛評估與治療: 臨床實務工作坊(上)115.11.22(共6時40分)(3.5點)",
-   "organizer": "宏恩醫療財團法人宏恩綜合醫院復健科",
-   "location": "杏誠復健診所 (台北市大安區信義路四段173號2樓)",
-   "credits": 3.5,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4566.html",
-   "categories": [
-    "疼痛"
-   ]
-  },
-  {
-   "date": "2026-11-22",
-   "title": "超音波解剖暨臨床實戰經驗分享工作坊115.11.22(共9時)(4.5點)",
-   "organizer": "社團法人台灣中西醫結合復健醫學會",
-   "location": "台北維醫診所 | 台北市大安區師大路105巷2號",
-   "credits": 4.5,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4469.html",
-   "categories": [
-    "超音波與介入"
-   ]
-  },
-  {
-   "date": "2026-11-22",
-   "title": "體適能結合兒童姿勢引導與臨床實務應用",
-   "organizer": "衛生福利部臺北醫院",
-   "location": "衛生福利部臺北醫院8樓國際會議廳(新北市新莊區思源路127號)",
-   "credits": null,
-   "region": "北部",
-   "source": "台灣兒童復健醫學會",
-   "url": "https://www.tapedpmr.org.tw/activity/info.asp?/273.html",
-   "categories": [
-    "兒童復健",
-    "運動醫學"
-   ]
-  },
-  {
-   "date": "2026-11-22",
-   "title": "體適能結合兒童姿勢引導與臨床實務應用115.11.22(共3時)(1.5點)",
-   "organizer": "衛生福利部臺北醫院",
-   "location": "衛生福利部臺北醫院8樓國際會議廳(新北市新莊區思源路127號)",
-   "credits": 1.5,
-   "region": "北部",
-   "source": "台灣復健醫學會",
-   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4564.html",
-   "categories": [
-    "兒童復健",
-    "運動醫學"
-   ]
-  },
   {
    "date": "2026-11-27",
    "title": "115年度早期療育專業人員訓練課程『OSAS手術與術後語言治療』(共1時)(0.5點)",
