@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-23T10:03:32+08:00",
- "count": 28,
+ "updated_at": "2026-11-24T13:40:17+08:00",
+ "count": 30,
  "sources": {
-  "台灣復健醫學會": 24,
+  "台灣復健醫學會": 26,
   "台灣兒童復健醫學會": 4,
   "連倚南教授復健醫學教育基金會": 1
  },
@@ -339,6 +339,32 @@
    "categories": [
     "疼痛",
     "長照與老年"
+   ]
+  },
+  {
+   "date": "2027-01-08",
+   "title": "脊椎手術發展趨勢116.01.08(共2時)(1點)",
+   "organizer": "屏基醫療財團法人屏東基督教醫院",
+   "location": "屏東基督教醫院6F簡報室",
+   "credits": 1.0,
+   "region": "南部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4580.html",
+   "categories": [
+    "骨骼肌肉"
+   ]
+  },
+  {
+   "date": "2027-01-09",
+   "title": "M.A.E.S. Therapy簡介：以家庭為中心的臨床經驗分享116.01.09(共3時40分)(2點)",
+   "organizer": "臺北榮民總醫院 復健醫學部 - 早療評估中心",
+   "location": "臺北榮民總醫院 醫療創新中心 (第三門診九樓)",
+   "credits": 2.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4581.html",
+   "categories": [
+    "兒童復健"
    ]
   },
   {
