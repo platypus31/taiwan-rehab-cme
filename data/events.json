@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-24T13:40:17+08:00",
- "count": 30,
+ "updated_at": "2026-11-25T12:40:22+08:00",
+ "count": 32,
  "sources": {
-  "台灣復健醫學會": 26,
+  "台灣復健醫學會": 28,
   "台灣兒童復健醫學會": 4,
   "連倚南教授復健醫學教育基金會": 1
  },
@@ -214,6 +214,20 @@
    ]
   },
   {
+   "date": "2026-12-12",
+   "title": "2026年 Prolotherapy of Shoulder 肩關節增生療法115.12.12(共1時)(0.5點)",
+   "organizer": "台灣增生療法醫學會",
+   "location": "線上課程",
+   "credits": 0.5,
+   "region": "線上",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4582.html",
+   "categories": [
+    "骨骼肌肉",
+    "超音波與介入"
+   ]
+  },
+  {
    "date": "2026-12-13",
    "title": "肌筋膜疼痛評估與治療: 臨床實務工作坊(下)115.12.13(共6時40分)(3.5點)",
    "organizer": "宏恩醫療財團法人宏恩綜合醫院復健科",
@@ -287,6 +301,19 @@
    "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4470.html",
    "categories": [
     "超音波與介入"
+   ]
+  },
+  {
+   "date": "2026-12-20",
+   "title": "骨科暨復健科再生醫學論壇115.12.20(共2時)(1點)",
+   "organizer": "財團法人訊聯健康基金會",
+   "location": "台北W飯店（演講廳：8F Mega Room1) 臺北市信義區興雅里忠孝東路五段10號",
+   "credits": 1.0,
+   "region": "北部",
+   "source": "台灣復健醫學會",
+   "url": "https://www.pmr.org.tw/active_news/active_info.asp?/4583.html",
+   "categories": [
+    "骨骼肌肉"
    ]
   },
   {
